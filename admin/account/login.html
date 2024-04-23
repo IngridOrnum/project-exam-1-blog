@@ -3,18 +3,27 @@
 <head>
     <meta charset="UTF-8">
     <title>Login</title>
+    <script defer src="js/login.js"></script>
 </head>
 <body>
-    <main>
-        <div>LOGIN</div>
-        <form action="../post/edit.html">
-            <label for="username"></label>
-            <input id="username" placeholder="Username" type="text">
-            <label for="password"></label>
-            <input id="password" placeholder="Password" type="password">
-            <button type="submit">Login</button>
+    <main class="login">
+        <h1>LOGIN</h1>
+        <form class="login-form">
+<!--                action="../post/edit.html" -->
+            <div class="inputs-login-form">
+                <label for="email-login"></label>
+                <input id="email-login" placeholder="Email" type="text">
+                <label for="password-login"></label>
+                <input id="password-login" placeholder="Password" type="password">
+                <button class="button" id="login-btn" type="submit">Login</button>
+            </div>
         </form>
-        <div>Please fill in all input fields</div>
+        <span id="login-error-message">Please fill in all input fields</span>
+        
+        <div>
+            <div>Don't have an account yet?</div>
+            <button class="button"><a href="register.html">Register</a></button>
+        </div>
     </main>
 </body>
 </html>
