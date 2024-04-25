@@ -19,14 +19,6 @@
     gap: 1rem;
 }
 
-.save-btn {
-    display: none;
-}
-
-.edit-dropdown {
-    display: none;
-}
-
 .edit-form {
     display: flex;
     flex-direction: column;
