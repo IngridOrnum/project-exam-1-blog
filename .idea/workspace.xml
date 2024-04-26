@@ -5,9 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c45fea73-1762-4fd9-a33f-17df48578d29" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/admin/post/js/edit.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/admin/post/edit.html" beforeDir="false" afterPath="$PROJECT_DIR$/admin/post/edit.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/account/js/login.js" beforeDir="false" afterPath="$PROJECT_DIR$/admin/account/js/login.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/account/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/admin/account/login.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/post/css/edit.css" beforeDir="false" afterPath="$PROJECT_DIR$/admin/post/css/edit.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/post/js/edit.js" beforeDir="false" afterPath="$PROJECT_DIR$/admin/post/js/edit.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -18,16 +20,29 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="JavaScript File" />
+        <option value="CSS File" />
       </list>
     </option>
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
     "git-widget-placeholder": "edit-pages-html-js",
+    "list.type.of.created.stylesheet": "CSS",
     "node.js.selected.package.tslint": "(autodetect)"
   }
 }]]></component>
   <component name="TaskManager">
     <servers />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
 </project>

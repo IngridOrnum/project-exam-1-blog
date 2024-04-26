@@ -19,6 +19,10 @@
     gap: 1rem;
 }
 
+.edit-delete-btns {
+    display: flex;
+}
+
 .edit-form {
     display: flex;
     flex-direction: column;
