@@ -5,10 +5,14 @@ document.addEventListener('DOMContentLoaded', function () {
     function displayEditDropdown(event) {
         const editDropdown = event.target.closest('.single-blog-display-edit').querySelector('.edit-dropdown');
         const deleteBtnEdit = event.target.closest('.single-blog-display-edit').querySelector('.delete-btn');
+        const editBtn = event.target.closest('.single-blog-display-edit').querySelector('.edit-btn');
         if (editDropdown) {
             editDropdown.style.display = "block";
             if (deleteBtnEdit) {
                 deleteBtnEdit.style.display = "none";
+                if (editBtn) {
+                    editBtn.style.display = "none";
+                }
             }
         }
     }
@@ -17,10 +21,14 @@ document.addEventListener('DOMContentLoaded', function () {
     function closeEditDropdown(event) {
         const editDropdown = event.target.closest('.single-blog-display-edit').querySelector('.edit-dropdown');
         const deleteBtnEdit = event.target.closest('.single-blog-display-edit').querySelector('.delete-btn');
+        const editBtn = event.target.closest('.single-blog-display-edit').querySelector('.edit-btn');
         if (editDropdown) {
             editDropdown.style.display = "none";
             if (deleteBtnEdit) {
                 deleteBtnEdit.style.display = "block";
+                if (editBtn) {
+                    editBtn.style.display = "block";
+                }
             }
         }
     }
@@ -63,6 +71,8 @@ document.addEventListener('DOMContentLoaded', function () {
                             <input id="img-url-hero" placeholder="Img URL - Hero" type="text">
                             <label for="new-title"></label>
                             <input id="new-title" placeholder="New Title" type="text">
+                            <label for="tags"></label>
+                            <input id="tags" placeholder="Tags" type="text">
                             <div class="line-divider"></div>
                             <span><label for="first-paragraph">First Paragraph:</label></span>
                             <textarea id="first-paragraph" name="first-paragraph" cols="100" rows="5"></textarea>
