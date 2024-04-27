@@ -1,0 +1,47 @@
+.ul-all-posts-edit-page {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    padding: 0;
+}
+
+.single-blog-display-edit {
+    display: flex;
+    flex-direction: column;
+    gap: .5rem;
+    border: black solid 1px;
+    padding: 1rem;
+}
+
+.author-date-edit-page {
+    display: flex;
+    gap: 1rem;
+}
+
+.edit-delete-btns {
+    display: flex;
+}
+
+.save-btn, .close-btn {
+    display: none;
+}
+
+.edit-form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 12px;
+}
+
+.edit-form input {
+    width: 100%;
+}
+
+.line-divider {
+    height: 2px;
+    width: 100%;
+    margin: 10px 12px;
+    background-color: #919191;
+}
