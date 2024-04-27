@@ -23,6 +23,10 @@
     display: flex;
 }
 
+.save-btn, .close-btn {
+    display: none;
+}
+
 .edit-form {
     display: flex;
     flex-direction: column;
