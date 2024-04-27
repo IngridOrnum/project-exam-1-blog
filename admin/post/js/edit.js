@@ -77,7 +77,7 @@ document.addEventListener('DOMContentLoaded', function () {
         element.querySelector('.edit-btn').addEventListener('click', displayEditDropdown);
         element.querySelector('.save-btn').addEventListener('click', editSingleBlogPost);
         element.querySelector('.close-btn').addEventListener('click', closeEditDropdown);
-        // Add listener for delete if functionality is needed
+        element.querySelector('.delete-btn').addEventListener('click', deleteSinglePost);
     }
 
     function toggleEditDropdown(event, displayMode) {
@@ -104,6 +104,27 @@ document.addEventListener('DOMContentLoaded', function () {
     function closeEditDropdown(event) {
         toggleEditDropdown(event, false);
     }
+
+    function deleteSinglePost(event) {
+        const element = event.target.closest('.single-blog-display-edit');
+        const postId = element.dataset.id;  // Get the postId from the element's data-id attribute
+        const username = sessionStorage.getItem('username');
+
+        fetch(`https://v2.api.noroff.dev/blog/posts/${username}/${postId}`, {
+            method: 'DELETE',
+            headers: getHeaders()
+        })
+            .then(response => {
+                if (response.ok) {
+                    alert('Post deleted successfully');
+                    element.remove();
+                } else {
+                    response.json().then(data => alert('Error - ' + data.message));
+                }
+            })
+            .catch(error => console.error('Failed to delete post:', error));
+    }
+
 
     function fetchBlogPostAndFillForm(postId, formElement) {
         const username = sessionStorage.getItem('username');
@@ -147,7 +168,7 @@ document.addEventListener('DOMContentLoaded', function () {
             }
         };
     }
-    
+
     function editSingleBlogPost(event) {
         const form = event.target.closest('.single-blog-display-edit').querySelector('.edit-form');
         const postId = event.target.closest('.single-blog-display-edit').dataset.id;
