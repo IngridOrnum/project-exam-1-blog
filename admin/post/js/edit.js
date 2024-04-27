@@ -134,7 +134,6 @@ document.addEventListener('DOMContentLoaded', function () {
         })
             .then(response => response.json())
             .then(post => {
-                console.log(post);
                 populateForm(formElement, post);
             })
             .catch(error => console.error('Failed to fetch post for editing:', error));
