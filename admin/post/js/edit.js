@@ -1,17 +1,16 @@
 document.addEventListener('DOMContentLoaded', function () {
     const postsContainer = document.querySelector('.ul-all-posts-edit-page');
+    const username = sessionStorage.getItem('username');
+    const headers = getHeaders();
 
     function fetchUserBlogPosts() {
-        const username = sessionStorage.getItem('username');
         fetch(`https://v2.api.noroff.dev/blog/posts/${username}`, {
             method: 'GET',
-            headers: getHeaders()
-        })
+            headers })
             .then(res => res.json())
             .then(data => {
                 data.data.forEach(blogPost => {
-                    const blogPostElement = createBlogPostElement(blogPost);
-                    postsContainer.appendChild(blogPostElement);
+                    postsContainer.appendChild(createBlogPostElement(blogPost));
                 });
             })
             .catch(error => console.error('Error fetching blog posts:', error));
@@ -35,38 +34,19 @@ document.addEventListener('DOMContentLoaded', function () {
                 <button class="close-btn">Close</button>
             </div>
             <div class="edit-dropdown" style="display: none;">
-                        <form class="edit-form">
-                            <div class="line-divider"></div>
-                            <label for="img-url-hero"></label>
-                            <input id="img-url-hero" placeholder="Img URL - Hero" type="text">
-                            <label for="alt-img-hero"></label>
-                            <input id="alt-img-hero" placeholder="Image description" type="text">
-                            <label for="new-title"></label>
-                            <input id="new-title" placeholder="New Title" type="text">
-                            <label for="tags"></label>
-                            <input id="tags" placeholder="Tags" type="text">
-                            <div class="line-divider"></div>
-                            <span><label for="first-paragraph">First Paragraph:</label></span>
-                            <textarea id="first-paragraph" name="first-paragraph" cols="100" rows="5"></textarea>
-                            <label for="img-url-1"></label>
-                            <input id="img-url-1" placeholder="Img URL" type="text">
-                            <label for="alt-img-1"></label>
-                            <input id="alt-img-1" placeholder="Image description" type="text">
-                            <div class="line-divider"></div>
-                            <span><label for="second-paragraph">Second Paragraph:</label></span>
-                            <textarea id="second-paragraph" name="second-paragraph" cols="100" rows="5"></textarea>
-                            <label for="img-url-2"></label>
-                            <input id="img-url-2" placeholder="Img URL" type="text">
-                            <label for="alt-img-2"></label>
-                            <input id="alt-img-2" placeholder="Image description" type="text">
-                            <div class="line-divider"></div>
-                            <span><label for="third-paragraph">Third Paragraph:</label></span>
-                            <textarea id="third-paragraph" name="third-paragraph" cols="100" rows="5"></textarea>
-                            <label for="img-url-3"></label>
-                            <input id="img-url-3" placeholder="Img URL" type="text">
-                            <label for="alt-img-3"></label>
-                            <input id="alt-img-3" placeholder="Image description" type="text">
-                    </form>
+                <form class="edit-form">
+                    <div class="line-divider"></div>
+                    <label for="img-url">Img URL:</label>
+                    <input id="img-url" type="text">
+                    <label for="alt-img">Image description:</label>
+                    <input id="alt-img" type="text">
+                    <label for="title">Title:</label>
+                    <input id="title" type="text">
+                    <label for="tags">Tags:</label>
+                    <input id="tags" type="text">
+                    <label for="body-text">Text:</label>
+                    <textarea id="body-text"  cols="100" rows="20"></textarea>
+                </form>
             </div>
         `;
         attachButtonListeners(element);
@@ -105,75 +85,36 @@ document.addEventListener('DOMContentLoaded', function () {
         toggleEditDropdown(event, false);
     }
 
-    function deleteSinglePost(event) {
-        const element = event.target.closest('.single-blog-display-edit');
-        const postId = element.dataset.id;  // Get the postId from the element's data-id attribute
-        const username = sessionStorage.getItem('username');
-
-        fetch(`https://v2.api.noroff.dev/blog/posts/${username}/${postId}`, {
-            method: 'DELETE',
-            headers: getHeaders()
-        })
-            .then(response => {
-                if (response.ok) {
-                    alert('Post deleted successfully');
-                    element.remove();
-                } else {
-                    response.json().then(data => alert('Error - ' + data.message));
-                }
-            })
-            .catch(error => console.error('Failed to delete post:', error));
-    }
-
-
-    function fetchBlogPostAndFillForm(postId, formElement) {
-        const username = sessionStorage.getItem('username');
-        fetch(`https://v2.api.noroff.dev/blog/posts/${username}/${postId}`, {
-            method: 'GET',
-            headers: getHeaders()
-        })
+    function fetchBlogPostAndFillForm(postId, editDropdown) {
+        fetch(`https://v2.api.noroff.dev/blog/posts/${username}/${postId}`, { method: 'GET', headers })
             .then(response => response.json())
-            .then(post => {
-                populateForm(formElement, post);
-            })
+            .then(post => addFormData(editDropdown, post))
             .catch(error => console.error('Failed to fetch post for editing:', error));
     }
 
-    function populateForm(form, postData) {
-        if (!postData || !postData.data) return; // Exit if no postData or no data inside postData
+    function addFormData(editDropdown, postData) {
         const { title, tags, body, media } = postData.data;
-        form.querySelector('#new-title').value = title || '';
-        form.querySelector('#tags').value = tags ? tags.join(', ') : '';
-        const paragraphs = body.split('\n\n');
-        form.querySelector('#first-paragraph').value = paragraphs[0] || '';
-        form.querySelector('#second-paragraph').value = paragraphs[1] || '';
-        form.querySelector('#third-paragraph').value = paragraphs[2] || '';
-        form.querySelector('#img-url-hero').value = media.url || '';
-        form.querySelector('#alt-img-hero').value = media.alt || '';
-    }
-
-    function extractDataFromForm(form) {
-        return {
-            title: form.querySelector('#new-title').value.trim(),
-            tags: form.querySelector('#tags').value.split(',').map(tag => tag.trim()).filter(tag => tag),
-            body: [
-                form.querySelector('#first-paragraph').value.trim(),
-                form.querySelector('#second-paragraph').value.trim(),
-                form.querySelector('#third-paragraph').value.trim()
-            ].join('\n\n'),
-            media: {
-                url: form.querySelector('#img-url-hero').value.trim(),
-                alt: form.querySelector('#alt-img-hero').value.trim()
-            }
-        };
+        editDropdown.querySelector('#title').value = title || '';
+        editDropdown.querySelector('#tags').value = tags.join(', ') || '';
+        editDropdown.querySelector('#body-text').value = body || '';
+        editDropdown.querySelector('#img-url').value = media.url || '';
+        editDropdown.querySelector('#alt-img').value = media.alt || '';
     }
 
     function editSingleBlogPost(event) {
-        const form = event.target.closest('.single-blog-display-edit').querySelector('.edit-form');
-        const postId = event.target.closest('.single-blog-display-edit').dataset.id;
-        const updatedPostData = extractDataFromForm(form);  // Use the function to extract data from the form
+        event.preventDefault();
 
-        const username = sessionStorage.getItem('username');
+        const postId = event.target.closest('.single-blog-display-edit').dataset.id;
+        const form = event.target.closest('.single-blog-display-edit').querySelector('.edit-form');
+        const updatedPostData = {
+            title: form.querySelector('#title').value.trim(),
+            tags: form.querySelector('#tags').value.split(',').map(tag => tag.trim()).filter(tag => tag),
+            body: form.querySelector('#body-text').value.trim(),
+            media: {
+                url: form.querySelector('#img-url').value.trim(),
+                alt: form.querySelector('#alt-img').value.trim()
+            }
+        };
         fetch(`https://v2.api.noroff.dev/blog/posts/${username}/${postId}`, {
             method: 'PUT',
             headers: {
@@ -185,12 +126,29 @@ document.addEventListener('DOMContentLoaded', function () {
             .then(response => {
                 if (response.ok) {
                     alert('Post updated successfully');
-                    closeEditDropdown(event); // Close the form on success
+                    closeEditDropdown(event);
                 } else {
-                    response.json().then(data => alert('Error - ' + data.message)); // More detailed error information
+                    response.json().then(data => alert('Error - ' + data.message));
                 }
             })
             .catch(error => console.error('Error updating post:', error));
+    }
+
+    function deleteSinglePost(element) {
+        const postId = element.dataset.id;
+        fetch(`https://v2.api.noroff.dev/blog/posts/${username}/${postId}`, {
+            method: 'DELETE',
+            headers
+        })
+            .then(response => {
+                if (response.ok) {
+                    alert('Post deleted successfully');
+                    element.remove();
+                } else {
+                    response.json().then(data => alert('Error - ' + data.message));
+                }
+            })
+            .catch(error => console.error('Failed to delete post:', error));
     }
 
     function getHeaders() {
