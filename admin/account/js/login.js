@@ -18,7 +18,7 @@ document.addEventListener('DOMContentLoaded', function () {
                     'Content-Type': 'application/json'
                 },
                 body: JSON.stringify({
-                    email: emailLogin, // Use hardcoded email
+                    email: emailLogin,
                     password: passwordLogin
                 })
             });
