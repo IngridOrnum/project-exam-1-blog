@@ -88,11 +88,11 @@ document.addEventListener('DOMContentLoaded', function () {
     function fetchBlogPostAndFillForm(postId, editDropdown) {
         fetch(`https://v2.api.noroff.dev/blog/posts/${username}/${postId}`, { method: 'GET', headers })
             .then(response => response.json())
-            .then(post => populateForm(editDropdown, post))
+            .then(post => addFormData(editDropdown, post))
             .catch(error => console.error('Failed to fetch post for editing:', error));
     }
 
-    function populateForm(editDropdown, postData) {
+    function addFormData(editDropdown, postData) {
         const { title, tags, body, media } = postData.data;
         editDropdown.querySelector('#title').value = title || '';
         editDropdown.querySelector('#tags').value = tags.join(', ') || '';

@@ -32,7 +32,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 sessionStorage.setItem('accessToken', accessToken);
                 sessionStorage.setItem('username', username);
 
-                window.location.href = '../post/edit.html'; // Redirect to dashboard page
+                window.location.href = '../post/index.html'; // Redirect to dashboard page
             } else {
                 // Login failed, display error message
                 errorMessage.textContent = data.message;
