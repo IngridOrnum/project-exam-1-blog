@@ -1,15 +1,16 @@
-
 .carousel-wrapper {
     display: flex;
     justify-content: center;
     position: relative;
     width: 100%;
     overflow: hidden;
+    height: 400px;
 }
 
 .carousel-ul-container {
     list-style: none;
     transition: left 0.5s ease-in-out;
+    padding: 0;
 }
 
 .carousel-ul-container li:first-child {
@@ -59,4 +60,16 @@
     margin-bottom: 400px;
     width: 600px;
     border-radius: 0 0 1rem 1rem;
+}
+
+.post-img-grid {
+    width: 400px;
+    height: 240px;
+    object-fit: cover;
+    border-radius: .5rem;
+}
+
+.post-grid-container {
+    display: grid;
+    
 }

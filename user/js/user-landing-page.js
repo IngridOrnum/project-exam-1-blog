@@ -2,7 +2,7 @@ const username = sessionStorage.getItem('username');
 let currentSlideIndex = 0;
 let slideInterval;
 
-function fetchUserBlogPosts() {
+function fetchUserBlogPostsCarousel() {
     fetch(`https://v2.api.noroff.dev/blog/posts/IngridOrnum`, {
         method: 'GET',
         headers: {
@@ -65,4 +65,30 @@ function stopAutomaticSlide() {
     clearInterval(slideInterval);
 }
 
-fetchUserBlogPosts();
+fetchUserBlogPostsCarousel();
+
+function fetchUserBlogPostsStaticList() {
+    fetch(`https://v2.api.noroff.dev/blog/posts/IngridOrnum`, {
+        method: 'GET',
+        headers: {
+            'Content-Type': 'application/json'
+        }
+    })
+        .then(res => res.json())
+        .then(data => {
+            if (data && data.data) {
+                document.querySelector('.post-grid-container').innerHTML = data.data.slice(0, 12).map((post, index) => {
+                    return `
+                <div class="post-elements grid-item" id="post-grid-element-${index + 1}">
+                    <img class="post-img-grid" src="${post.media.url}" alt="${post.media.alt}">
+                    <!-- <div class="post-text-background-grid">
+                    <div class="post-title-grid">${post.title}</div>
+                    </div> -->
+                </div>`;
+                }).join('');  // Join the array of strings into a single string
+            }
+        })
+        .catch(error => console.error('Error fetching blog posts:', error));
+}
+
+fetchUserBlogPostsStaticList();
