@@ -4,18 +4,20 @@
     <meta charset="UTF-8">
     <title>Title</title>
     <script src="js/user-landing-page.js" defer></script>
+    <script src="https://kit.fontawesome.com/eaf3f254a9.js" crossorigin="anonymous"></script>
+    <link href="css/user-landing-page.css" rel="stylesheet">
 </head>
 <body>
     <main>
         <div class="carousel-wrapper">
-        <ul class="carousel-ul-container">
-        
-        </ul>
+            <div class="carousel-buttons-wrapper">
+            <button class="carousel-buttons" id="left-btn-carousel" onclick="prevSlide()"><i class="fa-solid fa-chevron-left"></i></button>
+            <button class="carousel-buttons" id="right-btn-carousel" onclick="nextSlide()"><i class="fa-solid fa-chevron-right"></i></button>
+            </div>
+        <ul class="carousel-ul-container"></ul>
         </div>
         
-        <section class="post-grid-container">
-        
-        </section>
+        <section class="post-grid-container"></section>
     </main>
 </body>
 </html>
