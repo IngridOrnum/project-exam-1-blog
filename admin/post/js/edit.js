@@ -86,7 +86,10 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 
     function fetchBlogPostAndFillForm(postId, editDropdown) {
-        fetch(`https://v2.api.noroff.dev/blog/posts/${username}/${postId}`, { method: 'GET', headers })
+        fetch(`https://v2.api.noroff.dev/blog/posts/${username}/${postId}`, {
+            method: 'GET',
+            headers
+        })
             .then(response => response.json())
             .then(post => addFormData(editDropdown, post))
             .catch(error => console.error('Failed to fetch post for editing:', error));
@@ -135,7 +138,8 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 
     function deleteSinglePost(element) {
-        const postId = element.dataset.id;
+        const postElement = element.target.closest('.single-blog-display-edit');
+        const postId = postElement.dataset.id;
         fetch(`https://v2.api.noroff.dev/blog/posts/${username}/${postId}`, {
             method: 'DELETE',
             headers
@@ -143,7 +147,7 @@ document.addEventListener('DOMContentLoaded', function () {
             .then(response => {
                 if (response.ok) {
                     alert('Post deleted successfully');
-                    element.remove();
+                    postElement.remove();
                 } else {
                     response.json().then(data => alert('Error - ' + data.message));
                 }

@@ -11,7 +11,6 @@ function displaySinglePost () {
                 <img src="${data.data.media.url}" alt="${data.data.media.alt}">
                 <h1>${data.data.title}</h1>
                 <p>${data.data.body}</p>
-         
                 `
             document.querySelector('.blog-post-container').insertAdjacentHTML('beforeend', postDataDisplay);
 
