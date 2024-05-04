@@ -1,4 +1,3 @@
-const username = sessionStorage.getItem('username');
 let currentSlideIndex = 0;
 let slideInterval;
 
@@ -15,10 +14,12 @@ function fetchUserBlogPostsCarousel() {
                 document.querySelector('.carousel-ul-container').innerHTML = data.data.slice(0, 3).map((post, index) => {
                     return `
                 <li class="post-slide" id="slide-${index + 1}">
-                    <img class="post-img" src="${post.media.url}" alt="${post.media.alt}">
-                    <div class="post-text-background">
-                    <div class="post-title">${post.title}</div>
-                    </div>
+                <a href="post/index.html?postId=${post.id}">
+                        <img class="post-img" src="${post.media.url}" alt="${post.media.alt}">
+                        <div class="post-text-background">
+                        <div class="post-title">${post.title}</div>
+                        </div>
+                    </a>
                 </li>`;
                 }).join('');  // Join the array of strings into a single string
                 initializeSlides(); // Initialize slides and start the automatic slideshow
@@ -80,10 +81,12 @@ function fetchUserBlogPostsStaticList() {
                 document.querySelector('.post-grid-container').innerHTML = data.data.slice(0, 12).map((post, index) => {
                     return `
                 <div class="post-elements grid-item" id="post-grid-element-${index + 1}">
+                    <a href="post/index.html?postId=${post.id}">
                     <img class="post-img-grid" src="${post.media.url}" alt="${post.media.alt}">
                     <!-- <div class="post-text-background-grid">
                     <div class="post-title-grid">${post.title}</div>
                     </div> -->
+                    </a>
                 </div>`;
                 }).join('');  // Join the array of strings into a single string
             }

@@ -127,3 +127,10 @@
 "post5 post6";
     gap: 12px;
 }
+
+.grid-wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
