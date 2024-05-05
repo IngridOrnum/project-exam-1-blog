@@ -10,8 +10,21 @@ document.addEventListener('DOMContentLoaded', function () {
         const emailRegister = document.getElementById('email-register').value;
         const passwordRegister = document.getElementById('password-register').value;
 
-        if (!usernameRegister || !emailRegister || !passwordRegister) {
-            errorMessage.textContent = 'please finn in all required fields';
+        // Validate username
+        if (!/^[a-zA-Z_]+$/.test(usernameRegister)) {
+            errorMessage.textContent = 'Username must only contain letters from a-z/A-Z and no other symbols apart from underscores ( _ ).';
+            return;
+        }
+
+        // Validate password
+        if (passwordRegister.length < 8) {
+            errorMessage.textContent = 'Password must be at least 8 characters long.';
+            return;
+        }
+
+        // Validate email
+        if (!emailRegister.endsWith('@stud.noroff.no')) {
+            errorMessage.textContent = 'Email must end with @stud.noroff.no';
             return;
         }
 
