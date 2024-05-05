@@ -1,15 +1,23 @@
-
 .carousel-wrapper {
     display: flex;
     justify-content: center;
     position: relative;
-    width: 100%;
     overflow: hidden;
+    height: auto;
+    width: 100%;
+}
+
+.slides-and-pagination-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .carousel-ul-container {
     list-style: none;
     transition: left 0.5s ease-in-out;
+    padding: 0;
+    height: 400px;
 }
 
 .carousel-ul-container li:first-child {
@@ -59,4 +67,104 @@
     margin-bottom: 400px;
     width: 600px;
     border-radius: 0 0 1rem 1rem;
+}
+
+.post-img-grid {
+    width: 100%;
+    height: 240px;
+    object-fit: cover;
+    border-radius: .5rem;
+}
+
+#post-grid-element-1 {
+    grid-area: post1;
+}
+
+#post-grid-element-2 {
+    grid-area: post2;
+}
+
+#post-grid-element-3 {
+    grid-area: post3;
+}
+
+#post-grid-element-4 {
+    grid-area: post4;
+}
+
+#post-grid-element-5 {
+    grid-area: post5;
+}
+
+#post-grid-element-6 {
+    grid-area: post6;
+}
+
+#post-grid-element-7 {
+    grid-area: post7;
+}
+
+#post-grid-element-8 {
+    grid-area: post8;
+}
+
+#post-grid-element-9 {
+    grid-area: post9;
+}
+
+#post-grid-element-10 {
+    grid-area: post10;
+}
+
+#post-grid-element-11 {
+    grid-area: post11;
+}
+
+#post-grid-element-12 {
+    grid-area: post12;
+}
+
+.post-grid-container {
+    display: grid;
+    width: 800px;
+    grid-template-areas:
+"post1 post1"
+"post2 post3"
+"post4 post4"
+"post5 post6";
+    gap: 12px;
+}
+
+.grid-wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+/* pagination styling inspiration: https://www.codeguage.com/tutorials/sliders/pagination */
+
+.slider-pagination-btn {
+    display: inline-block;
+    padding: 6px;
+    background-color: transparent;
+    cursor: pointer;
+    border: none;
+    outline: none;
+}
+
+.slider-pagination-btn:before {
+    content: '';
+    display: inline-block;
+    padding: 6px;
+    border-radius: 100%;
+    background-color: #ccc;
+}
+
+.slider-pagination-btn:hover:before {
+    background-color: #aaa;
+}
+
+.slider-pagination-btn.slider-pagination-btn--sel:before {
+    border: 0.5px solid dimgray;
 }

@@ -9,15 +9,27 @@
 </head>
 <body>
     <main>
+        <h2>Latest posts</h2>
         <div class="carousel-wrapper">
             <div class="carousel-buttons-wrapper">
             <button class="carousel-buttons" id="left-btn-carousel" onclick="prevSlide()"><i class="fa-solid fa-chevron-left"></i></button>
             <button class="carousel-buttons" id="right-btn-carousel" onclick="nextSlide()"><i class="fa-solid fa-chevron-right"></i></button>
             </div>
-        <ul class="carousel-ul-container"></ul>
+            <div class="slides-and-pagination-wrapper">
+            <ul class="carousel-ul-container"></ul>
+            <div class="pagination-element">
+                <button class="slider-pagination-btn slider-pagination-btn--sel"></button>
+                <button class="slider-pagination-btn"></button>
+                <button class="slider-pagination-btn"></button>
+            </div>
+            </div>
         </div>
-        
-        <section class="post-grid-container"></section>
+        <section>
+            <h2 id="checkout-subtitle">Check out</h2>
+            <div class="grid-wrapper">
+            <div class="post-grid-container"></div>
+            </div>
+        </section>
     </main>
 </body>
 </html>
