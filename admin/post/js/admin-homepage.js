@@ -8,10 +8,9 @@ function displayNameWelcome() {
             return response.json();
         })
         .then(data => {
-            console.log(data);
-            const userDisplayName = data.data[0].author.name;
+            const username = sessionStorage.getItem('username');
             welcomeTitle.innerHTML = `
-    <h1>Welcome, ${userDisplayName}!</h1>
+    <h1>Welcome, ${username}!</h1>
     `
         })
         .catch(error => console.log(error));
