@@ -2,15 +2,22 @@
     display: flex;
     justify-content: center;
     position: relative;
-    width: 100%;
     overflow: hidden;
-    height: 400px;
+    height: auto;
+    width: 100%;
+}
+
+.slides-and-pagination-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .carousel-ul-container {
     list-style: none;
     transition: left 0.5s ease-in-out;
     padding: 0;
+    height: 400px;
 }
 
 .carousel-ul-container li:first-child {
@@ -133,4 +140,31 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
+}
+
+/* pagination styling inspiration: https://www.codeguage.com/tutorials/sliders/pagination */
+
+.slider-pagination-btn {
+    display: inline-block;
+    padding: 6px;
+    background-color: transparent;
+    cursor: pointer;
+    border: none;
+    outline: none;
+}
+
+.slider-pagination-btn:before {
+    content: '';
+    display: inline-block;
+    padding: 6px;
+    border-radius: 100%;
+    background-color: #ccc;
+}
+
+.slider-pagination-btn:hover:before {
+    background-color: #aaa;
+}
+
+.slider-pagination-btn.slider-pagination-btn--sel:before {
+    border: 0.5px solid dimgray;
 }
