@@ -3,23 +3,23 @@
 <head>
     <meta charset="UTF-8">
     <title>Register</title>
-    <script defer src="js/login.js"></script>
+    <script defer src="js/register.js"></script>
 </head>
 <body>
     <main>
         <h1>REGISTER</h1>
-        <form action="login.html" class="register-form">
+        <form class="register-form">
             <div class="inputs-register-form">
                 <label for="username"></label>
                 <input id="username" placeholder="Username" type="text">
-                <label for="email"></label>
-                <input id="email" placeholder="Email" type="email">
-                <label for="password"></label>
-                <input id="password" placeholder="Password" type="password">
-                <button class="button" type="submit">Create account</button>
+                <label for="email-register"></label>
+                <input id="email-register" placeholder="Email" type="email">
+                <label for="password-register"></label>
+                <input id="password-register" placeholder="Password" type="password">
+                <button id="register-btn" type="submit">Create account</button>
             </div>
         </form>
-        <div>Please fill in all input fields</div>
+        <div id="register-error-message">Please fill in all input fields</div>
     </main>
 </body>
 </html>

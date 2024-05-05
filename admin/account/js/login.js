@@ -31,7 +31,6 @@ document.addEventListener('DOMContentLoaded', function () {
                 const username = data.data.name;
                 sessionStorage.setItem('accessToken', accessToken);
                 sessionStorage.setItem('username', username);
-
                 window.location.href = '../post/index.html'; // Redirect to dashboard page
             } else {
                 // Login failed, display error message

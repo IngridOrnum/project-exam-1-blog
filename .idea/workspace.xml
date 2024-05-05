@@ -6,9 +6,10 @@
   <component name="ChangeListManager">
     <list default="true" id="c45fea73-1762-4fd9-a33f-17df48578d29" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/user/css/user-landing-page.css" beforeDir="false" afterPath="$PROJECT_DIR$/user/css/user-landing-page.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/user/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/user/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/user/js/user-landing-page.js" beforeDir="false" afterPath="$PROJECT_DIR$/user/js/user-landing-page.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/account/js/login.js" beforeDir="false" afterPath="$PROJECT_DIR$/admin/account/js/login.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/account/js/register.js" beforeDir="false" afterPath="$PROJECT_DIR$/admin/account/js/register.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/account/register.html" beforeDir="false" afterPath="$PROJECT_DIR$/admin/account/register.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/post/js/admin-homepage.js" beforeDir="false" afterPath="$PROJECT_DIR$/admin/post/js/admin-homepage.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -30,7 +31,7 @@
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
     "DefaultHtmlFileTemplate": "HTML File",
-    "git-widget-placeholder": "user-landing-page-display-static-list-of-posts",
+    "git-widget-placeholder": "admin-register-user-js",
     "list.type.of.created.stylesheet": "CSS",
     "node.js.selected.package.tslint": "(autodetect)"
   }
