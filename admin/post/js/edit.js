@@ -2,13 +2,29 @@ document.addEventListener('DOMContentLoaded', function () {
     const postsContainer = document.querySelector('.ul-all-posts-edit-page');
     const username = sessionStorage.getItem('username');
     const headers = getHeaders();
+    let blogPosts = [];
 
+    fetchUserBlogPosts();
+
+    const filterButtons = document.querySelectorAll('.filter-btn');
+        filterButtons.forEach(button => {
+            button.addEventListener('click', () => {
+                const filterValue = button.getAttribute('data-filter')
+                if (button.id === 'view-all-edit-page') {
+                    renderPosts(blogPosts);
+                } else {
+                    filterPosts(filterValue, blogPosts);
+                }
+            });
+        });
     function fetchUserBlogPosts() {
         fetch(`https://v2.api.noroff.dev/blog/posts/${username}`, {
             method: 'GET',
-            headers })
+            headers
+        })
             .then(res => res.json())
             .then(data => {
+                blogPosts = data.data;
                 data.data.forEach(blogPost => {
                     postsContainer.appendChild(createBlogPostElement(blogPost));
                 });
@@ -51,6 +67,20 @@ document.addEventListener('DOMContentLoaded', function () {
         `;
         attachButtonListeners(element);
         return element;
+    }
+
+    function renderPosts(posts) {
+        postsContainer.innerHTML = '';
+        posts.forEach(post => {
+            postsContainer.appendChild(createBlogPostElement(post));
+        })
+    }
+
+    function filterPosts(filter, posts) {
+        const filteredPosts = posts.filter(post => {
+            return post.tags && post.tags.some(tag => tag.toLowerCase() === filter.toLowerCase())
+        });
+        renderPosts(filteredPosts);
     }
 
     function attachButtonListeners(element) {
