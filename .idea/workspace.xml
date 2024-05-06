@@ -6,7 +6,9 @@
   <component name="ChangeListManager">
     <list default="true" id="c45fea73-1762-4fd9-a33f-17df48578d29" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/admin/account/js/register.js" beforeDir="false" afterPath="$PROJECT_DIR$/admin/account/js/register.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/user/css/user-landing-page.css" beforeDir="false" afterPath="$PROJECT_DIR$/user/css/user-landing-page.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/user/js/blog-archive.js" beforeDir="false" afterPath="$PROJECT_DIR$/user/js/blog-archive.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/user/post/blog-archive.html" beforeDir="false" afterPath="$PROJECT_DIR$/user/post/blog-archive.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -16,9 +18,9 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="CSS File" />
-        <option value="JavaScript File" />
         <option value="HTML File" />
+        <option value="JavaScript File" />
+        <option value="CSS File" />
       </list>
     </option>
   </component>
@@ -28,7 +30,7 @@
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
     "DefaultHtmlFileTemplate": "HTML File",
-    "git-widget-placeholder": "admin-register-user-js",
+    "git-widget-placeholder": "add-12-plus-posts-admin",
     "list.type.of.created.stylesheet": "CSS",
     "node.js.selected.package.tslint": "(autodetect)"
   }

@@ -1,6 +1,6 @@
 function displaySinglePost () {
     const urlParams = new URLSearchParams(window.location.search);
-    const postId = urlParams.get('postId'); // This should match the name in the URL
+    const postId = urlParams.get('postId');
 
     console.log(postId);
 
@@ -24,3 +24,5 @@ function displaySinglePost () {
 }
 
 document.addEventListener('DOMContentLoaded', displaySinglePost);
+
+
