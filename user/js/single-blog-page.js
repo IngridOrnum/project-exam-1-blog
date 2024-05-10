@@ -14,9 +14,11 @@ function displaySinglePost () {
         .then(data => {
             const postDataDisplay =
                 `
-                <img src="${data.data.media.url}" alt="${data.data.media.alt}">
+                <img class="hero-img-single-post" src="${data.data.media.url}" alt="${data.data.media.alt}">
+                <div class="single-post-content-wrapper">
                 <h1>${data.data.title}</h1>
-                <p>${data.data.body}</p>
+                    <div class="body-single-post">${data.data.body}</div>
+                </div>
                 `;
             document.querySelector('.blog-post-container').insertAdjacentHTML('beforeend', postDataDisplay);
         })
