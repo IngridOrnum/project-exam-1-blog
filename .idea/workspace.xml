@@ -7,8 +7,7 @@
     <list default="true" id="c45fea73-1762-4fd9-a33f-17df48578d29" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/admin/post/js/edit.js" beforeDir="false" afterPath="$PROJECT_DIR$/admin/post/js/edit.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/admin/post/make.html" beforeDir="false" afterPath="$PROJECT_DIR$/admin/post/make.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/user/js/single-blog-page.js" beforeDir="false" afterPath="$PROJECT_DIR$/user/js/single-blog-page.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/post/js/make.js" beforeDir="false" afterPath="$PROJECT_DIR$/admin/post/js/make.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
