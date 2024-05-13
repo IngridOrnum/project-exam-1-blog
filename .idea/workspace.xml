@@ -5,18 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c45fea73-1762-4fd9-a33f-17df48578d29" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/user/css/single-blog-page.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/admin/post/css/edit.css" beforeDir="false" afterPath="$PROJECT_DIR$/admin/post/css/edit.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/admin/post/css/make.css" beforeDir="false" afterPath="$PROJECT_DIR$/admin/post/css/make.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/admin/post/edit.html" beforeDir="false" afterPath="$PROJECT_DIR$/admin/post/edit.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/user/css/blog-archive.css" beforeDir="false" afterPath="$PROJECT_DIR$/user/css/blog-archive.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/user/css/styles.css" beforeDir="false" afterPath="$PROJECT_DIR$/user/css/styles.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/user/css/user-landing-page.css" beforeDir="false" afterPath="$PROJECT_DIR$/user/css/user-landing-page.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/user/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/user/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/post/js/edit.js" beforeDir="false" afterPath="$PROJECT_DIR$/admin/post/js/edit.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/post/make.html" beforeDir="false" afterPath="$PROJECT_DIR$/admin/post/make.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/user/js/single-blog-page.js" beforeDir="false" afterPath="$PROJECT_DIR$/user/js/single-blog-page.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/user/post/blog-archive.html" beforeDir="false" afterPath="$PROJECT_DIR$/user/post/blog-archive.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/user/post/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/user/post/index.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
