@@ -21,7 +21,7 @@ function renderPosts(posts) {
     document.querySelector('.blog-archive-section').innerHTML = posts.map((post, index) => {
         return `
             <div class="post-elements grid-item" data-tags="${post.tags.join(', ')}" id="post-grid-element-${index + 1}">
-                <a href="post/index.html?postId=${post.id}">
+                 <a href="index.html?postId=${post.id}">
                 <img class="post-img-grid" src="${post.media.url}" alt="${post.media.alt}">
                 <div class="post-title-grid">${post.title}</div>
                 </a>
@@ -47,7 +47,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
 function filterPosts(filter) {
     const filteredPosts = allPosts.filter(post => {
-        // Check if post.tags is truthy and if any tag matches the filter
         return post.tags && post.tags.some(tag => tag && tag.toLowerCase() === filter.toLowerCase());
     });
     renderPosts(filteredPosts);

@@ -50,19 +50,31 @@ document.addEventListener('DOMContentLoaded', function () {
                 <button class="close-btn">Close</button>
             </div>
             <div class="edit-dropdown" style="display: none;">
-                <form class="edit-form">
-                    <div class="line-divider"></div>
-                    <label for="img-url">Img URL:</label>
-                    <input id="img-url" type="text">
-                    <label for="alt-img">Image description:</label>
-                    <input id="alt-img" type="text">
-                    <label for="title">Title:</label>
-                    <input id="title" type="text">
-                    <label for="tags">Tags:</label>
-                    <input id="tags" type="text">
-                    <label for="body-text">Text:</label>
-                    <textarea id="body-text"  cols="100" rows="20"></textarea>
-                </form>
+               <form class="edit-form">
+                   <div class="line-divider"></div>
+                    <label for="img-url-1">Img URL Hero:</label>
+                     <input id="img-url-1" type="text">
+                     <label for="alt-img-1">Image description:</label>
+                     <input id="alt-img-1" type="text">
+                     <label for="title">Title:</label>
+                     <input id="title" type="text">
+                     <label for="tags">Tags:</label>
+                     <input id="tags" type="text">
+                     <label for="paragraph-1">First paragraph:</label>
+                     <textarea id="paragraph-1"  cols="100" rows="20"></textarea>
+                      <label for="img-url-2">Img URL:</label>
+                     <input id="img-url-2" type="text">
+                     <label for="alt-img-2">Image description:</label>
+                     <input id="alt-img-2" type="text">
+                     <label for="paragraph-2">Second paragraph:</label>
+                     <textarea id="paragraph-2"  cols="100" rows="20"></textarea>
+                      <label for="img-url-3">Img URL:</label>
+                     <input id="img-url-3" type="text">
+                     <label for="alt-img-3">Image description:</label>
+                     <input id="alt-img-3" type="text">
+                     <label for="paragraph-3">Third paragraph:</label>
+                     <textarea id="paragraph-3"  cols="100" rows="20"></textarea>
+                 </form>
             </div>
         `;
         attachButtonListeners(element);
@@ -129,9 +141,24 @@ document.addEventListener('DOMContentLoaded', function () {
         const { title, tags, body, media } = postData.data;
         editDropdown.querySelector('#title').value = title || '';
         editDropdown.querySelector('#tags').value = tags.join(', ') || '';
-        editDropdown.querySelector('#body-text').value = body || '';
-        editDropdown.querySelector('#img-url').value = media.url || '';
-        editDropdown.querySelector('#alt-img').value = media.alt || '';
+        editDropdown.querySelector('#img-url-1').value = media.url || '';
+        editDropdown.querySelector('#alt-img-1').value = media.alt || '';
+
+        const parser = new DOMParser();
+        const bodyText = parser.parseFromString(body, 'text/html');
+
+        const paragraphs = bodyText.querySelectorAll('p');
+        const images = bodyText.querySelectorAll('img');
+
+        if (paragraphs.length >= 3 && images.length >= 2) {
+            editDropdown.querySelector('#paragraph-1').value = paragraphs[0].textContent;
+            editDropdown.querySelector('#img-url-2').value = images[0].src;
+            editDropdown.querySelector('#alt-img-2').value = images[0].alt;
+            editDropdown.querySelector('#paragraph-2').value = paragraphs[1].textContent;
+            editDropdown.querySelector('#img-url-3').value = images[1].src;
+            editDropdown.querySelector('#alt-img-3').value = images[1].alt;
+            editDropdown.querySelector('#paragraph-3').value = paragraphs[2].textContent;
+        }
     }
 
     function editSingleBlogPost(event) {
@@ -139,15 +166,32 @@ document.addEventListener('DOMContentLoaded', function () {
 
         const postId = event.target.closest('.single-blog-display-edit').dataset.id;
         const form = event.target.closest('.single-blog-display-edit').querySelector('.edit-form');
+
+        const title = form.querySelector('#title').value.trim();
+        const tags = form.querySelector('#tags').value.split(',').map(tag => tag.trim()).filter(tag => tag);
+        const heroImageUrl = form.querySelector('#img-url-1').value.trim();
+        const heroImageAlt = form.querySelector('#alt-img-1').value.trim();
+
+        let body = `
+    <p>${form.querySelector('#paragraph-1').value.trim()}</p>
+    <img src="${form.querySelector('#img-url-2').value.trim()}" alt="${form.querySelector('#alt-img-2').value.trim()}">
+    <p>${form.querySelector('#paragraph-2').value.trim()}</p>
+    <img src="${form.querySelector('#img-url-3').value.trim()}" alt="${form.querySelector('#alt-img-3').value.trim()}">
+    <p>${form.querySelector('#paragraph-3').value.trim()}</p>
+`;
+
+
+        // Create updated post data object
         const updatedPostData = {
-            title: form.querySelector('#title').value.trim(),
-            tags: form.querySelector('#tags').value.split(',').map(tag => tag.trim()).filter(tag => tag),
-            body: form.querySelector('#body-text').value.trim(),
+            title: title,
+            tags: tags,
+            body: body,
             media: {
-                url: form.querySelector('#img-url').value.trim(),
-                alt: form.querySelector('#alt-img').value.trim()
+                url: heroImageUrl,
+                alt: heroImageAlt
             }
         };
+
         fetch(`https://v2.api.noroff.dev/blog/posts/${username}/${postId}`, {
             method: 'PUT',
             headers: {
