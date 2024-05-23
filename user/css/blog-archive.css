@@ -1,3 +1,52 @@
+.post-title-grid {
+    position: absolute;
+    z-index: 10;
+    margin-bottom: 2rem;
+}
+
+
+.post-grid-container {
+    display: grid;
+    gap: 22px;
+    grid-template-columns: repeat(auto-fit, minmax(312px, 1fr));
+    padding: 22px;
+}
+
+.grid-item {
+
+}
+
+.post-img-grid {
+    display: block;
+    object-fit: cover;
+    border-radius: 6px;
+    position: relative;
+    overflow: hidden;
+    height: 300px;
+    z-index: 1;
+    width: 100%;
+}
+
+.grid-wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.size-large {
+    width: 500px;
+}
+
+.size-medium {
+    width: 412px;
+}
+
+.size-small {
+    width: 312px;
+}
+
+
 @media (min-width: 834px) {
 }
 
