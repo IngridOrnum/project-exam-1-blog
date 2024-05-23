@@ -19,6 +19,14 @@ function displayAllPosts() {
 
 function renderPosts(posts) {
     document.querySelector('.blog-archive-section').innerHTML = posts.map((post, index) => {
+        let sizeClass = '';
+        if (index % 3 === 0) {
+            sizeClass = 'size-large';
+        } else if (index % 3 === 1) {
+            sizeClass = 'size-medium'
+        } else if (index % 3 === 2) {
+            sizeClass = 'size-small';
+        }
         return `
             <div class="post-elements grid-item" data-tags="${post.tags.join(', ')}" id="post-grid-element-${index + 1}">
                  <a href="index.html?postId=${post.id}">

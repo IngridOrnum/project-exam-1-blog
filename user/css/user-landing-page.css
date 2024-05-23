@@ -1,3 +1,11 @@
+
+.hero-bg {
+    background-image: url("assets/mobile/mobile-hero.jpg");
+    width: 100%;
+    height: 672px;
+}
+
+
 .carousel-wrapper {
     display: flex;
     justify-content: center;
@@ -124,24 +132,51 @@
     grid-area: post12;
 }
 
+#post-grid-element-13 {
+    grid-area: post13;
+}
+
+#post-grid-element-14 {
+    grid-area: post14;
+}
+
+#post-grid-element-15 {
+    grid-area: post15;
+}
+
+#post-grid-element-16 {
+    grid-area: post16;
+}
+
+#post-grid-element-17 {
+    grid-area: post17;
+}
+
+#post-grid-element-18 {
+    grid-area: post18;
+}
+
+#post-grid-element-19 {
+    grid-area: post19;
+}
+
+#post-grid-element-20 {
+    grid-area: post20;
+}
+
+#post-grid-element-21 {
+    grid-area: post21;
+}
+
+
 .post-grid-container {
     display: grid;
     width: 800px;
     grid-template-areas:
-"post1 post1"
-"post2 post3"
-"post4 post4"
-"post5 post6"
-"post7 post7"
-"post8 post9"
-"post10 post10"
-"post11 post12"
-"post13 post13"
-"post14 post15"
-"post16 post16"
-"post17 post18"
-"post19 post19"
-"post20 post21";
+"post1 post2 post3"
+"post4 post5 post6"
+"post7 post8 post9"
+"post10 post11 post12";
     gap: 12px;
 }
 
@@ -177,6 +212,16 @@
 
 .slider-pagination-btn.slider-pagination-btn--sel:before {
     border: 0.5px solid dimgray;
+}
+
+hr {
+    background-image: linear-gradient(to right, #000 20%, rgba(255, 255, 255, 0) 0%);
+    background-position: bottom;
+    background-size: 5px 1px;
+    background-repeat: repeat-x;
+    height: 1px;
+    border: 0;
+    margin: 30px auto;
 }
 
 @media (min-width: 834px) {
