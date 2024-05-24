@@ -138,7 +138,7 @@ border: none;
 .slide-background-blur {
     width: 100vw;
     height: 518px;
-    background-color: #3d3d3d30;
+    background-color: var(--secondary-400-gray-transparent);
     position: absolute;
 }
 
@@ -181,6 +181,11 @@ border: none;
     border: 1px solid var(--secondary-100-white-transparent);
     border-radius: 6px;
     z-index: 10;
+    cursor: pointer;
+}
+
+#left-btn-carousel:hover, #right-btn-carousel:hover {
+    background-color: var(--secondary-400-gray-transparent);
 }
 
 .post-slide {
@@ -259,11 +264,19 @@ border: none;
     height: 148px;
     border-radius: 200px;
     border: 4px solid var(--secondary-300-green-transparent);
+    background-color: var(--secondary-500-white);
+    cursor: pointer;
+}
+
+.filter-btn-homepage a {
     display: flex;
     flex-direction: column;
-    gap: 4px;
     justify-content: center;
     align-items: center;
+    gap: 4px;
+    font-family: Magilio, sans-serif;
+    font-size: 20px;
+    color: var(--neutral-300-black);
 }
 
 .filter-btn-homepage img {
@@ -271,11 +284,64 @@ border: none;
     height: 40px;
 }
 
+.filter-btn-homepage:hover {
+    background-color: var(--secondary-100-white-transparent);
+}
+
+.filter-btn-homepage:active, .filter-btn-homepage:focus {
+    background-color: var(--secondary-300-green-transparent);
+}
+
 .post-img-grid {
     width: 330px;
     height: 162px;
     object-fit: cover;
     border-radius: 6px;
+    z-index: -1;
+}
+
+.a-grid-item {
+    position: relative;
+    width: 330px;
+    height: 162px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+}
+
+.bg-blur-post-grid {
+    border-radius: 6px;
+    width: 330px;
+    height: 162px;
+    background-color: var(--secondary-400-gray-transparent);
+    position: absolute;
+    top: 0;
+    z-index: 1;
+}
+
+.bg-blur-post-grid:hover {
+    background-color: var(--neutral-300-black);
+}
+
+
+.grid-title-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    z-index: 5;
+    color: var(--neutral-500-white);
+    font-family: Magilio, sans-serif;
+    letter-spacing: 4px;
+    font-size: 36px;
+}
+
+.post-title-grid {
+    display: flex;          
+    justify-content: center;
+    align-items: center;    
+
 }
 
 .post-grid-container {

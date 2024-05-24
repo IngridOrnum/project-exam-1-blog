@@ -115,12 +115,14 @@ function fetchUserBlogPostsStaticList() {
             if (data && data.data) {
                 document.querySelector('.post-grid-container').innerHTML = data.data.slice(0, 12).map((post, index) => {
                     return `
-                <div class="post-elements grid-item" id="post-grid-element-${index + 1}">
-                    <a href="post/index.html?postId=${post.id}">
+                <div class="post-element-grid grid-item" id="post-grid-element-${index + 1}">
+                    <a class="a-grid-item" href="post/index.html?postId=${post.id}">
                     <img class="post-img-grid" src="${post.media.url}" alt="${post.media.alt}">
-                    <!-- <div class="post-text-background-grid">
-                    <div class="post-title-grid">${post.title}</div>
-                    </div> -->
+                    <div class="bg-blur-post-grid"></div>
+                    <div class="grid-title-wrapper">
+                        <div class="post-title-grid">${post.title}</div>
+                    </div>
+                    
                     </a>
                 </div>`;
                 }).join('');  // Join the array of strings into a single string

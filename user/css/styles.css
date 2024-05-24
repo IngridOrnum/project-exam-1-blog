@@ -5,9 +5,10 @@
     --neutral-500-white: #fafafa;
     --primary-300-greenbeige: #dbddc5;
     --primary-500-darkgreen: #283b2c;
-    --secondary-100-white-transparent: #fafafa40;
+    --secondary-100-white-transparent: #fafafa50;
     --secondary-200-green: #43624a;
     --secondary-300-green-transparent: #283b2c50;
+    --secondary-400-gray-transparent: #3d3d3d60;
     --secondary-500-white: #fcf8f9;
     --success-300: #5cb85c;
     --warning-300: #ff875a;
@@ -16,15 +17,13 @@
 
 body {
     background-color: var(--neutral-500-white);
+    scroll-behavior: smooth;
 }
 
 * {
     margin: 0;
-}
 
-/*body {*/
-/*    margin: 22px 12px;*/
-/*}*/
+}
 
 nav {
     display: flex;
