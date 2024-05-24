@@ -5,10 +5,15 @@ section {
     align-items: center;
 }
 
-nav {
+.nav-homepage {
     position: absolute;
     z-index: 10;
     margin: 22px;
+}
+
+.nav-content-homepage {
+    display: flex;
+    justify-content: space-between;
     align-items: center;
 }
 
@@ -257,6 +262,7 @@ border: none;
     flex-wrap: wrap;
     gap: 22px;
     width: 340px;
+    margin-top: 22px;
 }
 
 .filter-btn-homepage {
@@ -292,6 +298,10 @@ border: none;
     background-color: var(--secondary-300-green-transparent);
 }
 
+.text-content-grid-section {
+    margin-bottom: 22px;
+}
+
 .post-img-grid {
     width: 330px;
     height: 162px;
@@ -320,7 +330,11 @@ border: none;
     z-index: 1;
 }
 
-.bg-blur-post-grid:hover {
+.post-element-grid {
+    border-radius: 6px;
+}
+
+.post-element-grid:hover {
     background-color: var(--neutral-300-black);
 }
 
@@ -382,6 +396,11 @@ border: none;
     width: 365px;
     height: 320px;
     object-fit: cover;
+}
+
+.img-post-highlight {
+    border-radius: 6px;
+    margin-top: 42px;
 }
 
 @media (min-width: 834px) {

@@ -9,7 +9,8 @@
     <link href="css/styles.css" rel="stylesheet">
 </head>
 <body>
-    <nav>
+    <nav class="nav-homepage">
+        <div class="nav-content-homepage">
         <span><a class="logo-landingpage" href="#">Nordic Trekking</a></span>
         <div class="nav-links-wrapper">
             <span><a class="nav-link home-nav-link" href="#">HOME</a></span>
@@ -17,6 +18,7 @@
             <span><a class="nav-link about-nav-link" href="about.html">ABOUT</a></span>
         </div>
         <button class="burger-menu"><img src="/assets/icons/white-burger-menu.png"></button>
+        </div>
     </nav>
     <main>
         <div class="hero-bg">
@@ -32,7 +34,7 @@
             </div>
         </div>
         
-        <section>
+        <section class="carousel-section">
             <div class="carousel-section-2-text">
                 <h2>Latest posts</h2>
                 <p>Check out our latest posts!</p>
@@ -58,33 +60,35 @@
         <section class="filter-section">
             <div class="bg-filter-section">
                 <div class="content-filter-section">
-                <h2>Filter by activity</h2>
-                <p>We have something for every adventurer! Choose your preferred activity.</p>
-                <div class="homepage-filter-btns">
-                    <button class="filter-btn-homepage" id="forest"><a>
-                        <img alt="Forest Icon" src="/assets/icons/forest-hike-icon.png">
-                        <span>Forest Hiking</span>
-                    </a></button>
-                    <button class="filter-btn-homepage" id="mountain"><a>
-                        <img alt="Mountain Icon" src="/assets/icons/mountain-hiking-icon.png">
-                        <span>Mountain Hiking</span>
-                    </a></button>
-                    <button class="filter-btn-homepage" id="climbing"><a>
-                        <img alt="Climbing Shoe Icon" src="/assets/icons/climbing-icon.png">
-                        <span>Climbing</span>
-                    </a></button>
-                    <button class="filter-btn-homepage" id="biking"><a>
-                        <img alt="Bike Icon" src="/assets/icons/bike-icon.png">
-                        <span>Biking</span>
-                    </a></button>
-                </div>
+                    <h2>Filter by activity</h2>
+                    <p>We have something for every adventurer! Choose your preferred activity.</p>
+                    <div class="homepage-filter-btns">
+                        <button class="filter-btn-homepage" id="forest"><a>
+                            <img alt="Forest Icon" src="/assets/icons/forest-hike-icon.png">
+                            <span>Forest Hiking</span>
+                        </a></button>
+                        <button class="filter-btn-homepage" id="mountain"><a>
+                            <img alt="Mountain Icon" src="/assets/icons/mountain-hiking-icon.png">
+                            <span>Mountain Hiking</span>
+                        </a></button>
+                        <button class="filter-btn-homepage" id="climbing"><a>
+                            <img alt="Climbing Shoe Icon" src="/assets/icons/climbing-icon.png">
+                            <span>Climbing</span>
+                        </a></button>
+                        <button class="filter-btn-homepage" id="biking"><a>
+                            <img alt="Bike Icon" src="/assets/icons/bike-icon.png">
+                            <span>Biking</span>
+                        </a></button>
+                    </div>
                 </div>
             </div>
         </section>
         
-        <section>
-            <h2 id="checkout-subtitle">Find some inspiration</h2>
-            <p>Browse through our latest posts!</p>
+        <section class="display-posts-grid-section">
+            <div class="text-content-grid-section">
+                <h2>Find some inspiration</h2>
+                <p>Browse through our latest posts!</p>
+            </div>
             <div class="grid-wrapper">
                 <div class="post-grid-container"></div>
             </div>
@@ -108,17 +112,21 @@
             <p>Plan this summer to visit one of the most beautiful hikes in Norway - Besseggen!
             </p>
             <button class="button-uni"><a>CHECK OUT BESSEGGEN</a></button>
-            <img class="img-post-highlight" src="https://www.turbanken.no/wp-content/uploads/2021/07/IMG_20190722_123707-scaled.jpg" alt="Besseggen, the Mountain">
+            <img alt="Besseggen, the Mountain"
+                 class="img-post-highlight"
+                 src="https://www.turbanken.no/wp-content/uploads/2021/07/IMG_20190722_123707-scaled.jpg">
         </section>
     </main>
     <footer>
         <div class="bg-footer">
-        <span class="logo-footer"><a href="#">Nordic trekking</a></span>
-        <ul>
-            <li><a href="#">Home</a></li>
-            <li><a href="post/blog-archive.html">Blog Archive</a></li>
-            <li><a href="about.html">About</a></li>
-        </ul>
+            <div class="footer-text">
+                <span class="logo-footer"><a href="#">Nordic trekking</a></span>
+                <ul class="footer-links">
+                    <li><a href="#">Home</a></li>
+                    <li><a href="post/blog-archive.html">Blog Archive</a></li>
+                    <li><a href="about.html">About</a></li>
+                </ul>
+            </div>
         </div>
     </footer>
 </body>
