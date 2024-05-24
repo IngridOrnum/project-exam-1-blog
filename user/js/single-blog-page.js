@@ -18,7 +18,9 @@ function displaySinglePost () {
                 `
                 <img class="hero-img-single-post" src="${postData.media.url}" alt="${postData.media.alt}">
                 <div class="single-post-content-wrapper">
+                <div class="bg-title">
                 <h1>${postData.title}</h1>
+                </div>
                     <div class="body-single-post">${postData.body}</div>
                 </div>
                 `;

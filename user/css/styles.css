@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Montserrat+Subrayada:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Goudy+Bookletter+1911&family=Montserrat+Subrayada:wght@400;700&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
 
 :root {
     --neutral-300-black: #3d3d3d;
@@ -14,17 +14,25 @@
     --error-300: #e23636;
 }
 
-* {
+body {
     background-color: var(--neutral-500-white);
 }
 
-body {
-    margin: 22px 12px;
+* {
+    margin: 0;
 }
+
+/*body {*/
+/*    margin: 22px 12px;*/
+/*}*/
 
 nav {
     display: flex;
     justify-content: space-between;
+}
+
+.nav-link {
+    font-size: 1rem;
 }
 
 .logo {
@@ -39,11 +47,15 @@ a {
 
 h1 {
     font-family: Magilio, sans-serif;
+    letter-spacing: 4px;
 }
 
 h2, p {
     font-family: Montserrat, sans-serif;
     color: var(--primary-500-darkgreen);
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 h2 {
@@ -54,15 +66,44 @@ h2 {
 p {
   font-size: 14px;
   margin-top: 22px;
+  text-align: center;
 }
 
+section {
+    margin-top: 42px;
+}
+
+.button-uni {
+    background-color: var(--primary-500-darkgreen);
+    border: 2px solid var(--primary-500-darkgreen);
+    border-radius: 6px;
+    padding: 10px;
+    cursor: pointer;
+    font-size: 16px;
+    margin-top: 42px;
+}
+
+.button-uni a {
+    color: var(--neutral-500-white);
+}
+
+.button-uni:hover {
+    background-color: var(--secondary-200-green);
+    border: 2px solid var(--primary-500-darkgreen);
+}
+
+.button-uni:active, .button-uni:focus {
+    background-color: var(--secondary-300-green-transparent);
+    box-shadow: inset 5px 3px 8px 2px #283b2c25;
+    border: 2px solid var(--primary-500-darkgreen);
+}
 
 
 @media (min-width: 834px) {
 
-    body {
-        margin: 22px 42px;
-    }
+    /*body {*/
+    /*    margin: 22px 42px;*/
+    /*}*/
 
     .nav-links-wrapper {
         gap: 42px;
@@ -72,15 +113,33 @@ p {
       font-size:  24px;
     }
 
+    section {
+        margin-top: 82px;
+    }
+
+    .button-uni {
+        font-size: 20px;
+    }
+
 }
 
 @media (min-width: 1440px) {
-    body {
-        margin: 22px 82px;
-    }
+    /*body {*/
+    /*    margin: 22px 82px;*/
+    /*}*/
 
     h2 {
         font-size: 28px;
+    }
+
+    section {
+        margin-top: 102px;
+    }
+
+    .button-uni {
+        font-size: 20px;
+        padding: 12px 22px;
+        margin-top: 122px;
     }
 
 }

@@ -15,12 +15,14 @@ function fetchUserBlogPostsCarousel() {
                 document.querySelector('.carousel-ul-container').innerHTML = data.data.slice(0, 3).map((post, index) => {
                     return `
                 <li class="post-slide" id="slide-${index + 1}">
-                <a href="post/index.html?postId=${post.id}">
+                        <div class="slide-background-blur"></div>
                         <img class="post-img" src="${post.media.url}" alt="${post.media.alt}">
-                        <div class="post-text-background">
+                        <div class="title-and-btn-wrapper">
                         <div class="post-title">${post.title}</div>
+                         <div class="post-btn">
+                         <button class="button-uni"><a href="post/index.html?postId=${post.id}">SEE MORE</a></button>
+                         </div>
                         </div>
-                    </a>
                 </li>`;
                 }).join('');  // Join the array of strings into a single string
                 initializeSlides(); // Initialize slides and start the automatic slideshow
