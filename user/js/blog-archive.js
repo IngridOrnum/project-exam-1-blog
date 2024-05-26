@@ -19,14 +19,6 @@ function displayAllPosts() {
 
 function renderPosts(posts) {
     document.querySelector('.blog-archive-section').innerHTML = posts.map((post, index) => {
-        let sizeClass = '';
-        if (index % 3 === 0) {
-            sizeClass = 'size-large';
-        } else if (index % 3 === 1) {
-            sizeClass = 'size-medium'
-        } else if (index % 3 === 2) {
-            sizeClass = 'size-small';
-        }
         return `
             <div class="element-thumbnail grid-item" data-tags="${post.tags.join(', ')}" id="post-grid-element-${index + 1}">
                  <a class="a-element-thumbnail" href="index.html?postId=${post.id}">
@@ -44,16 +36,51 @@ displayAllPosts();
 
 document.addEventListener('DOMContentLoaded', () => {
     const filterButtons = document.querySelectorAll('.filter-btn');
+    const mainFilterButtons = document.querySelectorAll('.main-filter-btn');
+    const viewAllButton = document.getElementById('view-all');
+    const lineDivider = document.querySelector('.line-divider');
+
+    viewAllButton.classList.add('active');
+    displayAllPosts();
+
     filterButtons.forEach(button => {
         button.addEventListener('click', () => {
+            removeActiveClass(mainFilterButtons);
             if (button.id === 'view-all') {
                 renderPosts(allPosts);
             } else {
                 const filterValue = button.getAttribute('data-filter');
                 filterPosts(filterValue);
             }
+            button.classList.add('active');
         });
     });
+
+   mainFilterButtons.forEach(button => {
+        button.addEventListener('click', () => {
+            removeActiveClass(mainFilterButtons);
+            hideAllSubcategories();
+            const subcategoryClass = button.id.replace('-filter-btn', '-subcategories');
+            const subcategories = document.querySelector(`.${subcategoryClass}`);
+            if(subcategories) {
+                subcategories.style.display = 'block';
+                lineDivider.style.display = 'block';
+            }
+            button.classList.add('active'); // Add active class to the clicked main filter button
+        });
+    });
+
+    function removeActiveClass(buttons) {
+        buttons.forEach(btn => btn.classList.remove('active'));
+    }
+
+    function hideAllSubcategories() {
+        const allSubcategories = document.querySelectorAll('.wrapper-subcategories');
+        allSubcategories.forEach(subcat => {
+            subcat.style.display = 'none';
+        });
+        lineDivider.style.display = 'none';
+    }
 });
 
 function filterPosts(filter) {
@@ -62,3 +89,5 @@ function filterPosts(filter) {
     });
     renderPosts(filteredPosts);
 }
+
+

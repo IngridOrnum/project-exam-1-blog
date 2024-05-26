@@ -309,14 +309,6 @@ section {
     margin-bottom: 22px;
 }
 
-.grid-wrapper {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-}
-
-
 /*--------------------------------------------------------*/
 
 /* ABOUT SECTION */

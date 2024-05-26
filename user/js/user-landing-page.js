@@ -123,18 +123,7 @@ function fetchUserBlogPostsStaticList() {
                         <div class="title-thumbnail">${post.title}</div>
                     </div>
                     </a>
-                </div>`
-
-                //         <div class="post-element-grid grid-item" id="post-grid-element-${index + 1}">
-                //         <a class="a-grid-item" href="post/index.html?postId=${post.id}">
-                //         <img class="post-img-grid" src="${post.media.url}" alt="${post.media.alt}">
-                //         <div class="bg-blur-post-grid"></div>
-                //     <div class="grid-title-wrapper">
-                //         <div class="post-title-grid">${post.title}</div>
-                //     </div>
-                // </a>
-                // </div>`
-                ;
+                </div>`;
                 }).join('');  // Join the array of strings into a single string
             }
         })
