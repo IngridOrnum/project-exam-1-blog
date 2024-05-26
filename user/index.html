@@ -11,13 +11,23 @@
 <body>
     <nav class="nav-homepage">
         <div class="nav-content-homepage">
-        <span><a class="logo-landingpage" href="#">Nordic Trekking</a></span>
-        <div class="nav-links-wrapper">
-            <span><a class="nav-link home-nav-link" href="#">HOME</a></span>
-            <span><a class="nav-link BA-nav-link" href="post/blog-archive.html">BLOG ARCHIVE</a></span>
-            <span><a class="nav-link about-nav-link" href="about.html">ABOUT</a></span>
+            <span><a class="logo-landingpage logo" href="#">Nordic Trekking</a></span>
+            <div class="nav-links-wrapper">
+                <span><a class="nav-link home-nav-link" href="#">HOME</a></span>
+                <span><a class="nav-link BA-nav-link" href="post/blog-archive.html">BLOG ARCHIVE</a></span>
+                <span><a class="nav-link about-nav-link" href="about.html">ABOUT</a></span>
+            </div>
+            <button class="burger-menu"><img src="/assets/icons/white-burger-menu.png"></button>
         </div>
-        <button class="burger-menu"><img src="/assets/icons/white-burger-menu.png"></button>
+        <div class="nav-dropdown">
+            <button class="close-btn-nav-dropdown">
+                <i class="fa-solid fa-x fa-lg"></i>
+            </button>
+            <div class="wrapper-nav-link-dropdown">
+            <span><a class="nav-link-dropdown" href="#">HOME</a></span>
+            <span><a class="nav-link-dropdown" href="post/blog-archive.html">BLOG ARCHIVE</a></span>
+            <span><a class="nav-link-dropdown" href="about.html">ABOUT</a></span>
+            </div>
         </div>
     </nav>
     <main>
@@ -108,10 +118,15 @@
         </section>
         
         <section class="post-highlight-section">
-            <h2>Besseggen</h2>
-            <p>Plan this summer to visit one of the most beautiful hikes in Norway - Besseggen!
-            </p>
-            <button class="button-uni"><a>CHECK OUT BESSEGGEN</a></button>
+            <div class="content-post-highlight">
+                <div class="text-content-post-highlight">
+                    <h2>Besseggen</h2>
+                    <p>
+                        Plan this summer to visit one of the most beautiful hikes in Norway - Besseggen!
+                    </p>
+                </div>
+                <button class="button-uni"><a>CHECK OUT BESSEGGEN</a></button>
+            </div>
             <img alt="Besseggen, the Mountain"
                  class="img-post-highlight"
                  src="https://www.turbanken.no/wp-content/uploads/2021/07/IMG_20190722_123707-scaled.jpg">

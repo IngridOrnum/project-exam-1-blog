@@ -28,10 +28,13 @@ function renderPosts(posts) {
             sizeClass = 'size-small';
         }
         return `
-            <div class="post-elements grid-item" data-tags="${post.tags.join(', ')}" id="post-grid-element-${index + 1}">
-                 <a href="index.html?postId=${post.id}">
-                <img class="post-img-grid" src="${post.media.url}" alt="${post.media.alt}">
-                <div class="post-title-grid">${post.title}</div>
+            <div class="element-thumbnail grid-item" data-tags="${post.tags.join(', ')}" id="post-grid-element-${index + 1}">
+                 <a class="a-element-thumbnail" href="index.html?postId=${post.id}">
+                <img class="img-thumbnail" src="${post.media.url}" alt="${post.media.alt}">
+                <div class="bg-blur-thumbnail"></div>
+                <div class="title-thumbnail-wrapper">
+                    <div class="title-thumbnail">${post.title}</div>
+                </div>
                 </a>
             </div>`;
     }).join('');
