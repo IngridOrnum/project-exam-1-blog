@@ -15,12 +15,14 @@ function fetchUserBlogPostsCarousel() {
                 document.querySelector('.carousel-ul-container').innerHTML = data.data.slice(0, 3).map((post, index) => {
                     return `
                 <li class="post-slide" id="slide-${index + 1}">
-                <a href="post/index.html?postId=${post.id}">
+                        <div class="slide-background-blur"></div>
                         <img class="post-img" src="${post.media.url}" alt="${post.media.alt}">
-                        <div class="post-text-background">
+                        <div class="title-and-btn-wrapper">
                         <div class="post-title">${post.title}</div>
+                         <div class="post-btn">
+                         <button class="button-uni"><a href="post/index.html?postId=${post.id}">SEE MORE</a></button>
+                         </div>
                         </div>
-                    </a>
                 </li>`;
                 }).join('');  // Join the array of strings into a single string
                 initializeSlides(); // Initialize slides and start the automatic slideshow
@@ -113,14 +115,26 @@ function fetchUserBlogPostsStaticList() {
             if (data && data.data) {
                 document.querySelector('.post-grid-container').innerHTML = data.data.slice(0, 12).map((post, index) => {
                     return `
-                <div class="post-elements grid-item" id="post-grid-element-${index + 1}">
-                    <a href="post/index.html?postId=${post.id}">
-                    <img class="post-img-grid" src="${post.media.url}" alt="${post.media.alt}">
-                    <!-- <div class="post-text-background-grid">
-                    <div class="post-title-grid">${post.title}</div>
-                    </div> -->
+                <div class="element-thumbnail grid-item" id="element-thumbnail-${index + 1}">
+                    <a class="a-element-thumbnail" href="post/index.html?postId=${post.id}">
+                    <img class="img-thumbnail" src="${post.media.url}" alt="${post.media.alt}">
+                    <div class="bg-blur-thumbnail"></div>
+                    <div class="title-thumbnail-wrapper">
+                        <div class="title-thumbnail">${post.title}</div>
+                    </div>
                     </a>
-                </div>`;
+                </div>`
+
+                //         <div class="post-element-grid grid-item" id="post-grid-element-${index + 1}">
+                //         <a class="a-grid-item" href="post/index.html?postId=${post.id}">
+                //         <img class="post-img-grid" src="${post.media.url}" alt="${post.media.alt}">
+                //         <div class="bg-blur-post-grid"></div>
+                //     <div class="grid-title-wrapper">
+                //         <div class="post-title-grid">${post.title}</div>
+                //     </div>
+                // </a>
+                // </div>`
+                ;
                 }).join('');  // Join the array of strings into a single string
             }
         })

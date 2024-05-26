@@ -1,0 +1,10 @@
+.bg-about-page {
+    background-image: url("/assets/mobile/bg-about-page-mobile.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}

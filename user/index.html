@@ -2,47 +2,148 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
-    <script src="js/user-landing-page.js" defer></script>
-    <script src="https://kit.fontawesome.com/eaf3f254a9.js" crossorigin="anonymous"></script>
+    <title>Nordic Trekking ✵ Home</title>
+    <script defer src="js/user-landing-page.js"></script>
+    <script defer src="js/main.js"></script>
+    <script crossorigin="anonymous" src="https://kit.fontawesome.com/eaf3f254a9.js"></script>
     <link href="css/user-landing-page.css" rel="stylesheet">
     <link href="css/styles.css" rel="stylesheet">
 </head>
 <body>
-    <nav>
-        <span><a class="logo" href="#">Nordic Trekking</a></span>
-        <div class="nav-links-wrapper">
-            <span><a class="nav-link home-nav-link" href="#">HOME</a></span>
-            <span><a class="nav-link BA-nav-link" href="post/blog-archive.html">BLOG ARCHIVE</a></span>
-            <span><a class="nav-link about-nav-link" href="about.html">ABOUT</a></span>
+    <nav class="nav-homepage">
+        <div class="nav-content-homepage">
+            <span><a class="logo-landingpage logo" href="#">Nordic Trekking</a></span>
+            <div class="nav-links-wrapper">
+                <span><a class="nav-link home-nav-link" href="#">HOME</a></span>
+                <span><a class="nav-link BA-nav-link" href="post/blog-archive.html">BLOG ARCHIVE</a></span>
+                <span><a class="nav-link about-nav-link" href="about.html">ABOUT</a></span>
+            </div>
+            <button onclick="openDropdown()" class="burger-menu"><img src="/assets/icons/white-burger-menu.png"></button>
+        </div>
+        <div class="nav-dropdown">
+            <button onclick="closeDropdown()" class="close-btn-nav-dropdown">
+                <i class="fa-solid fa-x fa-lg"></i>
+            </button>
+            <div onclick="closeDropdownThroughLinks()" class="wrapper-nav-link-dropdown">
+            <span><a class="nav-link-dropdown" href="#">HOME</a></span>
+            <span><a class="nav-link-dropdown" href="post/blog-archive.html">BLOG ARCHIVE</a></span>
+            <span><a class="nav-link-dropdown" href="about.html">ABOUT</a></span>
+            </div>
         </div>
     </nav>
     <main>
-        <div class="hero-bg"></div>
-        <h2>Latest posts</h2>
-        <div class="carousel-wrapper">
-            <div class="carousel-buttons-wrapper">
-            <button class="carousel-buttons" id="left-btn-carousel" onclick="prevSlide()"><i class="fa-solid fa-chevron-left"></i></button>
-            <button class="carousel-buttons" id="right-btn-carousel" onclick="nextSlide()"><i class="fa-solid fa-chevron-right"></i></button>
-            </div>
-            <div class="slides-and-pagination-wrapper">
-            <ul class="carousel-ul-container"></ul>
-            <div class="pagination-element">
-                <button class="slider-pagination-btn slider-pagination-btn--sel"></button>
-                <button class="slider-pagination-btn"></button>
-                <button class="slider-pagination-btn"></button>
-            </div>
+        <div class="hero-bg">
+            <div class="hero-content">
+                <div class="hero-text">
+                    <span class="hero-large-text">Welcome to Nordic Trekking.</span>
+                    <span class="hero-large-text">Let’s plan your next outdoor adventure!</span>
+                    <div class="hero-small-text">
+                        <span>Scroll for inspiration</span>
+                        <img alt="Down Arrow" class="hero-icon" src="/assets/icons/white-down-arrow-icon.png">
+                    </div>
+                </div>
             </div>
         </div>
-        <section>
-            <h2 id="checkout-subtitle">Check out</h2>
-            <div class="grid-wrapper">
-            <div class="post-grid-container"></div>
+        
+        <section class="carousel-section">
+            <div class="carousel-section-2-text">
+                <h2>Latest posts</h2>
+                <p>Check out our latest posts!</p>
             </div>
-            <button><a href="post/blog-archive.html">View all posts</a></button>
+            <div class="carousel-wrapper">
+                <div class="carousel-buttons-wrapper">
+                    <button class="carousel-buttons" id="left-btn-carousel" onclick="prevSlide()"><i
+                            class="fa-solid fa-chevron-left fa-lg"></i></button>
+                    <button class="carousel-buttons" id="right-btn-carousel" onclick="nextSlide()"><i
+                            class="fa-solid fa-chevron-right fa-lg"></i></button>
+                </div>
+                <div class="slides-and-pagination-wrapper">
+                    <ul class="carousel-ul-container"></ul>
+                    <div class="pagination-element">
+                        <button class="slider-pagination-btn slider-pagination-btn--sel"></button>
+                        <button class="slider-pagination-btn"></button>
+                        <button class="slider-pagination-btn"></button>
+                    </div>
+                </div>
+            </div>
         </section>
         
-        <hr>
+        <section class="filter-section">
+            <div class="bg-filter-section">
+                <div class="content-filter-section">
+                    <h2>Filter by activity</h2>
+                    <p>We have something for every adventurer! Choose your preferred activity.</p>
+                    <div class="homepage-filter-btns">
+                        <button class="filter-btn-homepage" id="forest"><a href="post/blog-archive.html">
+                            <img alt="Forest Icon" src="/assets/icons/forest-hike-icon.png">
+                            <span>Forest Hiking</span>
+                        </a></button>
+                        <button class="filter-btn-homepage" id="mountain"><a href="post/blog-archive.html">
+                            <img alt="Mountain Icon" src="/assets/icons/mountain-hiking-icon.png">
+                            <span>Mountain Hiking</span>
+                        </a></button>
+                        <button class="filter-btn-homepage" id="climbing"><a href="post/blog-archive.html">
+                            <img alt="Climbing Shoe Icon" src="/assets/icons/climbing-icon.png">
+                            <span>Climbing</span>
+                        </a></button>
+                        <button class="filter-btn-homepage" id="biking"><a href="post/blog-archive.html">
+                            <img alt="Bike Icon" src="/assets/icons/bike-icon.png">
+                            <span>Biking</span>
+                        </a></button>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <section class="display-posts-grid-section">
+            <div class="text-content-grid-section">
+                <h2>Find some inspiration</h2>
+                <p>Browse through our latest posts!</p>
+            </div>
+            <div class="grid-wrapper">
+                <div class="post-grid-container"></div>
+            </div>
+            <button class="button-uni"><a href="post/blog-archive.html">VIEW ALL</a></button>
+        </section>
+        
+        <section class="about-section">
+            <div class="bg-about-section">
+                <div class="content-about-section">
+                    <h2>About Us</h2>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
+                        labore et dolore magna aliqua.
+                    </p>
+                    <button class="button-uni"><a href="about.html">ABOUT US</a></button>
+                </div>
+            </div>
+        </section>
+        
+        <section class="post-highlight-section">
+            <div class="content-post-highlight">
+                <div class="text-content-post-highlight">
+                    <h2>Besseggen</h2>
+                    <p>
+                        Plan this summer to visit one of the most beautiful hikes in Norway - Besseggen!
+                    </p>
+                </div>
+                <button class="button-uni"><a>CHECK OUT BESSEGGEN</a></button>
+            </div>
+            <img alt="Besseggen, the Mountain"
+                 class="img-post-highlight"
+                 src="https://www.turbanken.no/wp-content/uploads/2021/07/IMG_20190722_123707-scaled.jpg">
+        </section>
     </main>
+    <footer>
+        <div class="bg-footer">
+            <div class="footer-text">
+                <span class="logo-footer"><a href="#">Nordic trekking</a></span>
+                <ul class="footer-links">
+                    <li><a href="#">Home</a></li>
+                    <li><a href="post/blog-archive.html">Blog Archive</a></li>
+                    <li><a href="about.html">About</a></li>
+                </ul>
+            </div>
+        </div>
+    </footer>
 </body>
 </html>

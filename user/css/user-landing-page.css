@@ -1,31 +1,161 @@
-
-.hero-bg {
-    background-image: url("assets/mobile/mobile-hero.jpg");
-    width: 100%;
-    height: 672px;
+section {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
+.nav-homepage {
+    position: absolute;
+    z-index: 10;
+    width: 100%;
+}
+
+.nav-content-homepage {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    padding: 22px;
+}
+
+.nav-link, .logo-landingpage {
+    color: var(--neutral-500-white);
+}
+
+.nav-link {
+    display: none;
+}
+
+.burger-menu {
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+}
+
+.hero-bg {
+    background-image: url("/assets/mobile/mobile-hero.jpg");
+    width: 100vw;
+    height: 672px;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+.hero-content {
+    position: absolute;
+    top: 180px;
+    margin: 0;
+    width: 100%;
+}
+
+.hero-text {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: var(--neutral-500-white);
+}
+
+.hero-text :nth-child(1) {
+    margin-bottom: 8px;
+}
+
+.hero-large-text {
+    font-family: Magilio, sans-serif;
+    font-size: 28px;
+}
+
+.hero-small-text {
+    font-family: "Goudy Bookletter 1911", sans-serif;
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+    margin-top: 42px;
+}
+
+.hero-icon {
+    width: 20px;
+    height: 20px;
+}
+
+/* pagination styling inspiration: https://www.codeguage.com/tutorials/sliders/pagination */
+
+.slides-and-pagination-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
+
+.pagination-element {
+    background-color: var(--neutral-300-black);
+    border-radius: 25px;
+    padding: 0;
+    margin: 0;
+    z-index: 2;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+}
+
+.pagination-element button {
+    display: flex;
+    justify-content: center;
+    align-content: center;
+}
+
+.slider-pagination-btn {
+    display: inline-block;
+    padding: 6px;
+    background-color: transparent;
+    cursor: pointer;
+    border: none;
+    outline: none;
+}
+
+.slider-pagination-btn:before {
+    content: '';
+    display: inline-block;
+    padding: 6px;
+    border-radius: 100%;
+    background-color: var(--secondary-100-white-transparent);
+}
+
+.slider-pagination-btn:hover:before {
+    background-color: #aaa;
+}
+
+.slider-pagination-btn.slider-pagination-btn--sel:before {
+    background-color: var(--neutral-500-white);
+}
+
+.carousel-section-2-text {
+    margin-bottom: 22px;
+}
 
 .carousel-wrapper {
     display: flex;
     justify-content: center;
     position: relative;
     overflow: hidden;
-    height: auto;
+    height: 518px;
     width: 100%;
 }
 
-.slides-and-pagination-wrapper {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+.slide-background-blur {
+    width: 100vw;
+    height: 518px;
+    background-color: var(--secondary-400-gray-transparent);
+    position: absolute;
 }
 
 .carousel-ul-container {
     list-style: none;
     transition: left 0.5s ease-in-out;
     padding: 0;
-    height: 400px;
+    height: 518px;
+    width: 100%;
 }
 
 .carousel-ul-container li:first-child {
@@ -50,134 +180,133 @@
     right: 2rem;
 }
 
+#left-btn-carousel, #right-btn-carousel {
+    width: 48px;
+    height: 48px;
+    padding: 6px;
+    color: var(--neutral-500-white);
+    background-color: var(--neutral-300-black);
+    border: 1px solid var(--secondary-100-white-transparent);
+    border-radius: 6px;
+    z-index: 10;
+    cursor: pointer;
+}
+
+#left-btn-carousel:hover, #right-btn-carousel:hover {
+    background-color: var(--secondary-400-gray-transparent);
+}
+
 .post-slide {
     display: none;
     width: 100%;
 }
 
+.title-and-btn-wrapper {
+    position: absolute;
+    z-index: 5;
+    top: 120px;
+    width: 100%;
+}
+
 .post-title {
+    font-family: Magilio, sans-serif;
+    font-size: 40px;
+    letter-spacing: 2px;
+    color: var(--neutral-500-white);
     list-style: none;
-    color: black;
-    padding: 1rem;
+    margin-bottom: 82px;
+}
+
+.post-btn, .post-title {
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .post-img {
-    width: 600px;
-    height: 300px;
-    object-fit: cover;
-    border-radius: 1rem;
-}
-
-.post-text-background {
-    background-color: #91919180;
-    z-index: 2;
-    /*position: absolute;*/
-    margin-bottom: 400px;
-    width: 600px;
-    border-radius: 0 0 1rem 1rem;
-}
-
-.post-img-grid {
     width: 100%;
-    height: 240px;
+    height: 518px;
     object-fit: cover;
-    border-radius: .5rem;
+    border-radius: 6px;
 }
 
-#post-grid-element-1 {
-    grid-area: post1;
+.filter-section {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
-#post-grid-element-2 {
-    grid-area: post2;
+.bg-filter-section {
+    background-image: url("/assets/mobile/bg-filter-section-mobile.jpg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    height: 518px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
-#post-grid-element-3 {
-    grid-area: post3;
+.content-filter-section {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 0 12px;
 }
 
-#post-grid-element-4 {
-    grid-area: post4;
+.homepage-filter-btns {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 22px;
+    width: 340px;
+    margin-top: 22px;
 }
 
-#post-grid-element-5 {
-    grid-area: post5;
+.filter-btn-homepage {
+    width: 148px;
+    height: 148px;
+    border-radius: 200px;
+    border: 4px solid var(--secondary-300-green-transparent);
+    background-color: var(--secondary-500-white);
+    cursor: pointer;
 }
 
-#post-grid-element-6 {
-    grid-area: post6;
+.filter-btn-homepage a {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 4px;
+    font-family: Magilio, sans-serif;
+    font-size: 20px;
+    color: var(--neutral-300-black);
 }
 
-#post-grid-element-7 {
-    grid-area: post7;
+.filter-btn-homepage img {
+    width: 40px;
+    height: 40px;
 }
 
-#post-grid-element-8 {
-    grid-area: post8;
+.filter-btn-homepage:hover {
+    background-color: var(--secondary-100-white-transparent);
 }
 
-#post-grid-element-9 {
-    grid-area: post9;
+.filter-btn-homepage:active, .filter-btn-homepage:focus {
+    background-color: var(--secondary-300-green-transparent);
 }
 
-#post-grid-element-10 {
-    grid-area: post10;
-}
+/*--------------------------------------------------------*/
 
-#post-grid-element-11 {
-    grid-area: post11;
-}
+/* THUMBNAIL GRID SECTION */
 
-#post-grid-element-12 {
-    grid-area: post12;
-}
-
-#post-grid-element-13 {
-    grid-area: post13;
-}
-
-#post-grid-element-14 {
-    grid-area: post14;
-}
-
-#post-grid-element-15 {
-    grid-area: post15;
-}
-
-#post-grid-element-16 {
-    grid-area: post16;
-}
-
-#post-grid-element-17 {
-    grid-area: post17;
-}
-
-#post-grid-element-18 {
-    grid-area: post18;
-}
-
-#post-grid-element-19 {
-    grid-area: post19;
-}
-
-#post-grid-element-20 {
-    grid-area: post20;
-}
-
-#post-grid-element-21 {
-    grid-area: post21;
-}
-
-
-.post-grid-container {
-    display: grid;
-    width: 800px;
-    grid-template-areas:
-"post1 post2 post3"
-"post4 post5 post6"
-"post7 post8 post9"
-"post10 post11 post12";
-    gap: 12px;
+.text-content-grid-section {
+    margin-bottom: 22px;
 }
 
 .grid-wrapper {
@@ -187,45 +316,109 @@
     align-items: center;
 }
 
-/* pagination styling inspiration: https://www.codeguage.com/tutorials/sliders/pagination */
 
-.slider-pagination-btn {
-    display: inline-block;
-    padding: 6px;
-    background-color: transparent;
-    cursor: pointer;
-    border: none;
-    outline: none;
+/*--------------------------------------------------------*/
+
+/* ABOUT SECTION */
+
+.bg-about-section {
+    background-image: url("/assets/mobile/bg-about-page-mobile.jpg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    height: 518px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
-.slider-pagination-btn:before {
-    content: '';
-    display: inline-block;
-    padding: 6px;
-    border-radius: 100%;
-    background-color: #ccc;
+.content-about-section {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 0 12px;
 }
 
-.slider-pagination-btn:hover:before {
-    background-color: #aaa;
+.post-highlight-section {
+    padding: 0 12px;
 }
 
-.slider-pagination-btn.slider-pagination-btn--sel:before {
-    border: 0.5px solid dimgray;
+.content-post-highlight {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
-hr {
-    background-image: linear-gradient(to right, #000 20%, rgba(255, 255, 255, 0) 0%);
-    background-position: bottom;
-    background-size: 5px 1px;
-    background-repeat: repeat-x;
-    height: 1px;
-    border: 0;
-    margin: 30px auto;
+.img-post-highlight {
+    width: 365px;
+    height: 320px;
+    object-fit: cover;
+}
+
+.img-post-highlight {
+    border-radius: 6px;
+    margin-top: 42px;
 }
 
 @media (min-width: 834px) {
+
+    .hero-bg {
+        background-image: url("/assets/tablet/tablet-hero.jpg");
+        height: 982px;
+    }
+
+    #left-btn-carousel, #right-btn-carousel {
+        width: 42px;
+        height: 62px;
+        padding: 1rem 6px;
+    }
+
+    .homepage-filter-btns {
+        width: 100%;
+    }
+
+    .post-highlight-section {
+        flex-direction: row;
+        gap: 82px;
+        padding: 0 42px;
+    }
+
+    .text-content-post-highlight {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .text-content-post-highlight p {
+        text-align: left;
+    }
+
+    .content-post-highlight h2, .content-post-highlight {
+        display: inline;
+    }
+
+    .img-post-highlight {
+        margin-top: 0;
+        width: 365px;
+        height: 320px;
+    }
+
 }
 
 @media (min-width: 1440px) {
+    .hero-bg {
+        background-image: url("/assets/desktop/desktop-hero.jpg");
+    }
+
+    .post-highlight-section {
+        padding: 0 102px;
+    }
+
+    .img-post-highlight {
+        margin-top: 0;
+        width: 752px;
+        height: 468px;
+    }
 }
