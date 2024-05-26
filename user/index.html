@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <title>Nordic Trekking ✵ Home</title>
     <script defer src="js/user-landing-page.js"></script>
+    <script defer src="js/main.js"></script>
     <script crossorigin="anonymous" src="https://kit.fontawesome.com/eaf3f254a9.js"></script>
     <link href="css/user-landing-page.css" rel="stylesheet">
     <link href="css/styles.css" rel="stylesheet">
@@ -17,13 +18,13 @@
                 <span><a class="nav-link BA-nav-link" href="post/blog-archive.html">BLOG ARCHIVE</a></span>
                 <span><a class="nav-link about-nav-link" href="about.html">ABOUT</a></span>
             </div>
-            <button class="burger-menu"><img src="/assets/icons/white-burger-menu.png"></button>
+            <button onclick="openDropdown()" class="burger-menu"><img src="/assets/icons/white-burger-menu.png"></button>
         </div>
         <div class="nav-dropdown">
-            <button class="close-btn-nav-dropdown">
+            <button onclick="closeDropdown()" class="close-btn-nav-dropdown">
                 <i class="fa-solid fa-x fa-lg"></i>
             </button>
-            <div class="wrapper-nav-link-dropdown">
+            <div onclick="closeDropdownThroughLinks()" class="wrapper-nav-link-dropdown">
             <span><a class="nav-link-dropdown" href="#">HOME</a></span>
             <span><a class="nav-link-dropdown" href="post/blog-archive.html">BLOG ARCHIVE</a></span>
             <span><a class="nav-link-dropdown" href="about.html">ABOUT</a></span>
@@ -73,19 +74,19 @@
                     <h2>Filter by activity</h2>
                     <p>We have something for every adventurer! Choose your preferred activity.</p>
                     <div class="homepage-filter-btns">
-                        <button class="filter-btn-homepage" id="forest"><a>
+                        <button class="filter-btn-homepage" id="forest"><a href="post/blog-archive.html">
                             <img alt="Forest Icon" src="/assets/icons/forest-hike-icon.png">
                             <span>Forest Hiking</span>
                         </a></button>
-                        <button class="filter-btn-homepage" id="mountain"><a>
+                        <button class="filter-btn-homepage" id="mountain"><a href="post/blog-archive.html">
                             <img alt="Mountain Icon" src="/assets/icons/mountain-hiking-icon.png">
                             <span>Mountain Hiking</span>
                         </a></button>
-                        <button class="filter-btn-homepage" id="climbing"><a>
+                        <button class="filter-btn-homepage" id="climbing"><a href="post/blog-archive.html">
                             <img alt="Climbing Shoe Icon" src="/assets/icons/climbing-icon.png">
                             <span>Climbing</span>
                         </a></button>
-                        <button class="filter-btn-homepage" id="biking"><a>
+                        <button class="filter-btn-homepage" id="biking"><a href="post/blog-archive.html">
                             <img alt="Bike Icon" src="/assets/icons/bike-icon.png">
                             <span>Biking</span>
                         </a></button>
