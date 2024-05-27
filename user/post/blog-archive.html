@@ -3,56 +3,105 @@
 <head>
     <meta charset="UTF-8">
     <title>Nordic Trekking ✵ Blog Archive</title>
-  <script src="../js/blog-archive.js" defer></script>
-  <link href="../css/blog-archive.css" rel="stylesheet">
+    <script defer src="../js/blog-archive.js"></script>
+    <script defer src="../js/main.js"></script>
+    <script crossorigin="anonymous" src="https://kit.fontawesome.com/eaf3f254a9.js"></script>
+    <link href="../css/blog-archive.css" rel="stylesheet">
+    <link href="../css/styles.css" rel="stylesheet">
 </head>
 <body>
-<main>
-    <button><a href="../index.html">Back</a></button>
-    <h1>Blog Archive</h1>
-    <section class="blogs-and-filter-section">
-        <button class="filter-btn" id="view-all">View all posts</button>
-        <div>
-            <span>Filter by region:</span>
-            <button class="filter-btn" data-filter="Oslo">Oslo</button>
-            <button class="filter-btn" data-filter="Møre & Romsdal">Møre & Romsdal</button>
-            <button class="filter-btn" data-filter="Hardanger">Hardanger</button>
-            <button class="filter-btn" data-filter="Nordland">Nordland</button>
-            <button class="filter-btn" data-filter="Buskerud">Buskerud</button>
-            <button class="filter-btn" data-filter="Jotunheimen">Jotunheimen</button>
-            <button class="filter-btn" data-filter="Rondane">Rondane</button>
+    <nav class="nav-bar">
+        <div class="content-nav-bar">
+            <span><a class="logo-landingpage logo" href="../index.html">Nordic Trekking</a></span>
+            <div class="nav-links-wrapper">
+                <span><a class="nav-link" href="../index.html">HOME</a></span>
+                <span><a class="nav-link" href="blog-archive.html">BLOG ARCHIVE</a></span>
+                <span><a class="nav-link" href="../about.html">ABOUT</a></span>
+            </div>
+            <button class="burger-menu" onclick="openDropdown()"><img src="/assets/icons/dark-burger-menu.png">
+            </button>
         </div>
-        <div>
-            <span>Filter by difficulty:</span>
-            <button class="filter-btn" data-filter="Easy">Easy</button>
-            <button class="filter-btn" data-filter="Medium">Medium</button>
-            <button class="filter-btn" data-filter="Difficult">Difficult</button>
+        <div class="nav-dropdown">
+            <button class="close-btn-nav-dropdown" onclick="closeDropdown()">
+                <i class="fa-solid fa-x fa-lg"></i>
+            </button>
+            <div class="wrapper-nav-link-dropdown" onclick="closeDropdownThroughLinks()">
+                <span><a class="nav-link-dropdown" href="../index.html">HOME</a></span>
+                <span><a class="nav-link-dropdown" href="blog-archive.html">BLOG ARCHIVE</a></span>
+                <span><a class="nav-link-dropdown" href="../about.html">ABOUT</a></span>
+            </div>
         </div>
-        <div>
-            <span>Filter by travel duration:</span>
-            <button class="filter-btn" data-filter="Day Trip">Day Trip</button>
-            <button class="filter-btn" data-filter="Weekend">Weekend</button>
-            <button class="filter-btn" data-filter="Vacation">Vacation</button>
+    </nav>
+    <main>
+        <div class="userpages-main-content">
+            <h1>Blog Archive</h1>
+            <div class="wrapper-all-filter-btns">
+                <span class="text-filter-by">Filter by:</span>
+                <div class="wrapper-main-filter-btns">
+                    <button class="main-filter-btn filter-btn" id="view-all">View All
+                        <img alt="down arrow" class="arrow-filter-btn" src="/assets/icons/black-down-arrow-icon.png"></button>
+                    <button class="main-filter-btn" id="region-filter-btn">Region <img alt="down arrow"
+                                                                                       class="arrow-filter-btn"
+                                                                                       src="/assets/icons/black-down-arrow-icon.png"></button>
+                    <button class="main-filter-btn" id="difficulty-filter-btn">Difficulty <img alt="down arrow"
+                                                                                               class="arrow-filter-btn"
+                                                                                               src="/assets/icons/black-down-arrow-icon.png">
+                    </button>
+                    <button class="main-filter-btn" id="duration-filter-btn">Travel duration <img
+                            alt="down arrow" class="arrow-filter-btn" src="/assets/icons/black-down-arrow-icon.png">
+                    </button>
+                    <button class="main-filter-btn" id="season-filter-btn">Season <img alt="down arrow"
+                                                                                       class="arrow-filter-btn"
+                                                                                       src="/assets/icons/black-down-arrow-icon.png"></button>
+                    <button class="main-filter-btn" id="activity-filter-btn">Activity <img alt="down arrow"
+                                                                                           class="arrow-filter-btn"
+                                                                                           src="/assets/icons/black-down-arrow-icon.png"></button>
+                </div>
+                <div class="line-divider"></div>
+                <div class="wrapper-all-subcategories">
+                    <div class="region-subcategories wrapper-subcategories">
+                        <button class="filter-btn subcategory-filter-btn" data-filter="Oslo">Oslo</button>
+                        <button class="filter-btn subcategory-filter-btn" data-filter="Møre & Romsdal">Møre & Romsdal
+                        </button>
+                        <button class="filter-btn subcategory-filter-btn" data-filter="Hardanger">Hardanger</button>
+                        <button class="filter-btn subcategory-filter-btn" data-filter="Nordland">Nordland</button>
+                        <button class="filter-btn subcategory-filter-btn" data-filter="Buskerud">Buskerud</button>
+                        <button class="filter-btn subcategory-filter-btn" data-filter="Jotunheimen">Jotunheimen</button>
+                        <button class="filter-btn subcategory-filter-btn" data-filter="Rondane">Rondane</button>
+                    </div>
+                    <div class="difficulty-subcategories wrapper-subcategories">
+                        <button class="filter-btn subcategory-filter-btn" data-filter="Easy">Easy</button>
+                        <button class="filter-btn subcategory-filter-btn" data-filter="Medium">Medium</button>
+                        <button class="filter-btn subcategory-filter-btn" data-filter="Difficult">Difficult</button>
+                    </div>
+                    <div class="duration-subcategories wrapper-subcategories">
+                        <button class="filter-btn subcategory-filter-btn" data-filter="Day Trip">Day Trip</button>
+                        <button class="filter-btn subcategory-filter-btn" data-filter="Weekend">Weekend</button>
+                        <button class="filter-btn subcategory-filter-btn" data-filter="Vacation">Vacation</button>
+                    </div>
+                    <div class="season-subcategories wrapper-subcategories">
+                        <button class="filter-btn subcategory-filter-btn" data-filter="Spring">Spring</button>
+                        <button class="filter-btn subcategory-filter-btn" data-filter="Summer">Summer</button>
+                        <button class="filter-btn subcategory-filter-btn" data-filter="Autumn">Autumn</button>
+                        <button class="filter-btn subcategory-filter-btn" data-filter="Winter">Winter</button>
+                    </div>
+                    <div class="activity-subcategories wrapper-subcategories">
+                        <button class="filter-btn subcategory-filter-btn" data-filter="Forest">Forest Hiking</button>
+                        <button class="filter-btn subcategory-filter-btn" data-filter="Mountain">Mountain Hiking
+                        </button>
+                        <button class="filter-btn subcategory-filter-btn" data-filter="Biking">Biking</button>
+                        <button class="filter-btn subcategory-filter-btn" data-filter="Climbing">Climbing</button>
+                    </div>
+                </div>
+            </div>
+            <section class="blogs-and-filter-section">
+                <div class="grid-wrapper">
+                    <div class="post-grid-container blog-archive-section"></div>
+                    <button class="button-uni more-posts-generator-btn">VIEW 10 MORE</button>
+                </div>
+            </section>
         </div>
-        <div>
-            <span>Filter by season:</span>
-            <button class="filter-btn" data-filter="Spring">Spring</button>
-            <button class="filter-btn" data-filter="Summer">Summer</button>
-            <button class="filter-btn" data-filter="Autumn">Autumn</button>
-            <button class="filter-btn" data-filter="Winter">Winter</button>
-        </div>
-        <div>
-            <span>Filter by activity:</span>
-            <button class="filter-btn" data-filter="Forest">Forest Hiking</button>
-            <button class="filter-btn" data-filter="Mountain">Mountain Hiking</button>
-            <button class="filter-btn" data-filter="Biking">Biking</button>
-            <button class="filter-btn" data-filter="Climbing">Climbing</button>
-        </div>
-        <div class="grid-wrapper">
-            <div class="post-grid-container blog-archive-section"></div>
-        </div>
-    </section>
-</main>
+    </main>
     <footer>
         <div class="bg-footer">
             <div class="footer-text">

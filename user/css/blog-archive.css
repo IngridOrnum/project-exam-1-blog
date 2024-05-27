@@ -1,49 +1,101 @@
-/*.post-title-grid {*/
-/*    position: absolute;*/
-/*    z-index: 10;*/
-/*    margin-bottom: 2rem;*/
-/*}*/
 
 
-/*.post-grid-container {*/
-/*    display: grid;*/
-/*    gap: 22px;*/
-/*    grid-template-columns: repeat(auto-fit, minmax(312px, 1fr));*/
-/*    padding: 22px;*/
-/*}*/
+button {
+    font-family: Montserrat, sans-serif;
+    letter-spacing: 2px;
+    padding: 10px 22px;
+}
 
-/*.post-img-grid {*/
-/*    display: block;*/
-/*    object-fit: cover;*/
-/*    border-radius: 6px;*/
-/*    position: relative;*/
-/*    overflow: hidden;*/
-/*    height: 300px;*/
-/*    z-index: 1;*/
-/*    width: 100%;*/
-/*}*/
+.wrapper-all-filter-btns {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    border: var(--secondary-300-green-transparent) solid 2px;
+    border-radius: 6px;
+    margin: 42px 12px 0 12px;
+    padding: 22px;
+}
 
-/*.grid-wrapper {*/
-/*    display: flex;*/
-/*    flex-direction: column;*/
-/*    justify-content: center;*/
-/*    align-items: center;*/
-/*}*/
+.line-divider {
+    height: 1px;
+    width: 100%;
+    background-color: var(--secondary-300-green-transparent);
+    margin: 22px 0;
+}
 
-/*.size-large {*/
-/*    width: 500px;*/
-/*}*/
+.text-filter-by {
+    font-family: Montserrat, sans-serif;
+    font-weight: 500;
+    margin: 0 0 12px 20px;
+    letter-spacing: 2px;
+}
 
-/*.size-medium {*/
-/*    width: 412px;*/
-/*}*/
+.main-filter-btn {
+    background-color: var(--neutral-500-white);
+    color: var(--neutral-300-black);
+    border-radius: 6px;
+    border: none;
+    display: flex;
+    align-items: center;
+}
 
-/*.size-small {*/
-/*    width: 312px;*/
-/*}*/
+.wrapper-main-filter-btns {
+    display: flex;
+    flex-wrap: wrap;
+}
 
+.main-filter-btn:hover {
+   background-color: #283b2c20;
+}
+
+.main-filter-btn.active {
+    border: var(--secondary-300-green-transparent) solid 2px;
+}
+
+.arrow-filter-btn {
+    width: 14px;
+    height: 14px;
+    margin-left: 4px;
+}
+
+.wrapper-all-subcategories {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.wrapper-subcategories {
+    flex-wrap: wrap;
+}
+
+.subcategory-filter-btn {
+    color: var(--neutral-500-white);
+    background-color: var(--secondary-300-green-transparent);
+    border: none;
+    border-radius: 6px;
+    margin-bottom: 4px;
+}
+
+.region-subcategories, .difficulty-subcategories, .duration-subcategories, .season-subcategories, .activity-subcategories, .line-divider {
+    display: none;
+}
+
+.subcategory-filter-btn:hover {
+    background-color: #283b2c95;
+}
+
+.subcategory-filter-btn:active, .subcategory-filter-btn:focus {
+    background-color: var(--primary-500-darkgreen);
+}
+
+.more-posts-generator-btn {
+    color: var(--neutral-500-white);
+}
 
 @media (min-width: 834px) {
+    .wrapper-all-filter-btns {
+        margin: 42px 42px 0 42px;
+    }
 }
 
 @media (min-width: 1440px) {
