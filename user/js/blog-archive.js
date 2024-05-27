@@ -1,4 +1,5 @@
 let allPosts = [];
+let currentlyDisplayedPosts = 0;
 
 function displayAllPosts() {
     fetch(`https://v2.api.noroff.dev/blog/posts/IngridOrnum`, {
@@ -11,14 +12,15 @@ function displayAllPosts() {
         .then(data => {
             if (data && data.data) {
                 allPosts = data.data;  // Store fetched posts
-                renderPosts(allPosts); // Call render function
+                renderPosts(allPosts, 12); // Call render function, and display initial 12 posts
             }
         })
         .catch(error => console.error('Error fetching blog posts:', error));
 }
 
-function renderPosts(posts) {
-    document.querySelector('.blog-archive-section').innerHTML = posts.map((post, index) => {
+function renderPosts(posts, numberOfPosts) {
+    const postsToRender = posts.slice(currentlyDisplayedPosts, currentlyDisplayedPosts + numberOfPosts);
+    const postElements = postsToRender.map((post, index) => {
         return `
             <div class="element-thumbnail grid-item" data-tags="${post.tags.join(', ')}" id="post-grid-element-${index + 1}">
                  <a class="a-element-thumbnail" href="index.html?postId=${post.id}">
@@ -30,15 +32,23 @@ function renderPosts(posts) {
                 </a>
             </div>`;
     }).join('');
-}
 
-displayAllPosts();
+    document.querySelector('.blog-archive-section').innerHTML += postElements; //append new posts
+
+    currentlyDisplayedPosts += numberOfPosts; // update the count of displayed posts
+
+    //check if there is any more posts to display
+    if (currentlyDisplayedPosts >= posts.length) {
+        document.querySelector('.more-posts-generator-btn').style.display = 'none';
+    }
+}
 
 document.addEventListener('DOMContentLoaded', () => {
     const filterButtons = document.querySelectorAll('.filter-btn');
     const mainFilterButtons = document.querySelectorAll('.main-filter-btn');
     const viewAllButton = document.getElementById('view-all');
     const lineDivider = document.querySelector('.line-divider');
+    const morePostsButton = document.querySelector('.more-posts-generator-btn');
 
     viewAllButton.classList.add('active');
     displayAllPosts();
@@ -47,7 +57,7 @@ document.addEventListener('DOMContentLoaded', () => {
         button.addEventListener('click', () => {
             removeActiveClass(mainFilterButtons);
             if (button.id === 'view-all') {
-                renderPosts(allPosts);
+                renderPosts(allPosts, 12);
             } else {
                 const filterValue = button.getAttribute('data-filter');
                 filterPosts(filterValue);
@@ -70,6 +80,10 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
+   morePostsButton.addEventListener('click', () => {
+       renderPosts(allPosts, 10); // display 10 more posts on click
+   })
+
     function removeActiveClass(buttons) {
         buttons.forEach(btn => btn.classList.remove('active'));
     }
@@ -81,13 +95,21 @@ document.addEventListener('DOMContentLoaded', () => {
         });
         lineDivider.style.display = 'none';
     }
+
+    function resetPostView() {
+       document.querySelector('.blog-archive-section').innerHTML = '';
+       currentlyDisplayedPosts = 0;
+       morePostsButton.style.display = 'block';
+    }
+    function filterPosts(filter) {
+        const filteredPosts = allPosts.filter(post => {
+            return post.tags && post.tags.some(tag => tag && tag.toLowerCase() === filter.toLowerCase());
+        });
+        resetPostView();
+        renderPosts(filteredPosts, 12);
+    }
 });
 
-function filterPosts(filter) {
-    const filteredPosts = allPosts.filter(post => {
-        return post.tags && post.tags.some(tag => tag && tag.toLowerCase() === filter.toLowerCase());
-    });
-    renderPosts(filteredPosts);
-}
+
 
 
