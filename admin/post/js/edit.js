@@ -84,7 +84,7 @@ document.addEventListener('DOMContentLoaded', function () {
                      <label for="alt-img-3">Image description:</label>
                      <input id="alt-img-3" type="text">
                      <label for="paragraph-3">Details:</label>
-                     <textarea id="paragraph-3"  cols="100" rows="20"></textarea>
+                     <textarea id="paragraph-3"  cols="100" rows="8"></textarea>
                  </form>
             </div>
         `;
@@ -199,11 +199,15 @@ document.addEventListener('DOMContentLoaded', function () {
         }).join('');
         let body = `
     <p>${form.querySelector('#paragraph-1').value.trim()}</p>
-    <img src="${form.querySelector('#img-url-2').value.trim()}" alt="${form.querySelector('#alt-img-2').value.trim()}">
+    <img class="img-2" src="${form.querySelector('#img-url-2').value.trim()}" alt="${form.querySelector('#alt-img-2').value.trim()}">
     <p>${form.querySelector('#paragraph-2').value.trim()}</p>
-    <img src="${form.querySelector('#img-url-3').value.trim()}" alt="${form.querySelector('#alt-img-3').value.trim()}">
-   <h3>Details</h3>
-            <ul>${details}</ul>
+    <div class="details-section-wrapper">
+    <img class="details-img" src="${form.querySelector('#img-url-3').value.trim()}" alt="${form.querySelector('#alt-img-3').value.trim()}">
+    <div class="details-wrapper">
+        <h2>Details</h2>
+        <ul>${details}</ul>
+    </div>
+    </div>
 `;
 
 

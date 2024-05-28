@@ -24,15 +24,17 @@ document.addEventListener('DOMContentLoaded', function () {
             const restOfLine = line.substring(firstSpaceIndex);
             return `<li><strong>${firstWord}</strong>${restOfLine}</li>`;
         }).join('');
-        
+
         let body = `
             <p>${document.getElementById('paragraph-1').value.trim()}</p>
-            <img src="${document.getElementById('img-url-2').value.trim()}" alt="${document.getElementById('alt-img-2').value.trim()}">
+            <img class="img-2" src="${document.getElementById('img-url-2').value.trim()}" alt="${document.getElementById('alt-img-2').value.trim()}">
             <p>${document.getElementById('paragraph-2').value.trim()}</p>
-            <div>
-            <img src="${document.getElementById('img-url-3').value.trim()}" alt="${document.getElementById('alt-img-3').value.trim()}">
-            <h3>Details</h3>
-            <ul>${details}</ul>
+            <div class="details-section-wrapper">
+            <img class="details-img" src="${document.getElementById('img-url-3').value.trim()}" alt="${document.getElementById('alt-img-3').value.trim()}">
+            <div class="details-wrapper">
+                <h2>Details</h2>
+                <ul>${details}</ul>
+            </div>
             </div>
             
         `;

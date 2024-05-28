@@ -12,7 +12,8 @@ function displaySinglePost () {
         .then(data => {
             const postData = data.data;
 
-            console.log("Body HTML:", postData.body);
+            // Setting the title in head
+            document.title = 'Nordic Trekking ✵ ' + postData.title;
 
             const postDataDisplay =
                 `
