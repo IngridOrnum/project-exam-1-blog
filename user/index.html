@@ -12,26 +12,27 @@
 <body>
     <nav class="nav-homepage">
         <div class="content-nav-bar">
-            <span><a id="logo-landingpage" class="logo" href="#">Nordic Trekking</a></span>
+            <span><a class="logo" href="#" id="logo-landingpage">Nordic Trekking</a></span>
             <div class="nav-links-wrapper">
-                <span><a class="nav-link" id="home-nav-link" href="#">HOME</a></span>
-                <span><a class="nav-link" id="BA-nav-link" href="post/blog-archive.html">BLOG ARCHIVE</a></span>
-                <span><a class="nav-link" id="about-nav-link" href="about.html">ABOUT</a></span>
+                <span><a class="nav-link" href="#" id="home-nav-link">HOME</a></span>
+                <span><a class="nav-link" href="post/blog-archive.html" id="BA-nav-link">BLOG ARCHIVE</a></span>
+                <span><a class="nav-link" href="about.html" id="about-nav-link">ABOUT</a></span>
             </div>
-            <button onclick="openDropdown()" class="burger-menu"><img alt="burger menu" src="/assets/icons/white-burger-menu.png"></button>
+            <button class="burger-menu" onclick="openDropdown()"><i class="fa-solid fa-bars fa-lg"></i></button>
         </div>
         <div class="nav-dropdown">
-            <button onclick="closeDropdown()" class="close-btn-nav-dropdown">
+            <button class="close-btn-nav-dropdown" onclick="closeDropdown()">
                 <i class="fa-solid fa-x fa-lg"></i>
             </button>
-            <div onclick="closeDropdownThroughLinks()" class="wrapper-nav-link-dropdown">
-            <span><a class="nav-link-dropdown" href="#">HOME</a></span>
-            <span><a class="nav-link-dropdown" href="post/blog-archive.html">BLOG ARCHIVE</a></span>
-            <span><a class="nav-link-dropdown" href="about.html">ABOUT</a></span>
+            <div class="wrapper-nav-link-dropdown" onclick="closeDropdownThroughLinks()">
+                <span><a class="nav-link-dropdown" href="#">HOME</a></span>
+                <span><a class="nav-link-dropdown" href="post/blog-archive.html">BLOG ARCHIVE</a></span>
+                <span><a class="nav-link-dropdown" href="about.html">ABOUT</a></span>
             </div>
         </div>
     </nav>
     <main>
+        <div class="hero-wrapper">
         <div class="hero-bg">
             <div class="hero-content">
                 <div class="hero-text">
@@ -39,15 +40,16 @@
                     <span class="hero-large-text">Let’s plan your next outdoor adventure!</span>
                     <div class="hero-small-text">
                         <span>Scroll for inspiration</span>
-                        <img alt="Down Arrow" class="hero-icon" src="/assets/icons/white-down-arrow-icon.png">
+                        <img alt="Down Arrow" class="hero-icon" src="/assets/icons/black-down-arrow-icon.png">
                     </div>
                 </div>
             </div>
         </div>
+        </div>
         
         <section class="carousel-section">
             <div class="carousel-section-2-text">
-                <h2>Latest posts</h2>
+                <h2 class="h2-center">Latest posts</h2>
                 <p>Check out our latest posts!</p>
             </div>
             <div class="carousel-wrapper">
@@ -68,52 +70,64 @@
             </div>
         </section>
         
-        <section class="filter-section">
-            <div class="bg-filter-section">
-                <div class="content-filter-section">
-                    <h2>Filter by activity</h2>
-                    <p>We have something for every adventurer! Choose your preferred activity.</p>
-                    <div class="homepage-filter-btns">
-                        <button class="filter-btn-homepage" id="forest"><a href="post/blog-archive.html">
-                            <img alt="Forest Icon" src="/assets/icons/forest-hike-icon.png">
-                            <span>Forest Hiking</span>
-                        </a></button>
-                        <button class="filter-btn-homepage" id="mountain"><a href="post/blog-archive.html">
-                            <img alt="Mountain Icon" src="/assets/icons/mountain-hiking-icon.png">
-                            <span>Mountain Hiking</span>
-                        </a></button>
-                        <button class="filter-btn-homepage" id="climbing"><a href="post/blog-archive.html">
-                            <img alt="Climbing Shoe Icon" src="/assets/icons/climbing-icon.png">
-                            <span>Climbing</span>
-                        </a></button>
-                        <button class="filter-btn-homepage" id="biking"><a href="post/blog-archive.html">
-                            <img alt="Bike Icon" src="/assets/icons/bike-icon.png">
-                            <span>Biking</span>
-                        </a></button>
-                    </div>
-                </div>
-            </div>
-        </section>
+<!--        <section class="filter-section">-->
+<!--            <div class="bg-filter-section">-->
+<!--                <div class="content-filter-section">-->
+<!--                    <h2 class="h2-center">Filter by activity</h2>-->
+<!--                    <p>We have something for every adventurer! Choose your preferred activity.</p>-->
+<!--                    <div class="homepage-filter-btns">-->
+<!--                        <button class="filter-btn-homepage" id="forest">-->
+<!--                            <a href="post/blog-archive.html?filter=forest">-->
+<!--                                <img alt="Forest Icon" src="/assets/icons/forest-hike-icon.png">-->
+<!--                                <span>Forest Hiking</span>-->
+<!--                            </a>-->
+<!--                        </button>-->
+<!--                        <button class="filter-btn-homepage" id="mountain">-->
+<!--                            <a href="post/blog-archive.html?filter=mountain">-->
+<!--                                <img alt="Mountain Icon" src="/assets/icons/mountain-hiking-icon.png">-->
+<!--                                <span>Mountain Hiking</span>-->
+<!--                            </a>-->
+<!--                        </button>-->
+<!--                        <button class="filter-btn-homepage" id="climbing">-->
+<!--                            <a href="post/blog-archive.html?filter=climbing">-->
+<!--                                <img alt="Climbing Shoe Icon" src="/assets/icons/climbing-icon.png">-->
+<!--                                <span>Climbing</span>-->
+<!--                            </a>-->
+<!--                        </button>-->
+<!--                        <button class="filter-btn-homepage" id="biking">-->
+<!--                            <a href="post/blog-archive.html?filter=biking">-->
+<!--                                <img alt="Bike Icon" src="/assets/icons/bike-icon.png">-->
+<!--                                <span>Biking</span>-->
+<!--                            </a>-->
+<!--                        </button>-->
+<!--                    </div>-->
+<!--                </div>-->
+<!--            </div>-->
+<!--        </section>-->
         
         <section class="display-posts-grid-section">
             <div class="text-content-grid-section">
-                <h2>Find some inspiration</h2>
+                <h2 class="h2-center">Find some inspiration</h2>
                 <p>Browse through our latest posts!</p>
             </div>
             <div class="grid-wrapper">
                 <div class="post-grid-container"></div>
             </div>
-            <button class="button-uni"><a href="post/blog-archive.html">VIEW ALL</a></button>
+            <form action="post/blog-archive.html">
+                <button class="button-uni">VIEW ALL</button>
+            </form>
         </section>
         
         <section class="about-section">
             <div class="bg-about-section">
                 <div class="content-about-section">
-                    <h2>About Us</h2>
+                    <h2 class="h2-center">About Us</h2>
                     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
                         labore et dolore magna aliqua.
                     </p>
-                    <button class="button-uni"><a href="about.html">ABOUT US</a></button>
+                    <form action="about.html">
+                        <button class="button-uni">ABOUT US</button>
+                    </form>
                 </div>
             </div>
         </section>
@@ -121,12 +135,14 @@
         <section class="post-highlight-section">
             <div class="content-post-highlight">
                 <div class="text-content-post-highlight">
-                    <h2>Besseggen</h2>
+                    <h2 class="h2-center">Besseggen</h2>
                     <p>
                         Plan this summer to visit one of the most beautiful hikes in Norway - Besseggen!
                     </p>
                 </div>
-                <button class="button-uni"><a>CHECK OUT BESSEGGEN</a></button>
+                <form action="post/index.html?postId=55b69747-fb27-47f6-aa1a-a67c9bac4298">
+                    <button class="button-uni">CHECK OUT BESSEGGEN</button>
+                </form>
             </div>
             <img alt="Besseggen, the Mountain"
                  class="img-post-highlight"
@@ -138,7 +154,7 @@
             <div class="footer-text">
                 <span class="logo-footer"><a href="#">Nordic trekking</a></span>
                 <ul class="footer-links">
-                    <li><a href="#">Home</a></li>
+                    <li><a href="index.html">Home</a></li>
                     <li><a href="post/blog-archive.html">Blog Archive</a></li>
                     <li><a href="about.html">About</a></li>
                 </ul>

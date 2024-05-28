@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Goudy+Bookletter+1911&family=Montserrat+Subrayada:wght@400;700&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Goudy+Bookletter+1911&family=Marcellus&family=Montserrat+Subrayada:wght@400;700&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
 
 :root {
     --neutral-300-black: #3d3d3d;
@@ -117,40 +117,43 @@ nav {
     font-family: Montserrat Subrayada, sans-serif;
 }
 
+a, h2, p, ul li {
+    font-family: Montserrat, sans-serif;
+}
+
 a {
     text-decoration: none;
     color: var(--primary-500-darkgreen);
-    font-family: Montserrat, sans-serif;
 }
 
 h1 {
-    font-family: Magilio, sans-serif;
+    font-family: Marcellus, sans-serif;
     letter-spacing: 4px;
     margin-top: 42px;
+    font-size: 40px;
 }
 
-h2, p {
-    font-family: Montserrat, sans-serif;
-    color: var(--primary-500-darkgreen);
+.h2-center, p {
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
 h2 {
+    color: var(--primary-500-darkgreen);
     text-transform: uppercase;
     font-size: 20px;
+    letter-spacing: 2px;
 }
 
 p {
-    font-size: 14px;
-    margin-top: 22px;
     text-align: center;
-    line-height: 24px;
+    line-height: 30px;
 }
 
 ul li {
     list-style: none;
+    margin-bottom: 12px;
 }
 
 section {
@@ -162,26 +165,29 @@ button {
 }
 
 .button-uni {
-    background-color: var(--primary-500-darkgreen);
-    border: 2px solid var(--primary-500-darkgreen);
+    background-color: var(--secondary-200-green);
+    border: 2px solid var(--secondary-200-green);
     border-radius: 6px;
-    padding: 10px;
+    padding: 10px 12px;
     cursor: pointer;
-    font-size: 14px;
+    font-size: 15px;
     margin-top: 42px;
-}
-
-.button-uni a {
+    font-weight: 400;
     color: var(--neutral-500-white);
+    font-family: Montserrat, sans-serif;
+    letter-spacing: 2px;
+
 }
 
 .button-uni:hover {
-    background-color: var(--secondary-200-green);
-    border: 2px solid var(--primary-500-darkgreen);
+    background-color: transparent;
+    border: 2px solid var(--secondary-300-green-transparent);
+    transition: 0.3s ease;
+    color: var(--neutral-300-black);
 }
 
 .button-uni:active, .button-uni:focus {
-    background-color: var(--secondary-300-green-transparent);
+    background-color: var(--secondary-200-green);
     box-shadow: inset 5px 3px 8px 2px #283b2c25;
     border: 2px solid var(--primary-500-darkgreen);
 }
@@ -201,8 +207,9 @@ button {
     border-radius: 6px;
 }
 
-.element-thumbnail:hover {
-    background-color: var(--neutral-300-black);
+.element-thumbnail:hover .bg-blur-thumbnail{
+    backdrop-filter: blur(10px);
+    transition: 0.3s ease;
 }
 
 .a-element-thumbnail {
@@ -240,9 +247,9 @@ button {
     position: absolute;
     z-index: 5;
     color: var(--neutral-500-white);
-    font-family: Magilio, sans-serif;
+    font-family: Marcellus, sans-serif;
     letter-spacing: 4px;
-    font-size: 36px;
+    font-size: 32px;
 }
 
 .title-thumbnail {
@@ -257,11 +264,6 @@ button {
     justify-content: center;
     align-items: center;
 }
-
-/*.text-content-grid-section {*/
-/*    margin-bottom: 22px;*/
-/*}*/
-
 
 /*--------------------------------------------------------*/
 
@@ -352,6 +354,14 @@ footer {
 
 @media (min-width: 834px) {
 
+    section {
+        margin-top: 82px;
+    }
+
+    h1 {
+        font-size: 48px;
+    }
+
     .logo, #logo-landingpage {
         font-size: 20px;
     }
@@ -373,13 +383,6 @@ footer {
         font-size: 24px;
     }
 
-    section {
-        margin-top: 82px;
-    }
-
-    .button-uni {
-        font-size: 20px;
-    }
 
 }
 
@@ -392,15 +395,12 @@ footer {
 }
 
 @media (min-width: 1440px) {
-    /*body {*/
-    /*    margin: 22px 82px;*/
-    /*}*/
+   h1 {
+       font-size: 68px;
+   }
+
     h2 {
         font-size: 28px;
-    }
-
-    section {
-        margin-top: 102px;
     }
 
     .button-uni {

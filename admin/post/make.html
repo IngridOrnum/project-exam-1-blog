@@ -9,7 +9,6 @@
 </head>
 <body>
     <main>
-        <button><a href="index.html">Back</a></button>
         <h1>Create post</h1>
         <section id="create-post-form-section-wrapping">
             <form class="edit-form">
@@ -21,8 +20,41 @@
                 <input id="alt-img-1" type="text">
                 <label for="title">Title:</label>
                 <input id="title" type="text">
-                <label for="tags">Tags:</label>
-                <input id="tags" type="text">
+                <div>
+                    <span>Tags</span>
+                    <label for="region">Region</label>
+                    <select name="region" id="region">
+                        <option value="">Select option</option>
+                        <option value="oslo">Oslo</option>
+                        <option value="buskerud">Buskerud</option>
+                        <option value="jotunheimen">Jotunheimen</option>
+                        <option value="rondane">Rondane</option>
+                        <option value="hardanger">Hardanger</option>
+                        <option value="more-romsdal">Møre & Romsdal</option>
+                    </select>
+                    <label for="difficulty">Difficulty</label>
+                    <select name="difficulty" id="difficulty">
+                        <option value="">Select option</option>
+                        <option value="easy">Easy</option>
+                        <option value="medium">Medium</option>
+                        <option value="difficult">Difficult</option>
+                    </select>
+                    <label for="season">Season</label>
+                    <select name="season" id="season">
+                        <option value="">Select option</option>
+                        <option value="ssa">Spring, Summer & Autumn</option>
+                        <option value="winter">Winter</option>
+                    </select>
+                    <label for="activity">Activity</label>
+                    <select name="activity" id="activity">
+                        <option value="">Select option</option>
+                        <option value="forest">Forest Hiking</option>
+                        <option value="mountain">Mountain Hiking</option>
+                        <option value="difficult">Biking</option>
+                        <option value="climbing">Climbing</option>
+                        <option value="skiing">Skiing</option>
+                    </select>
+                </div>
                 <label for="paragraph-1">First paragraph:</label>
                 <textarea id="paragraph-1"  cols="100" rows="20"></textarea>
                 <label for="img-url-2">Img URL:</label>
@@ -35,18 +67,14 @@
                 <input id="img-url-3" type="text">
                 <label for="alt-img-3">Image description:</label>
                 <input id="alt-img-3" type="text">
-                <label for="paragraph-3">Third paragraph:</label>
-                <textarea id="paragraph-3"  cols="100" rows="20"></textarea>
-<!--                <label for="img-url">Img URL:</label>-->
-<!--                <input name="img-url" id="img-url" type="text">-->
-<!--                <label for="alt-img">Image description:</label>-->
-<!--                <input name="alt-img" id="alt-img" type="text">-->
-<!--                <label for="title">Title:</label>-->
-<!--                <input name="title" id="title" type="text">-->
-<!--                <label for="tags">Tags:</label>-->
-<!--                <input name="tags" id="tags" type="text">-->
-<!--                <label for="body-text">Text:</label>-->
-<!--                <textarea name="body-text" id="body-text"  cols="100" rows="20"></textarea>-->
+                <label for="paragraph-3">Details:</label>
+                <textarea id="paragraph-3"  cols="100" rows="8">
+Location:
+Difficulty:
+Length:
+Season:
+Elevation:
+                </textarea>
             </form>
         </section>
     </main>

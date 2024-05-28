@@ -42,6 +42,7 @@ button {
 .wrapper-main-filter-btns {
     display: flex;
     flex-wrap: wrap;
+    gap: 12px;
 }
 
 .main-filter-btn:hover {

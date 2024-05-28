@@ -2,6 +2,27 @@ let currentSlideIndex = 0;
 let slideInterval;
 const paginationElement = document.querySelector('.pagination-element');
 
+document.addEventListener('DOMContentLoaded', function () {
+    const heroBg = document.querySelector('.hero-bg');
+
+    heroBg.addEventListener('mousemove', function (e) {
+        const width = heroBg.offsetWidth;
+        const height = heroBg.offsetHeight;
+        const mouseX = e.clientX / width;
+        const mouseY = e.clientY / height;
+
+        const moveX = (mouseX - 0.5) * 30; // Adjust multiplier for desired effect
+        const moveY = (mouseY - 0.5) * 30; // Adjust multiplier for desired effect
+
+        heroBg.style.backgroundPosition = `calc(50% + ${moveX}px) calc(50% + ${moveY}px)`;
+    });
+
+    heroBg.addEventListener('mouseleave', function () {
+        heroBg.style.backgroundPosition = '50% 50%';
+    });
+});
+
+
 function fetchUserBlogPostsCarousel() {
     fetch(`https://v2.api.noroff.dev/blog/posts/IngridOrnum`, {
         method: 'GET',
@@ -17,11 +38,8 @@ function fetchUserBlogPostsCarousel() {
                 <li class="post-slide" id="slide-${index + 1}">
                         <div class="slide-background-blur"></div>
                         <img class="post-img" src="${post.media.url}" alt="${post.media.alt}">
-                        <div class="title-and-btn-wrapper">
-                        <div class="post-title">${post.title}</div>
-                         <div class="post-btn">
-                         <button class="button-uni"><a href="post/index.html?postId=${post.id}">SEE MORE</a></button>
-                         </div>
+                        <div class="title-wrapper">
+                         <button class="title-carousel-button"><a class="post-title" href="post/index.html?postId=${post.id}">${post.title}</a></button>
                         </div>
                 </li>`;
                 }).join('');  // Join the array of strings into a single string

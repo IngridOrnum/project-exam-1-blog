@@ -7,10 +7,17 @@ document.addEventListener('DOMContentLoaded', function () {
 
         const formData = new FormData(formElement);
         const title = document.getElementById('title').value.trim();
-        const tags = document.getElementById('tags').value.trim().split(',').map(tag => tag.trim());
-
         const heroImgUrl = document.getElementById('img-url-1').value.trim();
         const heroAltImg = document.getElementById('alt-img-1').value.trim();
+
+        // Collect selected tags from dropdowns
+        const region = document.getElementById('region').value.trim();
+        const difficulty = document.getElementById('difficulty').value.trim();
+        const season = document.getElementById('season').value.trim();
+        const activity = document.getElementById('activity').value.trim();
+        const travelDuration = document.getElementById('travel-duration').value.trim();
+
+        const tags = [region, difficulty, season, activity, travelDuration].filter(tag => tag);
 
         // Check if any of the required fields are empty
         if (!title || !heroImgUrl|| !heroAltImg) {
@@ -18,12 +25,25 @@ document.addEventListener('DOMContentLoaded', function () {
             return; // Stop the function if any required fields are empty
         }
 
+        const details = document.getElementById('paragraph-3').value.trim().split('\n').map(line => {
+            const firstSpaceIndex = line.indexOf(' ');
+            const firstWord = line.substring(0, firstSpaceIndex);
+            const restOfLine = line.substring(firstSpaceIndex);
+            return `<li><strong>${firstWord}</strong>${restOfLine}</li>`;
+        }).join('');
+
         let body = `
             <p>${document.getElementById('paragraph-1').value.trim()}</p>
-            <img src="${document.getElementById('img-url-2').value.trim()}" alt="${document.getElementById('alt-img-2').value.trim()}">
+            <img class="img-2" src="${document.getElementById('img-url-2').value.trim()}" alt="${document.getElementById('alt-img-2').value.trim()}">
             <p>${document.getElementById('paragraph-2').value.trim()}</p>
-            <img src="${document.getElementById('img-url-3').value.trim()}" alt="${document.getElementById('alt-img-3').value.trim()}">
-            <p>${document.getElementById('paragraph-3').value.trim()}</p>
+            <div class="details-section-wrapper">
+            <img class="details-img" src="${document.getElementById('img-url-3').value.trim()}" alt="${document.getElementById('alt-img-3').value.trim()}">
+            <div class="details-wrapper">
+                <h2>Details</h2>
+                <ul>${details}</ul>
+            </div>
+            </div>
+            
         `;
 
         const postData = {
