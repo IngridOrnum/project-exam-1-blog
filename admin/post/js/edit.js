@@ -37,6 +37,17 @@ document.addEventListener('DOMContentLoaded', function () {
         const element = document.createElement('div');
         element.classList.add('single-blog-display-edit');
         element.dataset.id = blogPost.id;
+
+        const bodyText = new DOMParser().parseFromString(blogPost.body, 'text/html');
+        const paragraphs = bodyText.querySelectorAll('p');
+        const images = bodyText.querySelectorAll('img');
+        const details = bodyText.querySelector('ul');
+        let detailsText = '';
+
+        if (details) {
+            detailsText = Array.from(details.querySelectorAll('li')).map(li => li.textContent).join('\n');
+        }
+
         element.innerHTML = `
             <li>Title: ${blogPost.title}</li>
             <div class="author-date-edit-page">
@@ -72,7 +83,7 @@ document.addEventListener('DOMContentLoaded', function () {
                      <input id="img-url-3" type="text">
                      <label for="alt-img-3">Image description:</label>
                      <input id="alt-img-3" type="text">
-                     <label for="paragraph-3">Third paragraph:</label>
+                     <label for="paragraph-3">Details:</label>
                      <textarea id="paragraph-3"  cols="100" rows="20"></textarea>
                  </form>
             </div>
@@ -149,15 +160,23 @@ document.addEventListener('DOMContentLoaded', function () {
 
         const paragraphs = bodyText.querySelectorAll('p');
         const images = bodyText.querySelectorAll('img');
+        const details = bodyText.querySelector('ul');
 
-        if (paragraphs.length >= 3 && images.length >= 2) {
+        if (paragraphs.length >= 2 && images.length >= 2) {
             editDropdown.querySelector('#paragraph-1').value = paragraphs[0].textContent;
             editDropdown.querySelector('#img-url-2').value = images[0].src;
             editDropdown.querySelector('#alt-img-2').value = images[0].alt;
             editDropdown.querySelector('#paragraph-2').value = paragraphs[1].textContent;
             editDropdown.querySelector('#img-url-3').value = images[1].src;
             editDropdown.querySelector('#alt-img-3').value = images[1].alt;
-            editDropdown.querySelector('#paragraph-3').value = paragraphs[2].textContent;
+
+            if (details) {
+                const detailsText = Array.from(details.querySelectorAll('li')).map(li => {
+                    const line = li.innerHTML.replace(/<strong>(.*?)<\/strong>/, '$1');
+                    return line;
+                }).join('\n');
+                editDropdown.querySelector('#paragraph-3').value = detailsText;
+            }
         }
     }
 
@@ -172,12 +191,19 @@ document.addEventListener('DOMContentLoaded', function () {
         const heroImageUrl = form.querySelector('#img-url-1').value.trim();
         const heroImageAlt = form.querySelector('#alt-img-1').value.trim();
 
+        const details = form.querySelector('#paragraph-3').value.trim().split('\n').map(line => {
+            const firstSpaceIndex = line.indexOf(' ');
+            const firstWord = line.substring(0, firstSpaceIndex);
+            const restOfLine = line.substring(firstSpaceIndex);
+            return `<li><strong>${firstWord}</strong>${restOfLine}</li>`;
+        }).join('');
         let body = `
     <p>${form.querySelector('#paragraph-1').value.trim()}</p>
     <img src="${form.querySelector('#img-url-2').value.trim()}" alt="${form.querySelector('#alt-img-2').value.trim()}">
     <p>${form.querySelector('#paragraph-2').value.trim()}</p>
     <img src="${form.querySelector('#img-url-3').value.trim()}" alt="${form.querySelector('#alt-img-3').value.trim()}">
-    <p>${form.querySelector('#paragraph-3').value.trim()}</p>
+   <h3>Details</h3>
+            <ul>${details}</ul>
 `;
 
 

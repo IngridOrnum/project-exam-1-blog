@@ -18,12 +18,23 @@ document.addEventListener('DOMContentLoaded', function () {
             return; // Stop the function if any required fields are empty
         }
 
+        const details = document.getElementById('paragraph-3').value.trim().split('\n').map(line => {
+            const firstSpaceIndex = line.indexOf(' ');
+            const firstWord = line.substring(0, firstSpaceIndex);
+            const restOfLine = line.substring(firstSpaceIndex);
+            return `<li><strong>${firstWord}</strong>${restOfLine}</li>`;
+        }).join('');
+        
         let body = `
             <p>${document.getElementById('paragraph-1').value.trim()}</p>
             <img src="${document.getElementById('img-url-2').value.trim()}" alt="${document.getElementById('alt-img-2').value.trim()}">
             <p>${document.getElementById('paragraph-2').value.trim()}</p>
+            <div>
             <img src="${document.getElementById('img-url-3').value.trim()}" alt="${document.getElementById('alt-img-3').value.trim()}">
-            <p>${document.getElementById('paragraph-3').value.trim()}</p>
+            <h3>Details</h3>
+            <ul>${details}</ul>
+            </div>
+            
         `;
 
         const postData = {

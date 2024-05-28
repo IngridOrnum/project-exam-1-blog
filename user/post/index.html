@@ -4,12 +4,35 @@
     <meta charset="UTF-8">
     <title>Title</title>
     <script src="../js/single-blog-page.js" defer></script>
+    <script src="../js/main.js" defer></script>
+    <script crossorigin="anonymous" src="https://kit.fontawesome.com/eaf3f254a9.js"></script>
     <link href="../css/single-blog-page.css" rel="stylesheet">
     <link href="../css/styles.css" rel="stylesheet">
 </head>
 <body>
+    <nav class="nav-bar">
+        <div class="content-nav-bar">
+            <span><a class="logo-landingpage logo" href="../index.html">Nordic Trekking</a></span>
+            <div class="nav-links-wrapper">
+                <span><a class="nav-link" href="../index.html">HOME</a></span>
+                <span><a class="nav-link" href="blog-archive.html">BLOG ARCHIVE</a></span>
+                <span><a class="nav-link" href="../about.html">ABOUT</a></span>
+            </div>
+            <button class="burger-menu" onclick="openDropdown()"><i class="fa-solid fa-bars fa-lg"></i>
+            </button>
+        </div>
+        <div class="nav-dropdown">
+            <button class="close-btn-nav-dropdown" onclick="closeDropdown()">
+                <i class="fa-solid fa-x fa-lg"></i>
+            </button>
+            <div class="wrapper-nav-link-dropdown" onclick="closeDropdownThroughLinks()">
+                <span><a class="nav-link-dropdown" href="../index.html">HOME</a></span>
+                <span><a class="nav-link-dropdown" href="blog-archive.html">BLOG ARCHIVE</a></span>
+                <span><a class="nav-link-dropdown" href="../about.html">ABOUT</a></span>
+            </div>
+        </div>
+    </nav>
     <main>
-        <button><a href="../index.html">Back</a></button>
         <div class="blog-post-container"></div>
     </main>
     <footer>
@@ -17,9 +40,9 @@
             <div class="footer-text">
                 <span class="logo-footer"><a href="#">Nordic trekking</a></span>
                 <ul class="footer-links">
-                    <li><a href="#">Home</a></li>
-                    <li><a href="post/blog-archive.html">Blog Archive</a></li>
-                    <li><a href="about.html">About</a></li>
+                    <li><a href="../index.html">Home</a></li>
+                    <li><a href="blog-archive.html">Blog Archive</a></li>
+                    <li><a href="../about.html">About</a></li>
                 </ul>
             </div>
         </div>
