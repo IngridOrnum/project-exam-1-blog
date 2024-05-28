@@ -6,13 +6,14 @@ section {
 }
 
 .nav-homepage {
-    position: absolute;
+    position: fixed;
     z-index: 10;
     width: 100%;
+    backdrop-filter: blur(12px);
 }
 
 #home-nav-link, #BA-nav-link, #about-nav-link, #logo-landingpage {
-    color: var(--neutral-500-white);
+    color: var(--neutral-300-black);
 }
 
 #fa-x-homepage {
@@ -20,12 +21,15 @@ section {
 }
 
 .hero-bg {
-    background-image: url("/assets/mobile/mobile-hero.jpg");
-    width: 100vw;
-    height: 672px;
+    background-image: url(https://www.nasjonalparkriket.no/sites/cb_npr/files/8Besseggen-Cathrine%20Dokken_Nasjonalparkriket.web_.jpg);
+    width: 100%;
+    height: 100vh;
     background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center;
+    background-size: 110% 110%;
+    background-position: 50% 50%;
+    position: relative;
+    overflow: hidden;
+    transition: 0.15s ease;
 }
 
 .hero-content {
@@ -40,7 +44,7 @@ section {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    color: var(--neutral-500-white);
+    color: var(--neutral-300-black);
 }
 
 .hero-text :nth-child(1) {
@@ -343,10 +347,9 @@ section {
 
 @media (min-width: 834px) {
 
-    .hero-bg {
-        background-image: url("/assets/tablet/tablet-hero.jpg");
-        height: 982px;
-    }
+    /*.hero-bg {*/
+    /*    background-image: url("/assets/tablet/tablet-hero.jpg");*/
+    /*}*/
 
     #left-btn-carousel, #right-btn-carousel {
         width: 42px;

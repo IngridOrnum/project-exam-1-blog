@@ -95,19 +95,13 @@ document.addEventListener('DOMContentLoaded', function () {
                         <option value="mountain">Mountain Hiking</option>
                         <option value="difficult">Biking</option>
                         <option value="climbing">Climbing</option>
+                         <option value="skiing">Skiing</option>
                     </select>
                     <label for="season">Season</label>
                     <select name="season" id="season">
                        <option value="">Select option</option>
                         <option value="ssa">Spring, Summer & Autumn</option>
                         <option value="winter">Winter</option>
-                    </select>
-                    <label for="travel-duration">Travel Duration</label>
-                    <select name="travel-duration" id="travel-duration">
-                        <option value="">Select option</option>
-                        <option value="easy">Day Trip</option>
-                        <option value="medium">Weekend</option>
-                        <option value="difficult">Vacation</option>
                     </select>
                 </div>
                      <label for="paragraph-1">First paragraph:</label>
@@ -242,9 +236,16 @@ document.addEventListener('DOMContentLoaded', function () {
         const form = event.target.closest('.single-blog-display-edit').querySelector('.edit-form');
 
         const title = form.querySelector('#title').value.trim();
-        const tags = form.querySelector('#tags').value.split(',').map(tag => tag.trim()).filter(tag => tag);
         const heroImageUrl = form.querySelector('#img-url-1').value.trim();
         const heroImageAlt = form.querySelector('#alt-img-1').value.trim();
+
+        // Collect selected tags from dropdowns
+        const region = form.querySelector('#region').value.trim();
+        const difficulty = form.querySelector('#difficulty').value.trim();
+        const season = form.querySelector('#season').value.trim();
+        const activity = form.querySelector('#activity').value.trim();
+
+        const tags = [region, difficulty, season, activity].filter(tag => tag);
 
         const details = form.querySelector('#paragraph-3').value.trim().split('\n').map(line => {
             const firstSpaceIndex = line.indexOf(' ');

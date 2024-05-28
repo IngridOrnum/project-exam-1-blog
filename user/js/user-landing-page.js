@@ -2,6 +2,27 @@ let currentSlideIndex = 0;
 let slideInterval;
 const paginationElement = document.querySelector('.pagination-element');
 
+document.addEventListener('DOMContentLoaded', function () {
+    const heroBg = document.querySelector('.hero-bg');
+
+    heroBg.addEventListener('mousemove', function (e) {
+        const width = heroBg.offsetWidth;
+        const height = heroBg.offsetHeight;
+        const mouseX = e.clientX / width;
+        const mouseY = e.clientY / height;
+
+        const moveX = (mouseX - 0.5) * 30; // Adjust multiplier for desired effect
+        const moveY = (mouseY - 0.5) * 30; // Adjust multiplier for desired effect
+
+        heroBg.style.backgroundPosition = `calc(50% + ${moveX}px) calc(50% + ${moveY}px)`;
+    });
+
+    heroBg.addEventListener('mouseleave', function () {
+        heroBg.style.backgroundPosition = '50% 50%';
+    });
+});
+
+
 function fetchUserBlogPostsCarousel() {
     fetch(`https://v2.api.noroff.dev/blog/posts/IngridOrnum`, {
         method: 'GET',
