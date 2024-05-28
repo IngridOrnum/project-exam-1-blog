@@ -69,8 +69,47 @@ document.addEventListener('DOMContentLoaded', function () {
                      <input id="alt-img-1" type="text">
                      <label for="title">Title:</label>
                      <input id="title" type="text">
-                     <label for="tags">Tags:</label>
-                     <input id="tags" type="text">
+                     <div>
+                    <span>Tags</span>
+                    <label for="region">Region</label>
+                    <select name="region" id="region">
+                        <option value="">Select option</option>
+                        <option value="oslo">Oslo</option>
+                        <option value="buskerud">Buskerud</option>
+                        <option value="jotunheimen">Jotunheimen</option>
+                        <option value="rondane">Rondane</option>
+                        <option value="hardanger">Hardanger</option>
+                        <option value="more-romsdal">Møre & Romsdal</option>
+                    </select>
+                    <label for="difficulty">Difficulty</label>
+                    <select name="difficulty" id="difficulty">
+                        <option value="">Select option</option>
+                        <option value="easy">Easy</option>
+                        <option value="medium">Medium</option>
+                        <option value="difficult">Difficult</option>
+                    </select>
+                    <label for="activity">Activity</label>
+                    <select name="activity" id="activity">
+                        <option value="">Select option</option>
+                        <option value="forest">Forest Hiking</option>
+                        <option value="mountain">Mountain Hiking</option>
+                        <option value="difficult">Biking</option>
+                        <option value="climbing">Climbing</option>
+                    </select>
+                    <label for="season">Season</label>
+                    <select name="season" id="season">
+                       <option value="">Select option</option>
+                        <option value="ssa">Spring, Summer & Autumn</option>
+                        <option value="winter">Winter</option>
+                    </select>
+                    <label for="travel-duration">Travel Duration</label>
+                    <select name="travel-duration" id="travel-duration">
+                        <option value="">Select option</option>
+                        <option value="easy">Day Trip</option>
+                        <option value="medium">Weekend</option>
+                        <option value="difficult">Vacation</option>
+                    </select>
+                </div>
                      <label for="paragraph-1">First paragraph:</label>
                      <textarea id="paragraph-1"  cols="100" rows="20"></textarea>
                       <label for="img-url-2">Img URL:</label>
@@ -151,9 +190,25 @@ document.addEventListener('DOMContentLoaded', function () {
     function addFormData(editDropdown, postData) {
         const { title, tags, body, media } = postData.data;
         editDropdown.querySelector('#title').value = title || '';
-        editDropdown.querySelector('#tags').value = tags.join(', ') || '';
         editDropdown.querySelector('#img-url-1').value = media.url || '';
         editDropdown.querySelector('#alt-img-1').value = media.alt || '';
+
+        // Set the tags in the select elements
+        const tagMap = {
+            'region': ['oslo', 'buskerud', 'jotunheimen', 'rondane', 'hardanger', 'more-romsdal'],
+            'difficulty': ['easy', 'medium', 'difficult'],
+            'season': ['ssa', 'winter'],
+            'activity': ['forest', 'mountain', 'biking', 'climbing'],
+            'travel-duration': ['day-trip', 'weekend', 'vacation']
+        };
+
+        Object.keys(tagMap).forEach(tagKey => {
+            const selectElement = editDropdown.querySelector(`#${tagKey}`);
+            const tagValue = tags.find(tag => tagMap[tagKey].includes(tag));
+            if (tagValue) {
+                selectElement.value = tagValue;
+            }
+        });
 
         const parser = new DOMParser();
         const bodyText = parser.parseFromString(body, 'text/html');

@@ -7,10 +7,17 @@ document.addEventListener('DOMContentLoaded', function () {
 
         const formData = new FormData(formElement);
         const title = document.getElementById('title').value.trim();
-        const tags = document.getElementById('tags').value.trim().split(',').map(tag => tag.trim());
-
         const heroImgUrl = document.getElementById('img-url-1').value.trim();
         const heroAltImg = document.getElementById('alt-img-1').value.trim();
+
+        // Collect selected tags from dropdowns
+        const region = document.getElementById('region').value.trim();
+        const difficulty = document.getElementById('difficulty').value.trim();
+        const season = document.getElementById('season').value.trim();
+        const activity = document.getElementById('activity').value.trim();
+        const travelDuration = document.getElementById('travel-duration').value.trim();
+
+        const tags = [region, difficulty, season, activity, travelDuration].filter(tag => tag);
 
         // Check if any of the required fields are empty
         if (!title || !heroImgUrl|| !heroAltImg) {
