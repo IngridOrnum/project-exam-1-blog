@@ -38,11 +38,8 @@ function fetchUserBlogPostsCarousel() {
                 <li class="post-slide" id="slide-${index + 1}">
                         <div class="slide-background-blur"></div>
                         <img class="post-img" src="${post.media.url}" alt="${post.media.alt}">
-                        <div class="title-and-btn-wrapper">
-                        <div class="post-title">${post.title}</div>
-                         <div class="post-btn">
-                         <button class="button-uni"><a href="post/index.html?postId=${post.id}">SEE MORE</a></button>
-                         </div>
+                        <div class="title-wrapper">
+                         <button class="title-carousel-button"><a class="post-title" href="post/index.html?postId=${post.id}">${post.title}</a></button>
                         </div>
                 </li>`;
                 }).join('');  // Join the array of strings into a single string

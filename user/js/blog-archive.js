@@ -57,6 +57,7 @@ document.addEventListener('DOMContentLoaded', () => {
         button.addEventListener('click', () => {
             removeActiveClass(mainFilterButtons);
             if (button.id === 'view-all') {
+                resetPostView();
                 renderPosts(allPosts, 12);
             } else {
                 const filterValue = button.getAttribute('data-filter');

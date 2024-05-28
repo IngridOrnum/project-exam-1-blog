@@ -5,6 +5,11 @@ section {
     align-items: center;
 }
 
+p {
+    margin-top: 12px;
+    font-size: 14px;
+}
+
 .nav-homepage {
     position: fixed;
     z-index: 10;
@@ -20,23 +25,27 @@ section {
     color: var(--neutral-500-white);
 }
 
+
 .hero-bg {
     background-image: url(https://www.nasjonalparkriket.no/sites/cb_npr/files/8Besseggen-Cathrine%20Dokken_Nasjonalparkriket.web_.jpg);
-    width: 100%;
-    height: 100vh;
+    width: 100vw;
+    height: 110vh;
     background-repeat: no-repeat;
-    background-size: 110% 110%;
+    background-size: cover;
     background-position: 50% 50%;
     position: relative;
     overflow: hidden;
     transition: 0.15s ease;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .hero-content {
     position: absolute;
     top: 180px;
     margin: 0;
-    width: 100%;
+    width: 100vw;
 }
 
 .hero-text {
@@ -53,7 +62,7 @@ section {
 
 .hero-large-text {
     font-family: Marcellus, sans-serif;
-    font-size: 28px;
+    font-size: 20px;
 }
 
 .hero-small-text {
@@ -62,6 +71,7 @@ section {
     justify-content: center;
     gap: 12px;
     margin-top: 42px;
+    font-size: 20px;
 }
 
 .hero-icon {
@@ -83,10 +93,12 @@ section {
     border-radius: 25px;
     padding: 0;
     margin: 0;
-    z-index: 2;
+    z-index: 20;
     display: flex;
     justify-content: center;
     align-content: center;
+    position: absolute;
+    top: 480px;
 }
 
 .pagination-element button {
@@ -180,6 +192,7 @@ section {
     border-radius: 6px;
     z-index: 8;
     cursor: pointer;
+    transition: 0.3s ease;
 }
 
 #left-btn-carousel:hover, #right-btn-carousel:hover {
@@ -191,20 +204,33 @@ section {
     width: 100%;
 }
 
-.title-and-btn-wrapper {
+.title-wrapper {
     position: absolute;
     z-index: 5;
     top: 120px;
     width: 100%;
+    display: flex;
+    justify-content: center;
+    background-color: transparent;
+}
+
+.title-carousel-button {
+    border: none;
+    border-radius: 6px;
+    padding: 22px;
+    background-color: #fafafa80;
+}
+
+.title-carousel-button:hover {
+    background-color: var(--neutral-500-white);
+    transition: 0.8s ease;
 }
 
 .post-title {
     font-family: Marcellus, sans-serif;
     font-size: 40px;
     letter-spacing: 2px;
-    color: var(--neutral-500-white);
     list-style: none;
-    margin-bottom: 82px;
 }
 
 .post-btn, .post-title {
@@ -218,77 +244,6 @@ section {
     height: 518px;
     object-fit: cover;
     border-radius: 6px;
-}
-
-.filter-section {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-}
-
-.bg-filter-section {
-    background-image: url("/assets/mobile/bg-filter-section-mobile.jpg");
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: cover;
-    height: 518px;
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-}
-
-.content-filter-section {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    margin: 0 12px;
-}
-
-.homepage-filter-btns {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-wrap: wrap;
-    gap: 22px;
-    width: 340px;
-    margin-top: 22px;
-}
-
-.filter-btn-homepage {
-    width: 148px;
-    height: 148px;
-    border-radius: 200px;
-    border: 4px solid var(--secondary-300-green-transparent);
-    background-color: var(--secondary-500-white);
-    cursor: pointer;
-}
-
-.filter-btn-homepage a {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    gap: 4px;
-    font-family: Magilio, sans-serif;
-    font-size: 20px;
-    color: var(--neutral-300-black);
-}
-
-.filter-btn-homepage img {
-    width: 40px;
-    height: 40px;
-}
-
-.filter-btn-homepage:hover {
-    background-color: var(--secondary-100-white-transparent);
-}
-
-.filter-btn-homepage:active, .filter-btn-homepage:focus {
-    background-color: var(--secondary-300-green-transparent);
 }
 
 /*--------------------------------------------------------*/
@@ -322,6 +277,7 @@ section {
     justify-content: center;
     align-items: center;
     margin: 0 12px;
+    max-width: 640px;
 }
 
 .post-highlight-section {
@@ -332,6 +288,10 @@ section {
     display: flex;
     flex-direction: column;
     align-items: center;
+}
+
+.text-content-post-highlight {
+    width: 320px;
 }
 
 .img-post-highlight {
@@ -345,11 +305,36 @@ section {
     margin-top: 42px;
 }
 
+@media (min-width: 600px) {
+    .hero-large-text {
+        font-size: 28px;
+    }
+}
+
+@media (min-width: 600px) {
+    .content-about-section, .text-content-post-highlight {
+        margin: 0 22px;
+    }
+}
+
+@media (min-width: 700px) {
+
+    .bg-about-section {
+        background-image: url("/assets/tablet/bg-about-section.jpg");
+    }
+
+    .content-about-section, .text-content-post-highlight {
+        margin: 0 42px;
+    }
+}
+
+
+
 @media (min-width: 834px) {
 
-    /*.hero-bg {*/
-    /*    background-image: url("/assets/tablet/tablet-hero.jpg");*/
-    /*}*/
+    p {
+        margin-top: 22px;
+    }
 
     #left-btn-carousel, #right-btn-carousel {
         width: 42px;
@@ -357,9 +342,9 @@ section {
         padding: 1rem 6px;
     }
 
-    .homepage-filter-btns {
-        width: 100%;
-    }
+   .post-title {
+       font-size: 48px;
+   }
 
     .post-highlight-section {
         flex-direction: row;
@@ -370,6 +355,7 @@ section {
     .text-content-post-highlight {
         display: flex;
         flex-direction: column;
+        margin: 0;
     }
 
     .text-content-post-highlight p {
@@ -385,12 +371,31 @@ section {
         width: 365px;
         height: 320px;
     }
+    .carousel-wrapper, .slide-background-blur, .carousel-ul-container, .post-img {
+        height: 680px;
+    }
+
+    .carousel-section-2-text, .text-content-grid-section {
+        margin-bottom: 42px;
+    }
+
+    .pagination-element {
+        top: 620px;
+    }
+
+}
+
+@media (min-width: 1000px) {
+    p {
+        font-size: 16px;
+    }
 
 }
 
 @media (min-width: 1440px) {
-    .hero-bg {
-        background-image: url("/assets/desktop/desktop-hero.jpg");
+
+    .bg-about-section {
+        background-image: url("/assets/desktop/bg-about-section-desktop.jpg");
     }
 
     .post-highlight-section {
