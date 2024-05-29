@@ -1,3 +1,4 @@
+
 document.addEventListener('DOMContentLoaded', function () {
     const postsContainer = document.querySelector('.ul-all-posts-edit-page');
     const username = sessionStorage.getItem('username');
@@ -7,16 +8,40 @@ document.addEventListener('DOMContentLoaded', function () {
     fetchUserBlogPosts();
 
     const filterButtons = document.querySelectorAll('.filter-btn');
-        filterButtons.forEach(button => {
-            button.addEventListener('click', () => {
-                const filterValue = button.getAttribute('data-filter')
-                if (button.id === 'view-all-edit-page') {
-                    renderPosts(blogPosts);
-                } else {
-                    filterPosts(filterValue, blogPosts);
-                }
-            });
+    const mainFilterButtons = document.querySelectorAll('.main-filter-btn');
+    const viewAllButton = document.getElementById('view-all');
+    const lineDivider = document.querySelector('.line-divider');
+
+    viewAllButton.classList.add('active');
+
+    filterButtons.forEach(button => {
+        button.addEventListener('click', () => {
+            const filterValue = button.getAttribute('data-filter');
+            if (button.id === 'view-all') {
+                resetPostView();
+                renderPosts(blogPosts);
+            } else {
+                filterPosts(filterValue);
+            }
+            removeActiveClass(filterButtons);
+            button.classList.add('active');
         });
+    });
+
+    mainFilterButtons.forEach(button => {
+        button.addEventListener('click', () => {
+            removeActiveClass(mainFilterButtons);
+            hideAllSubcategories();
+            const subcategoryClass = button.id.replace('-filter-btn', '-subcategories');
+            const subcategories = document.querySelector(`.${subcategoryClass}`);
+            if (subcategories) {
+                subcategories.style.display = 'block';
+                lineDivider.style.display = 'block';
+            }
+            button.classList.add('active');
+        });
+    });
+
     function fetchUserBlogPosts() {
         fetch(`https://v2.api.noroff.dev/blog/posts/${username}`, {
             method: 'GET',
@@ -25,16 +50,21 @@ document.addEventListener('DOMContentLoaded', function () {
             .then(res => res.json())
             .then(data => {
                 blogPosts = data.data;
-                data.data.forEach(blogPost => {
-                    postsContainer.appendChild(createBlogPostElement(blogPost));
-                });
+                renderPosts(blogPosts);
             })
             .catch(error => console.error('Error fetching blog posts:', error));
     }
 
+    function renderPosts(posts) {
+        postsContainer.innerHTML = '';
+        posts.forEach(post => {
+            postsContainer.appendChild(createBlogPostElement(post));
+        });
+    }
+
     function createBlogPostElement(blogPost) {
         const date = blogPost.created.slice(0, 10);
-        const element = document.createElement('div');
+        const element = document.createElement('li');
         element.classList.add('single-blog-display-edit');
         element.dataset.id = blogPost.id;
 
@@ -49,94 +79,120 @@ document.addEventListener('DOMContentLoaded', function () {
         }
 
         element.innerHTML = `
-            <li>${blogPost.title}</li>
-            <div class="author-date-edit-page">
-                <li><strong>Author:</strong> ${blogPost.author.name}</li>
-                <li><strong>Date:</strong> ${date}</li>
-            </div>
-            <div class="edit-delete-btns">
-                <button class="edit-btn">Edit</button>
-                <button class="delete-btn">Delete</button>
-                <button class="save-btn">Save</button>
-                <button class="close-btn">Close</button>
-            </div>
-            <div class="edit-dropdown" style="display: none;">
-               <form class="edit-form">
-                   <div class="line-divider"></div>
-                    <label for="img-url-1">Img URL Hero:</label>
-                     <input id="img-url-1" type="text">
-                     <label for="alt-img-1">Image description:</label>
-                     <input id="alt-img-1" type="text">
-                     <label for="title">Title:</label>
-                     <input id="title" type="text">
-                     <div>
-                    <span>Tags</span>
-                    <label for="region">Region</label>
-                    <select name="region" id="region">
-                        <option value="">Select option</option>
-                        <option value="oslo">Oslo</option>
-                        <option value="buskerud">Buskerud</option>
-                        <option value="jotunheimen">Jotunheimen</option>
-                        <option value="rondane">Rondane</option>
-                        <option value="hardanger">Hardanger</option>
-                        <option value="more-romsdal">Møre & Romsdal</option>
-                    </select>
-                    <label for="difficulty">Difficulty</label>
-                    <select name="difficulty" id="difficulty">
-                        <option value="">Select option</option>
-                        <option value="easy">Easy</option>
-                        <option value="medium">Medium</option>
-                        <option value="difficult">Difficult</option>
-                    </select>
-                    <label for="activity">Activity</label>
-                    <select name="activity" id="activity">
-                        <option value="">Select option</option>
-                        <option value="forest">Forest Hiking</option>
-                        <option value="mountain">Mountain Hiking</option>
-                        <option value="difficult">Biking</option>
-                        <option value="climbing">Climbing</option>
-                         <option value="skiing">Skiing</option>
-                    </select>
-                    <label for="season">Season</label>
-                    <select name="season" id="season">
-                       <option value="">Select option</option>
-                        <option value="ssa">Spring, Summer & Autumn</option>
-                        <option value="winter">Winter</option>
-                    </select>
+            <div class="wrapper-edit-card">
+                <div class="title-card-edit-page">${blogPost.title}</div>
+                <div class="line-divider-card-edit-page"></div>
+                <div class="author-date-edit-page">
+                    <span><strong>Author:</strong> ${blogPost.author.name}</span>
+                    <span><strong>Date:</strong> ${date}</span>
                 </div>
-                     <label for="paragraph-1">First paragraph:</label>
-                     <textarea id="paragraph-1"  cols="100" rows="20"></textarea>
-                      <label for="img-url-2">Img URL:</label>
-                     <input id="img-url-2" type="text">
-                     <label for="alt-img-2">Image description:</label>
-                     <input id="alt-img-2" type="text">
-                     <label for="paragraph-2">Second paragraph:</label>
-                     <textarea id="paragraph-2"  cols="100" rows="20"></textarea>
-                      <label for="img-url-3">Img URL:</label>
-                     <input id="img-url-3" type="text">
-                     <label for="alt-img-3">Image description:</label>
-                     <input id="alt-img-3" type="text">
-                     <label for="paragraph-3">Details:</label>
-                     <textarea id="paragraph-3"  cols="100" rows="8"></textarea>
-                 </form>
+                <div class="edit-delete-btns">
+                    <button class="edit-btn">Edit</button>
+                    <button class="delete-btn">Delete</button>
+                    <button class="save-btn">Save</button>
+                    <button class="close-btn">Close</button>
+                </div>
+                <div class="edit-dropdown" style="display: none;">
+                    <div class="line-divider-card-edit-page"></div>
+                    <section id="create-post-form-section-wrapping">
+                        <form class="edit-form">
+                            <label for="img-url-1">Img URL Hero:</label>
+                            <input id="img-url-1" type="text">
+                            <label for="alt-img-1">Image description:</label>
+                            <input id="alt-img-1" type="text">
+                            <label for="title">Title:</label>
+                            <input id="title" type="text">
+                            <div class="tags-wrapper">
+                                <span class="tags">Tags:</span>
+                                <div class="select-wrapper">
+                                    <div class="label-select-wrapper">
+                                        <label for="region">Region</label>
+                                        <select id="region" name="region">
+                                            <option value="">Select option</option>
+                                            <option value="oslo">Oslo</option>
+                                            <option value="buskerud">Buskerud</option>
+                                            <option value="jotunheimen">Jotunheimen</option>
+                                            <option value="rondane">Rondane</option>
+                                            <option value="hardanger">Hardanger</option>
+                                            <option value="more-romsdal">Møre & Romsdal</option>
+                                        </select>
+                                    </div>
+                                    <div class="label-select-wrapper">
+                                        <label for="difficulty">Difficulty</label>
+                                        <select id="difficulty" name="difficulty">
+                                            <option value="">Select option</option>
+                                            <option value="easy">Easy</option>
+                                            <option value="medium">Medium</option>
+                                            <option value="difficult">Difficult</option>
+                                        </select>
+                                    </div>
+                                    <div class="label-select-wrapper">
+                                        <label for="season">Season</label>
+                                        <select id="season" name="season">
+                                            <option value="">Select option</option>
+                                            <option value="ssa">Spring, Summer & Autumn</option>
+                                            <option value="winter">Winter</option>
+                                        </select>
+                                    </div>
+                                    <div class="label-select-wrapper">
+                                        <label for="activity">Activity</label>
+                                        <select id="activity" name="activity">
+                                            <option value="">Select option</option>
+                                            <option value="forest">Forest Hiking</option>
+                                            <option value="mountain">Mountain Hiking</option>
+                                            <option value="biking">Biking</option>
+                                            <option value="climbing">Climbing</option>
+                                            <option value="skiing">Skiing</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                            <label for="paragraph-1">First paragraph:</label>
+                            <textarea cols="100" id="paragraph-1" rows="20"></textarea>
+                            <label for="img-url-2">Img URL:</label>
+                            <input id="img-url-2" type="text">
+                            <label for="alt-img-2">Image description:</label>
+                            <input id="alt-img-2" type="text">
+                            <label for="paragraph-2">Second paragraph:</label>
+                            <textarea cols="100" id="paragraph-2" rows="20"></textarea>
+                            <label for="img-url-3">Img URL:</label>
+                            <input id="img-url-3" type="text">
+                            <label for="alt-img-3">Image description:</label>
+                            <input id="alt-img-3" type="text">
+                            <label for="paragraph-3">Details:</label>
+                            <textarea cols="100" id="paragraph-3" rows="8">
+                            </textarea>
+                        </form>
+                    </section>
+                </div>
             </div>
         `;
         attachButtonListeners(element);
         return element;
     }
 
-    function renderPosts(posts) {
-        postsContainer.innerHTML = '';
-        posts.forEach(post => {
-            postsContainer.appendChild(createBlogPostElement(post));
-        })
+    function filterPosts(filter) {
+        const filteredPosts = blogPosts.filter(post => {
+            return post.tags && post.tags.some(tag => typeof tag === 'string' && tag === filter);
+        });
+        resetPostView();
+        renderPosts(filteredPosts);
     }
 
-    function filterPosts(filter, posts) {
-        const filteredPosts = posts.filter(post => {
-            return post.tags && post.tags.some(tag => tag.toLowerCase() === filter.toLowerCase())
+    function resetPostView() {
+        postsContainer.innerHTML = '';
+    }
+
+    function removeActiveClass(buttons) {
+        buttons.forEach(btn => btn.classList.remove('active'));
+    }
+
+    function hideAllSubcategories() {
+        const allSubcategories = document.querySelectorAll('.wrapper-subcategories');
+        allSubcategories.forEach(subcat => {
+            subcat.style.display = 'none';
         });
-        renderPosts(filteredPosts);
+        lineDivider.style.display = 'none';
     }
 
     function attachButtonListeners(element) {
@@ -187,13 +243,11 @@ document.addEventListener('DOMContentLoaded', function () {
         editDropdown.querySelector('#img-url-1').value = media.url || '';
         editDropdown.querySelector('#alt-img-1').value = media.alt || '';
 
-        // Set the tags in the select elements
         const tagMap = {
             'region': ['oslo', 'buskerud', 'jotunheimen', 'rondane', 'hardanger', 'more-romsdal'],
             'difficulty': ['easy', 'medium', 'difficult'],
             'season': ['ssa', 'winter'],
-            'activity': ['forest', 'mountain', 'biking', 'climbing'],
-            'travel-duration': ['day-trip', 'weekend', 'vacation']
+            'activity': ['forest', 'mountain', 'biking', 'climbing']
         };
 
         Object.keys(tagMap).forEach(tagKey => {
@@ -239,7 +293,6 @@ document.addEventListener('DOMContentLoaded', function () {
         const heroImageUrl = form.querySelector('#img-url-1').value.trim();
         const heroImageAlt = form.querySelector('#alt-img-1').value.trim();
 
-        // Collect selected tags from dropdowns
         const region = form.querySelector('#region').value.trim();
         const difficulty = form.querySelector('#difficulty').value.trim();
         const season = form.querySelector('#season').value.trim();
@@ -254,20 +307,18 @@ document.addEventListener('DOMContentLoaded', function () {
             return `<li><strong>${firstWord}</strong>${restOfLine}</li>`;
         }).join('');
         let body = `
-    <p>${form.querySelector('#paragraph-1').value.trim()}</p>
-    <img class="img-2" src="${form.querySelector('#img-url-2').value.trim()}" alt="${form.querySelector('#alt-img-2').value.trim()}">
-    <p>${form.querySelector('#paragraph-2').value.trim()}</p>
-    <div class="details-section-wrapper">
-    <img class="details-img" src="${form.querySelector('#img-url-3').value.trim()}" alt="${form.querySelector('#alt-img-3').value.trim()}">
-    <div class="details-wrapper">
-        <h2>Details</h2>
-        <ul>${details}</ul>
-    </div>
-    </div>
-`;
+            <p>${form.querySelector('#paragraph-1').value.trim()}</p>
+            <img class="img-2" src="${form.querySelector('#img-url-2').value.trim()}" alt="${form.querySelector('#alt-img-2').value.trim()}">
+            <p>${form.querySelector('#paragraph-2').value.trim()}</p>
+            <div class="details-section-wrapper">
+                <img class="details-img" src="${form.querySelector('#img-url-3').value.trim()}" alt="${form.querySelector('#alt-img-3').value.trim()}">
+                <div class="details-wrapper">
+                    <h2>Details</h2>
+                    <ul>${details}</ul>
+                </div>
+            </div>
+        `;
 
-
-        // Create updated post data object
         const updatedPostData = {
             title: title,
             tags: tags,
@@ -321,6 +372,4 @@ document.addEventListener('DOMContentLoaded', function () {
             'Authorization': `Bearer ${sessionStorage.getItem('accessToken')}`
         };
     }
-
-    fetchUserBlogPosts();
 });
