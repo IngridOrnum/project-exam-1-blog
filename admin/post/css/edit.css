@@ -1,17 +1,26 @@
 .ul-all-posts-edit-page {
     list-style: none;
     display: flex;
-    flex-direction: column;
+    justify-content: center;
+    flex-wrap: wrap;
     gap: 2rem;
     padding: 0;
+    max-width: 840px;
+}
+
+.div-all-posts-edit-page {
+    display: flex;
+    justify-content: center;
+    margin-top: 42px;
 }
 
 .single-blog-display-edit {
     display: flex;
     flex-direction: column;
     gap: .5rem;
-    border: black solid 1px;
+    border: var(--secondary-300-green-transparent) solid 2px;
     padding: 1rem;
+    border-radius: 6px;
 }
 
 .author-date-edit-page {
@@ -21,6 +30,29 @@
 
 .edit-delete-btns {
     display: flex;
+    justify-content: center;
+    gap: 12px;
+}
+
+.edit-delete-btns button {
+    border-radius: 6px;
+    color: var(--neutral-500-white);
+    font-family: Montserrat, sans-serif;
+    font-size: 16px;
+    text-transform: uppercase;
+    border: none;
+}
+
+.edit-btn, .save-btn {
+    background-color: var(--primary-500-darkgreen);
+}
+
+.delete-btn {
+    background-color: var(--error-300);
+}
+
+.close-btn {
+    display: none;
 }
 
 .save-btn, .close-btn {
@@ -50,6 +82,7 @@
     margin: 10px 0;
     background-color: #919191;
 }
+
 
 @media (min-width: 834px) {
 }

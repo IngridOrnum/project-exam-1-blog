@@ -49,10 +49,10 @@ document.addEventListener('DOMContentLoaded', function () {
         }
 
         element.innerHTML = `
-            <li>Title: ${blogPost.title}</li>
+            <li>${blogPost.title}</li>
             <div class="author-date-edit-page">
-                <li>Author: ${blogPost.author.name}</li>
-                <li>Date: ${date}</li>
+                <li><strong>Author:</strong> ${blogPost.author.name}</li>
+                <li><strong>Date:</strong> ${date}</li>
             </div>
             <div class="edit-delete-btns">
                 <button class="edit-btn">Edit</button>
