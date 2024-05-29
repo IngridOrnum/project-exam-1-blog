@@ -4,6 +4,15 @@ h2 {
     margin-bottom: 22px;
 }
 
+.auth-and-date {
+    display: flex;
+    margin-bottom: 42px;
+    margin-top: -12px;
+    gap: 12px;
+    font-family: "Goudy Bookletter 1911", sans-serif;
+    color: #636363;
+}
+
 .img-2, .details-img {
     width: 800px;
     height: 400px;
@@ -163,5 +172,10 @@ strong {
 @media (min-width: 1440px) {
     .bg-title {
         top: 620px;
+    }
+
+    .auth-and-date {
+        font-size: 20px;
+        margin-top: 0;
     }
 }

@@ -1,3 +1,7 @@
+#nav-bar-about-page {
+    background-color: #DBDDC5;
+}
+
 .bg-about-page {
     background-image: url("/assets/mobile/bg-about-page-mobile.jpg");
     background-position: center;
@@ -5,6 +9,62 @@
     background-size: cover;
     display: flex;
     flex-direction: column;
-    justify-content: center;
     align-items: center;
+    height: 648px;
 }
+
+#footer-about-page {
+    margin-top: 0;
+}
+
+.title-about-page {
+    margin-top: 42px;
+    margin-bottom: 22px;
+}
+
+.p-about-page {
+    color: var(--neutral-300-black);
+    padding: 0 22px;
+}
+
+.small-text-about-page {
+    font-family: "Goudy Bookletter 1911", sans-serif;
+    margin-top: 42px;
+    font-size: 18px;
+    color: var(--neutral-300-black);
+}
+
+@media (min-width: 700px) {
+
+    .bg-about-page {
+        background-image: url("/assets/tablet/bg-about-page.jpg");
+        height: 648px;
+    }
+
+    .p-about-page {
+        padding: 0 42px;
+        text-align: left;
+    }
+
+    .title-about-page {
+        margin-top: 82px;
+        margin-bottom: 42px;
+    }
+
+}
+
+@media (min-width: 1000px) {
+    p.p-about-page {
+        width: 800px;
+    }
+}
+
+
+@media (min-width: 1400px) {
+    .bg-about-page {
+        background-image: url("/assets/desktop/bg-about-page-desktop.jpg");
+        height: 869px;
+    }
+}
+
+
