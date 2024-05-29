@@ -10,7 +10,7 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    height: 648px;
+    height: 100vh;
 }
 
 #footer-about-page {
@@ -38,7 +38,7 @@
 
     .bg-about-page {
         background-image: url("/assets/tablet/bg-about-page.jpg");
-        height: 648px;
+        /*height: 648px;*/
     }
 
     .p-about-page {
@@ -63,7 +63,7 @@
 @media (min-width: 1400px) {
     .bg-about-page {
         background-image: url("/assets/desktop/bg-about-page-desktop.jpg");
-        height: 869px;
+        /*height: 869px;*/
     }
 }
 

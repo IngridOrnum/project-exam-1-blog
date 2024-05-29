@@ -10,7 +10,7 @@ function displayNameWelcome() {
         .then(data => {
             const username = sessionStorage.getItem('username');
             welcomeTitle.innerHTML = `
-    <h1>Welcome, ${username}!</h1>
+    <h1 class="h1-admin">Welcome, ${username}!</h1>
     `
         })
         .catch(error => console.log(error));

@@ -5,78 +5,124 @@
     <title>Nordic Trekking ✵ Create Post</title>
     <link href="css/edit.css" rel="stylesheet">
     <link href="css/make.css" rel="stylesheet">
-    <script src="js/make.js" defer></script>
+    <link href="css/admin-landingpage.css" rel="stylesheet">
+    <link href="../../user/css/styles.css" rel="stylesheet">
+    <script defer src="js/make.js"></script>
+    <script defer src="../../user/js/main.js"></script>
+    <script crossorigin="anonymous" src="https://kit.fontawesome.com/eaf3f254a9.js"></script>
 </head>
 <body>
+    <nav class="nav-bar">
+        <div class="content-nav-bar">
+            <span><a class="logo" href="index.html">Nordic Trekking</a></span>
+            <div class="nav-links-wrapper">
+                <span><a class="nav-link" href="index.html">HOME</a></span>
+                <span><a class="nav-link" href="make.html">NEW POST</a></span>
+                <span><a class="nav-link" href="edit.html">EDIT POSTS</a></span>
+            </div>
+            <button class="burger-menu" onclick="openDropdown()"><i class="fa-solid fa-bars fa-lg"></i>
+            </button>
+        </div>
+        <div class="nav-dropdown">
+            <button class="close-btn-nav-dropdown" onclick="closeDropdown()">
+                <i class="fa-solid fa-x fa-lg"></i>
+            </button>
+            <div class="wrapper-nav-link-dropdown" onclick="closeDropdownThroughLinks()">
+                <span><a class="nav-link" href="index.html">HOME</a></span>
+                <span><a class="nav-link" href="make.html">New Post</a></span>
+                <span><a class="nav-link" href="edit.html">Edit Posts</a></span>
+            </div>
+        </div>
+    </nav>
     <main>
-        <h1>Create post</h1>
-        <section id="create-post-form-section-wrapping">
-            <form class="edit-form">
-                <button type="submit" id="create-post-btn">Create and publish blog post</button>
-                <div class="line-divider"></div>
-                <label for="img-url-1">Img URL Hero:</label>
-                <input id="img-url-1" type="text">
-                <label for="alt-img-1">Image description:</label>
-                <input id="alt-img-1" type="text">
-                <label for="title">Title:</label>
-                <input id="title" type="text">
-                <div>
-                    <span>Tags</span>
-                    <label for="region">Region</label>
-                    <select name="region" id="region">
-                        <option value="">Select option</option>
-                        <option value="oslo">Oslo</option>
-                        <option value="buskerud">Buskerud</option>
-                        <option value="jotunheimen">Jotunheimen</option>
-                        <option value="rondane">Rondane</option>
-                        <option value="hardanger">Hardanger</option>
-                        <option value="more-romsdal">Møre & Romsdal</option>
-                    </select>
-                    <label for="difficulty">Difficulty</label>
-                    <select name="difficulty" id="difficulty">
-                        <option value="">Select option</option>
-                        <option value="easy">Easy</option>
-                        <option value="medium">Medium</option>
-                        <option value="difficult">Difficult</option>
-                    </select>
-                    <label for="season">Season</label>
-                    <select name="season" id="season">
-                        <option value="">Select option</option>
-                        <option value="ssa">Spring, Summer & Autumn</option>
-                        <option value="winter">Winter</option>
-                    </select>
-                    <label for="activity">Activity</label>
-                    <select name="activity" id="activity">
-                        <option value="">Select option</option>
-                        <option value="forest">Forest Hiking</option>
-                        <option value="mountain">Mountain Hiking</option>
-                        <option value="difficult">Biking</option>
-                        <option value="climbing">Climbing</option>
-                        <option value="skiing">Skiing</option>
-                    </select>
-                </div>
-                <label for="paragraph-1">First paragraph:</label>
-                <textarea id="paragraph-1"  cols="100" rows="20"></textarea>
-                <label for="img-url-2">Img URL:</label>
-                <input id="img-url-2" type="text">
-                <label for="alt-img-2">Image description:</label>
-                <input id="alt-img-2" type="text">
-                <label for="paragraph-2">Second paragraph:</label>
-                <textarea id="paragraph-2"  cols="100" rows="20"></textarea>
-                <label for="img-url-3">Img URL:</label>
-                <input id="img-url-3" type="text">
-                <label for="alt-img-3">Image description:</label>
-                <input id="alt-img-3" type="text">
-                <label for="paragraph-3">Details:</label>
-                <textarea id="paragraph-3"  cols="100" rows="8">
+        <div class="main-content-admin">
+            <h1>Create New Post</h1>
+            <section id="create-post-form-section-wrapping">
+                <form class="edit-form">
+                    <label for="img-url-1">Img URL Hero:</label>
+                    <input id="img-url-1" type="text">
+                    <label for="alt-img-1">Image description:</label>
+                    <input id="alt-img-1" type="text">
+                    <label for="title">Title:</label>
+                    <input id="title" type="text">
+                    <div class="tags-wrapper">
+                        <span class="tags">Tags:</span>
+                        <div class="select-wrapper">
+                            <div class="label-select-wrapper">
+                                <label for="region">Region</label>
+                                <select id="region" name="region">
+                                    <option value="">Select option</option>
+                                    <option value="oslo">Oslo</option>
+                                    <option value="buskerud">Buskerud</option>
+                                    <option value="jotunheimen">Jotunheimen</option>
+                                    <option value="rondane">Rondane</option>
+                                    <option value="hardanger">Hardanger</option>
+                                    <option value="more-romsdal">Møre & Romsdal</option>
+                                </select>
+                            </div>
+                            <div class="label-select-wrapper">
+                                <label for="difficulty">Difficulty</label>
+                                <select id="difficulty" name="difficulty">
+                                    <option value="">Select option</option>
+                                    <option value="easy">Easy</option>
+                                    <option value="medium">Medium</option>
+                                    <option value="difficult">Difficult</option>
+                                </select>
+                            </div>
+                            <div class="label-select-wrapper">
+                                <label for="season">Season</label>
+                                <select id="season" name="season">
+                                    <option value="">Select option</option>
+                                    <option value="ssa">Spring, Summer & Autumn</option>
+                                    <option value="winter">Winter</option>
+                                </select>
+                            </div>
+                            <div class="label-select-wrapper">
+                                <label for="activity">Activity</label>
+                                <select id="activity" name="activity">
+                                    <option value="">Select option</option>
+                                    <option value="forest">Forest Hiking</option>
+                                    <option value="mountain">Mountain Hiking</option>
+                                    <option value="difficult">Biking</option>
+                                    <option value="climbing">Climbing</option>
+                                    <option value="skiing">Skiing</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                    <label for="paragraph-1">First paragraph:</label>
+                    <textarea cols="100" id="paragraph-1" rows="20"></textarea>
+                    <label for="img-url-2">Img URL:</label>
+                    <input id="img-url-2" type="text">
+                    <label for="alt-img-2">Image description:</label>
+                    <input id="alt-img-2" type="text">
+                    <label for="paragraph-2">Second paragraph:</label>
+                    <textarea cols="100" id="paragraph-2" rows="20"></textarea>
+                    <label for="img-url-3">Img URL:</label>
+                    <input id="img-url-3" type="text">
+                    <label for="alt-img-3">Image description:</label>
+                    <input id="alt-img-3" type="text">
+                    <label for="paragraph-3">Details:</label>
+                    <textarea cols="100" id="paragraph-3" rows="8">
 Location:
 Difficulty:
 Length:
 Season:
 Elevation:
                 </textarea>
-            </form>
-        </section>
+                    <div class="create-post-btn-wrapper">
+                        <button id="create-post-btn" type="submit">Create and publish blog post</button>
+                    </div>
+                </form>
+            </section>
+        </div>
     </main>
+    <footer>
+        <div class="bg-footer" id="footer-admin">
+            <div class="footer-text">
+                <span class="logo-footer"><a href="index.html">Nordic trekking</a></span>
+            </div>
+        </div>
+    </footer>
 </body>
 </html>
