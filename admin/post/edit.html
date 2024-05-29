@@ -4,10 +4,37 @@
     <meta charset="UTF-8">
     <title>Nordic Trekking ✵ Edit Posts</title>
     <link href="css/edit.css" rel="stylesheet">
+    <link href="css/admin-landingpage.css" rel="stylesheet">
+    <link href="../../user/css/styles.css" rel="stylesheet">
     <script src="js/edit.js" defer></script>
+    <script src="../../user/js/main.js" defer></script>
+    <script crossorigin="anonymous" src="https://kit.fontawesome.com/eaf3f254a9.js"></script>
 </head>
 <body>
+    <nav class="nav-bar">
+        <div class="content-nav-bar">
+            <span><a class="logo" href="index.html">Nordic Trekking</a></span>
+            <div class="nav-links-wrapper">
+                <span><a class="nav-link" href="index.html">HOME</a></span>
+                <span><a class="nav-link" href="make.html">NEW POST</a></span>
+                <span><a class="nav-link" href="edit.html">EDIT POSTS</a></span>
+            </div>
+            <button class="burger-menu" onclick="openDropdown()"><i class="fa-solid fa-bars fa-lg"></i>
+            </button>
+        </div>
+        <div class="nav-dropdown">
+            <button class="close-btn-nav-dropdown" onclick="closeDropdown()">
+                <i class="fa-solid fa-x fa-lg"></i>
+            </button>
+            <div class="wrapper-nav-link-dropdown" onclick="closeDropdownThroughLinks()">
+                <span><a class="nav-link" href="index.html">HOME</a></span>
+                <span><a class="nav-link" href="make.html">New Post</a></span>
+                <span><a class="nav-link" href="edit.html">Edit Posts</a></span>
+            </div>
+        </div>
+    </nav>
     <main>
+        <div class="main-content-admin">
         <h1>Edit posts</h1>
         <div class="filter-function">
             <button class="filter-btn" id="view-all-edit-page">View all posts</button>
@@ -36,6 +63,14 @@
         <div class="div-all-posts-edit-page">
             <ul class="ul-all-posts-edit-page"></ul>
         </div>
+        </div>
     </main>
+    <footer>
+        <div class="bg-footer" id="footer-admin">
+            <div class="footer-text">
+                <span class="logo-footer"><a href="index.html">Nordic trekking</a></span>
+            </div>
+        </div>
+    </footer>
 </body>
 </html>

@@ -1,9 +1,109 @@
 
-#create-post-btn {
-    width: 220px;
-    padding: 1rem;
-    cursor: pointer;
+label, .tags {
+    font-family: Montserrat, sans-serif;
+    color: var(--primary-500-darkgreen);
+    font-weight: 400;
+    margin-top: 22px;
 }
+.edit-form {
+    width: 370px;
+}
+
+#create-post-form-section-wrapping {
+    margin-top: 22px;
+}
+
+input, textarea, select {
+    font-family: Montserrat, sans-serif;
+    font-size: 16px;
+    font-weight: 500;
+    border: var(--secondary-300-green-transparent) 2px solid;
+    border-radius: 4px;
+    background-color: var(--neutral-500-white);
+}
+
+.edit-form input {
+    height: 40px;
+    width: 370px;
+    padding: 0 12px;
+}
+
+input:focus {
+    border: var(--primary-500-darkgreen) solid 2px;
+}
+
+textarea, select {
+    padding: 8px 12px;
+}
+
+.tags-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 22px;
+}
+
+.select-wrapper {
+    flex-wrap: wrap;
+}
+
+.select-wrapper label {
+    margin-top: 0;
+}
+
+.label-select-wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 12px;
+}
+
+select {
+    font-weight: 300;
+    color: var(--neutral-500-white);
+    letter-spacing: 2px;
+    width: 260px;
+    background-color: var(--secondary-300-green-transparent);
+    cursor: pointer;
+
+}
+
+#create-post-btn {
+    font-family: Montserrat, sans-serif;
+    font-size: 16px;
+    width: 370px;
+    height: 58px;
+    cursor: pointer;
+    background-color: var(--primary-500-darkgreen);
+    color: var(--neutral-500-white);
+    letter-spacing: 2px;
+    border-radius: 6px;
+    text-transform: uppercase;
+    border: var(--primary-500-darkgreen) solid 2px;
+    margin-top: 42px;
+}
+
+#create-post-btn:hover {
+    background-color: transparent;
+    color: var(--primary-500-darkgreen);
+}
+
+.create-post-btn-wrapper {
+    display: flex;
+    justify-content: center;
+}
+
+@media (min-width: 700px) {
+    .edit-form, .edit-form input {
+        width: 580px;
+    }
+
+    .select-wrapper {
+        width: 380px;
+    }
+
+}
+
+
 
 @media (min-width: 834px) {
 }
