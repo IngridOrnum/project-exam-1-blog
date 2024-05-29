@@ -6,25 +6,33 @@
     <script defer src="js/login.js"></script>
     <script src="../post/js/edit.js" defer></script>
     <script src="../../user/js/main.js" defer></script>
+    <link href="css/login-and-register.css" rel="stylesheet">
+    <link href="../post/css/admin-landingpage.css" rel="stylesheet">
+    <link href="../../user/css/styles.css" rel="stylesheet">
 </head>
 <body>
+    <nav>
+        <span class="logo-admin-register-login">Nordic Trekking</span>
+    </nav>
     <main class="login">
-        <h1>LOGIN</h1>
+        <div class="content-login-page">
+        <h1 class="h1-login-and-register">LOGIN</h1>
         <form class="login-form">
-<!--                action="../post/edit.html" -->
             <div class="inputs-login-form">
                 <label for="email-login"></label>
                 <input id="email-login" placeholder="Email" type="text">
                 <label for="password-login"></label>
                 <input id="password-login" placeholder="Password" type="password">
-                <button class="button" id="login-btn" type="submit">Login</button>
+                <button class="btn-admin" id="login-btn" type="submit">Login</button>
             </div>
         </form>
         <span id="login-error-message">Please fill in all input fields</span>
-        
-        <div>
-            <div>Don't have an account yet?</div>
-            <button class="button"><a href="register.html">Register</a></button>
+        <div class="register-option">
+            <div class="text-option">Don't have an account yet?</div>
+            <form action="register.html">
+                <button class="btn-admin" id="register-btn-option">Register</button>
+            </form>
+        </div>
         </div>
     </main>
 </body>

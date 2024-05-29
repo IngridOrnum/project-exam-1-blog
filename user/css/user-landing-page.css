@@ -305,6 +305,14 @@ p {
     margin-top: 42px;
 }
 
+#besseggen-btn a {
+    color: var(--neutral-500-white);
+}
+
+#besseggen-btn:hover a {
+    color: var(--secondary-200-green)
+}
+
 @media (min-width: 600px) {
     .hero-large-text {
         font-size: 28px;

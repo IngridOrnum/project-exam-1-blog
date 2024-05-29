@@ -114,6 +114,7 @@ document.addEventListener('DOMContentLoaded', function () {
                                             <option value="jotunheimen">Jotunheimen</option>
                                             <option value="rondane">Rondane</option>
                                             <option value="hardanger">Hardanger</option>
+                                            <option value="nordland">Nordland</option>
                                             <option value="more-romsdal">Møre & Romsdal</option>
                                         </select>
                                     </div>
@@ -141,7 +142,6 @@ document.addEventListener('DOMContentLoaded', function () {
                                             <option value="forest">Forest Hiking</option>
                                             <option value="mountain">Mountain Hiking</option>
                                             <option value="biking">Biking</option>
-                                            <option value="climbing">Climbing</option>
                                             <option value="skiing">Skiing</option>
                                         </select>
                                     </div>

@@ -60,23 +60,39 @@
 
 .edit-delete-btns button {
     border-radius: 6px;
-    color: var(--neutral-500-white);
     font-family: Montserrat, sans-serif;
     font-size: 16px;
     text-transform: uppercase;
-    border: none;
+    transition: 0.3s ease;
 }
 
 .edit-btn, .save-btn {
     background-color: var(--primary-500-darkgreen);
+    color: var(--neutral-500-white);
+    border: var(--primary-500-darkgreen) solid 1px;
+}
+
+.edit-btn:hover, .save-btn:hover {
+    background-color: transparent;
+    color: var(--primary-500-darkgreen);
 }
 
 .delete-btn {
     background-color: var(--error-300);
+    color: var(--neutral-500-white);
+    border: var(--error-300) solid 1px;
+}
+
+.delete-btn:hover {
+    background-color: transparent;
+    color: var(--primary-500-darkgreen);
 }
 
 .close-btn {
     display: none;
+    background-color: transparent;
+    border: var(--primary-500-darkgreen) solid 1px;
+    color: var(--primary-500-darkgreen);
 }
 
 .save-btn, .close-btn {
