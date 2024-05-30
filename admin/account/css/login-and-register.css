@@ -28,7 +28,7 @@ nav {
     flex-direction: column;
 }
 
-.content-register-page, .content-login-page, .login-option, .register-option  {
+.content-register-page, .content-login-page, .login-option, .register-option {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -85,17 +85,19 @@ input {
     font-style: italic;
 }
 
-#login-error-message, #register-error-message {
+#empty-login-error-message, #false-input-login-error-message, #register-error-message {
+    font-family: Montserrat, sans-serif;
+    color: var(--warning-300);
     display: none;
+    margin-bottom: 12px;
 }
 
-@media(min-width: 600px) {
-
-input {
-    height: 58px;
-    width: 365px;
-    font-size: 20px;
-}
+@media (min-width: 600px) {
+    input {
+        height: 58px;
+        width: 365px;
+        font-size: 20px;
+    }
 
     #register-btn-option, #login-btn-option {
         width: 365px;

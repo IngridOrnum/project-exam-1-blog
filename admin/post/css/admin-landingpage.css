@@ -14,8 +14,9 @@
 }
 
 .h1-admin {
-   font-size: 26px;
+   font-size: 24px;
     color: var(--primary-500-darkgreen);
+    font-weight: 700;
 }
 
 .p-admin {

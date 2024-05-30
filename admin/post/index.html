@@ -2,10 +2,10 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
     <title>Nordic Trekking ✵ Home Admin</title>
-    <script src="js/admin-homepage.js" defer></script>
-    <script src="../../user/js/main.js" defer></script>
+    <script defer src="js/admin-homepage.js"></script>
+    <script defer src="../../user/js/main.js"></script>
     <link href="css/admin-landingpage.css" rel="stylesheet">
     <link href="../../user/css/styles.css" rel="stylesheet">
     <script crossorigin="anonymous" src="https://kit.fontawesome.com/eaf3f254a9.js"></script>
@@ -19,7 +19,8 @@
                 <span><a class="nav-link" href="make.html">NEW POST</a></span>
                 <span><a class="nav-link" href="edit.html">EDIT POSTS</a></span>
             </div>
-            <button class="burger-menu" onclick="openDropdown()"><i class="fa-solid fa-bars fa-lg"></i>
+            <button class="burger-menu" onclick="openDropdown()">
+                <i class="fa-solid fa-bars fa-xl"></i>
             </button>
         </div>
         <div class="nav-dropdown">
@@ -33,20 +34,20 @@
             </div>
         </div>
     </nav>
-<main>
-    <div class="main-content-admin main-content-admin-landingpage">
-    <div id="welcome-title"></div>
-    <p class="p-admin">What do you want to do today?</p>
-    <div class="buttons-wrapper-admin-landingpage">
-        <form action="../post/make.html">
-            <button class="btn-admin">Create New Post</button>
-        </form>
-        <form action="../post/edit.html">
-            <button class="btn-admin">Edit or Delete Post</button>
-        </form>
-    </div>
-    </div>
-</main>
+    <main>
+        <div class="main-content-admin main-content-admin-landingpage">
+            <div id="welcome-title"></div>
+            <p class="p-admin">What do you want to do today?</p>
+            <div class="buttons-wrapper-admin-landingpage">
+                <form action="../post/make.html">
+                    <button class="btn-admin">Create New Post</button>
+                </form>
+                <form action="../post/edit.html">
+                    <button class="btn-admin">Edit or Delete Post</button>
+                </form>
+            </div>
+        </div>
+    </main>
     <footer>
         <div class="bg-footer" id="footer-admin">
             <div class="footer-text">

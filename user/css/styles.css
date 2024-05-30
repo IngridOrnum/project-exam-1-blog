@@ -15,21 +15,21 @@
     --error-300: #C93232;
 }
 
-body {
-    background-color: var(--neutral-500-white);
-    scroll-behavior: smooth;
-}
-
 * {
     margin: 0;
     box-sizing: border-box;
 }
 
+body {
+    background-color: var(--neutral-500-white);
+    scroll-behavior: smooth;
+}
+
 .userpages-main-content {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
 nav {
@@ -59,6 +59,10 @@ nav {
     background-color: transparent;
     cursor: pointer;
     padding: 0;
+}
+
+.fa-bars {
+    color: var(--neutral-300-black);
 }
 
 .fa-x {
@@ -193,11 +197,6 @@ button {
     border: 2px solid var(--primary-500-darkgreen);
 }
 
-
-/*--------------------------------------------------------*/
-
-/* THUMBNAIL */
-
 .post-grid-container {
     display: grid;
     grid-template-columns: repeat(1, 1fr);
@@ -208,7 +207,7 @@ button {
     border-radius: 6px;
 }
 
-.element-thumbnail:hover .bg-blur-thumbnail{
+.element-thumbnail:hover .bg-blur-thumbnail {
     backdrop-filter: blur(10px);
     transition: 0.3s ease;
 }
@@ -265,10 +264,6 @@ button {
     justify-content: center;
     align-items: center;
 }
-
-/*--------------------------------------------------------*/
-
-/* FOOTER */
 
 footer {
     height: 478px;
@@ -355,7 +350,6 @@ footer {
 }
 
 @media (min-width: 834px) {
-
     section {
         margin-top: 82px;
     }
@@ -384,8 +378,6 @@ footer {
     h2 {
         font-size: 24px;
     }
-
-
 }
 
 @media (min-width: 1158px) {
@@ -393,13 +385,12 @@ footer {
         grid-template-columns: repeat(3, 1fr);
         gap: 42px;
     }
-
 }
 
 @media (min-width: 1440px) {
-   h1 {
-       font-size: 68px;
-   }
+    h1 {
+        font-size: 68px;
+    }
 
     h2 {
         font-size: 28px;
@@ -431,7 +422,6 @@ footer {
     .bg-footer {
         background-image: url("/assets/desktop/bg-footer-desktop.jpg");
     }
-
 }
 
 @media (min-width: 1600px) {
