@@ -61,6 +61,10 @@ nav {
     padding: 0;
 }
 
+.fa-bars {
+    color: var(--neutral-300-black);
+}
+
 .fa-x {
     color: var(--primary-500-darkgreen);
 }
