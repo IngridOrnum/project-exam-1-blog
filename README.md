@@ -49,8 +49,6 @@ For further development of this blog, I would like to add folloging features:
 ## Deployment and Project Links
 * [Vercel Deployment User](https://project-exam-1-blog.vercel.app/user/index.html)
 * [Vercel Deployment Admin](https://project-exam-1-blog.vercel.app/admin/account/login.html)
-  * email: ingrid.ornum@stud.noroff.no
-  * password: iLoveFlexbox
 * [GitHub Repository](https://github.com/IngridOrnum/project-exam-1-blog)
 * [GitHub Board](https://github.com/users/IngridOrnum/projects/11/views/1)
 * [Figma Design](https://www.figma.com/design/h2OCILAUmPbyg0Pa2o1TzH/Exam-Project-1?node-id=1%3A5&t=MMt9nOGpAecWT2rN-1)
