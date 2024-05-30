@@ -7,11 +7,11 @@
 .ul-all-posts-edit-page {
     list-style: none;
     display: flex;
-    flex-direction: column;
     justify-content: center;
     gap: 2rem;
     padding: 0;
     max-width: 840px;
+    flex-wrap: wrap;
 }
 
 .wrapper-edit-card {
@@ -30,8 +30,8 @@
     border: var(--secondary-300-green-transparent) solid 2px;
     padding: 1rem;
     border-radius: 6px;
-    width: 420px;
     list-style: none;
+    margin: 0 12px;
 }
 
 .title-card-edit-page {
@@ -50,6 +50,7 @@
 .author-date-edit-page {
     display: flex;
     gap: 1rem;
+    font-size: 14px;
 }
 
 .edit-delete-btns {
@@ -127,13 +128,13 @@
 
 @media (min-width: 700px) {
     .single-blog-display-edit {
-        width: 680px;
+        /*width: 680px;*/
     }
 }
 
 @media (min-width: 750px) {
     .single-blog-display-edit {
-        width: 740px;
+        /*width: 740px;*/
     }
 }
 

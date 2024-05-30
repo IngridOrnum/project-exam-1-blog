@@ -247,7 +247,7 @@ document.addEventListener('DOMContentLoaded', function () {
             'region': ['oslo', 'buskerud', 'jotunheimen', 'rondane', 'hardanger', 'more-romsdal'],
             'difficulty': ['easy', 'medium', 'difficult'],
             'season': ['ssa', 'winter'],
-            'activity': ['forest', 'mountain', 'biking', 'climbing']
+            'activity': ['forest', 'mountain', 'biking']
         };
 
         Object.keys(tagMap).forEach(tagKey => {
@@ -349,22 +349,24 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 
     function deleteSinglePost(element) {
-        const postElement = element.target.closest('.single-blog-display-edit');
-        const postId = postElement.dataset.id;
-        fetch(`https://v2.api.noroff.dev/blog/posts/${username}/${postId}`, {
-            method: 'DELETE',
-            headers
-        })
-            .then(response => {
-                if (response.ok) {
-                    alert('Post deleted successfully');
-                    postElement.remove();
-                } else {
-                    response.json().then(data => alert('Error - ' + data.message));
-                }
+        if(confirm('Are you sure you want to delete this post?')) {
+            const postElement = element.target.closest('.single-blog-display-edit');
+            const postId = postElement.dataset.id;
+            fetch(`https://v2.api.noroff.dev/blog/posts/${username}/${postId}`, {
+                method: 'DELETE',
+                headers
             })
-            .catch(error => console.error('Failed to delete post:', error));
-    }
+                .then(response => {
+                    if (response.ok) {
+                        alert('Post deleted successfully');
+                        postElement.remove();
+                    } else {
+                        response.json().then(data => alert('Error - ' + data.message));
+                    }
+                })
+                .catch(error => console.error('Failed to delete post:', error));
+        }
+        }
 
     function getHeaders() {
         return {

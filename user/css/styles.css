@@ -45,7 +45,7 @@ nav {
     padding: 22px;
 }
 
-.nav-link, .logo {
+.logo {
     color: var(--primary-500-darkgreen);
 }
 

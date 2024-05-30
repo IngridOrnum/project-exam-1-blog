@@ -39,10 +39,10 @@ input {
     background-color: transparent;
     border: var(--neutral-500-white) 1px solid;
     border-radius: 6px;
-    height: 58px;
-    width: 365px;
+    height: 48px;
+    width: 320px;
     font-family: Montserrat, sans-serif;
-    font-size: 20px;
+    font-size: 18px;
     letter-spacing: 2px;
     padding: 0 22px;
     margin-bottom: 22px;
@@ -69,6 +69,7 @@ input {
 
 #register-btn-option, #login-btn-option {
     margin: 42px;
+    width: 320px;
 }
 
 #register-btn-option:hover, #login-btn-option:hover {
@@ -86,4 +87,23 @@ input {
 
 #login-error-message, #register-error-message {
     display: none;
+}
+
+@media(min-width: 600px) {
+
+input {
+    height: 58px;
+    width: 365px;
+    font-size: 20px;
+}
+
+    #register-btn-option, #login-btn-option {
+        width: 365px;
+    }
+}
+
+@media (min-width: 700px) {
+    .h1-login-and-register {
+        margin-top: 142px;
+    }
 }
