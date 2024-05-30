@@ -15,22 +15,21 @@ This project was a project exam while studying on Noroff School of Technology an
 - [Licence](#licence)
 
 ## User Features
-* Latest Posts View: Users can view the latest posts, filter them based on various criteria, and see detailed information about hikes, skiing trips, and biking adventures.
-* Interactive Landing Page: Includes a hero section showcasing the three latest posts, a static thumbnail grid displaying the latest 12 posts, an about page link, and a highlighted post link.
-* Blog Archive: Users can filter blog posts using multiple filters to find content that matches their interests.
+* Interactive Landing Page: Includes an automatic and manual carousel showcasing the three latest posts, a static thumbnail grid displaying the latest 12 posts, an about page link, and a highlighted post link.
+* Blog Archive: Users can filter blog posts using multiple filters to find content that matches their interests, like region, difficulty, season and activity.
 * Detailed Blog Post View: Each blog post page displays comprehensive details including the post title, author, publication date, banner image, and content.
 * About Page: Provides information about the blog and its mission.
 
 ## Admin Features
-* Account Management: Admins can register and log in with validation and error handling for incorrect inputs, empty fields, or false login information.
+* Account Management: Admins can register and log in with validation. Error handling is implemented for incorrect inputs, empty fields or false login information.
 * Admin Dashboard: Displays the logged-in user's name and provides options to create or edit posts.
-* Post Creation: A form for creating new posts with alerts indicating the success or failure of the publishing process.
+* Post Creation: A form for creating new posts. The user will recieve alerts indicating the success or failure of the publishing process.
 * Post Editing: An edit page where admins can update or delete posts, with alerts confirming the success or failure of these actions. A confirmation prompt is shown before deletion, and posts can be filtered for easier management.
 
 ## Tech Used
 * HTML, CSS, JavaScript: Core technologies for building the front-end interface.
 * ChatGPT: Used for debugging and assistance during development.
-* Figma: For designing wireframes and high-fidelity assets.Post Creation: A form for creating new posts with alerts indicating the success or failure of the publishing process.
+* Figma: For designing wireframes and high-fidelity assets.
 * FontAwesome: For incorporating icons into the interface.
 * Google Fonts: For typography and enhancing the visual appeal.
 * Youtube: For inspiration and tips for various of challenges during the project.
