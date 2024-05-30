@@ -35,10 +35,8 @@
 }
 
 @media (min-width: 700px) {
-
     .bg-about-page {
         background-image: url("/assets/tablet/bg-about-page.jpg");
-        /*height: 648px;*/
     }
 
     .p-about-page {
@@ -50,7 +48,6 @@
         margin-top: 82px;
         margin-bottom: 42px;
     }
-
 }
 
 @media (min-width: 1000px) {
@@ -63,7 +60,6 @@
 @media (min-width: 1400px) {
     .bg-about-page {
         background-image: url("/assets/desktop/bg-about-page-desktop.jpg");
-        /*height: 869px;*/
     }
 }
 

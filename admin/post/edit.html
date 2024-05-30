@@ -2,15 +2,15 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
     <title>Nordic Trekking ✵ Edit Posts</title>
     <link href="css/edit.css" rel="stylesheet">
     <link href="css/admin-landingpage.css" rel="stylesheet">
     <link href="css/make.css" rel="stylesheet">
     <link href="../../user/css/styles.css" rel="stylesheet">
     <link href="../../user/css/blog-archive.css" rel="stylesheet">
-    <script src="js/edit.js" defer></script>
-    <script src="../../user/js/main.js" defer></script>
+    <script defer src="js/edit.js"></script>
+    <script defer src="../../user/js/main.js"></script>
     <script crossorigin="anonymous" src="https://kit.fontawesome.com/eaf3f254a9.js"></script>
 </head>
 <body>
@@ -22,7 +22,8 @@
                 <span><a class="nav-link" href="make.html">NEW POST</a></span>
                 <span><a class="nav-link" href="edit.html">EDIT POSTS</a></span>
             </div>
-            <button class="burger-menu" onclick="openDropdown()"><i class="fa-solid fa-bars fa-xl"></i>
+            <button class="burger-menu" onclick="openDropdown()">
+                <i class="fa-solid fa-bars fa-xl"></i>
             </button>
         </div>
         <div class="nav-dropdown">
@@ -38,35 +39,32 @@
     </nav>
     <main>
         <div class="main-content-admin">
-        <h1>Edit posts</h1>
+            <h1>Edit posts</h1>
             <div class="wrapper-all-filter-btns">
                 <span class="text-filter-by">Filter by:</span>
                 <div class="wrapper-main-filter-btns">
                     <button class="main-filter-btn filter-btn" id="view-all">View All
                         <img alt="down arrow" class="arrow-filter-btn" src="/assets/icons/black-down-arrow-icon.png">
                     </button>
-                    <button class="main-filter-btn" id="region-filter-btn">Region <img alt="down arrow"
-                                                                                       class="arrow-filter-btn"
-                                                                                       src="/assets/icons/black-down-arrow-icon.png">
+                    <button class="main-filter-btn" id="region-filter-btn">Region
+                        <img alt="down arrow" class="arrow-filter-btn" src="/assets/icons/black-down-arrow-icon.png">
                     </button>
-                    <button class="main-filter-btn" id="difficulty-filter-btn">Difficulty <img alt="down arrow"
-                                                                                               class="arrow-filter-btn"
-                                                                                               src="/assets/icons/black-down-arrow-icon.png">
+                    <button class="main-filter-btn" id="difficulty-filter-btn">Difficulty
+                        <img alt="down arrow" class="arrow-filter-btn" src="/assets/icons/black-down-arrow-icon.png">
                     </button>
-                    <button class="main-filter-btn" id="season-filter-btn">Season <img alt="down arrow"
-                                                                                       class="arrow-filter-btn"
-                                                                                       src="/assets/icons/black-down-arrow-icon.png">
+                    <button class="main-filter-btn" id="season-filter-btn">Season
+                        <img alt="down arrow" class="arrow-filter-btn" src="/assets/icons/black-down-arrow-icon.png">
                     </button>
-                    <button class="main-filter-btn" id="activity-filter-btn">Activity <img alt="down arrow"
-                                                                                           class="arrow-filter-btn"
-                                                                                           src="/assets/icons/black-down-arrow-icon.png">
+                    <button class="main-filter-btn" id="activity-filter-btn">Activity
+                        <img alt="down arrow" class="arrow-filter-btn" src="/assets/icons/black-down-arrow-icon.png">
                     </button>
                 </div>
                 <div class="line-divider"></div>
                 <div class="wrapper-all-subcategories">
                     <div class="region-subcategories wrapper-subcategories">
                         <button class="filter-btn subcategory-filter-btn" data-filter="oslo">Oslo</button>
-                        <button class="filter-btn subcategory-filter-btn" data-filter="more-romsdal">Møre & Romsdal</button>
+                        <button class="filter-btn subcategory-filter-btn" data-filter="more-romsdal">Møre & Romsdal
+                        </button>
                         <button class="filter-btn subcategory-filter-btn" data-filter="hardanger">Hardanger</button>
                         <button class="filter-btn subcategory-filter-btn" data-filter="nordland">Nordland</button>
                         <button class="filter-btn subcategory-filter-btn" data-filter="buskerud">Buskerud</button>
@@ -79,8 +77,7 @@
                         <button class="filter-btn subcategory-filter-btn" data-filter="difficult">Difficult</button>
                     </div>
                     <div class="season-subcategories wrapper-subcategories">
-                        <button class="filter-btn subcategory-filter-btn" data-filter="ssa">
-                            Spring, Summer and Autumn
+                        <button class="filter-btn subcategory-filter-btn" data-filter="ssa">Spring, Summer and Autumn
                         </button>
                         <button class="filter-btn subcategory-filter-btn" data-filter="winter">Winter</button>
                     </div>
@@ -94,9 +91,9 @@
                     </div>
                 </div>
             </div>
-        <div class="div-all-posts-edit-page">
-            <ul class="ul-all-posts-edit-page"></ul>
-        </div>
+            <div class="div-all-posts-edit-page">
+                <ul class="ul-all-posts-edit-page"></ul>
+            </div>
         </div>
     </main>
     <footer>

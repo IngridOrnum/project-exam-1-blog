@@ -100,7 +100,6 @@ strong {
 }
 
 @media (min-width: 740px) {
-
     .img-2 {
         width: 660px;
     }
@@ -124,9 +123,8 @@ strong {
     }
 
     h2 {
-       margin-bottom: 22px;
+        margin-bottom: 22px;
     }
-
 }
 
 @media (min-width: 834px) {
@@ -140,7 +138,6 @@ strong {
 }
 
 @media (min-width: 1000px) {
-
     .single-post-content-wrapper {
         margin: 0 82px;
     }
