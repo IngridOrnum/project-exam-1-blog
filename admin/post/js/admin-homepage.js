@@ -1,4 +1,3 @@
-
 const welcomeTitle = document.getElementById('welcome-title');
 const username = sessionStorage.getItem('username');
 
