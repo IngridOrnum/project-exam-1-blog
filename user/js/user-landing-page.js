@@ -11,8 +11,8 @@ document.addEventListener('DOMContentLoaded', function () {
         const mouseX = e.clientX / width;
         const mouseY = e.clientY / height;
 
-        const moveX = (mouseX - 0.5) * 30;
-        const moveY = (mouseY - 0.5) * 30;
+        const moveX = (mouseX - 0.5) * 15;
+        const moveY = (mouseY - 0.5) * 15;
 
         heroBg.style.backgroundPosition = `calc(50% + ${moveX}px) calc(50% + ${moveY}px)`;
     });

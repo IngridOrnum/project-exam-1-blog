@@ -28,20 +28,40 @@ p {
 }
 
 .hero-bg {
-    background-image: url(https://www.nasjonalparkriket.no/sites/cb_npr/files/8Besseggen-Cathrine%20Dokken_Nasjonalparkriket.web_.jpg);
+    position: relative;
     width: 100vw;
     height: 110vh;
+    display: flex;
     background-repeat: no-repeat;
     background-size: cover;
-    background-position: 50% 50%;
-    position: relative;
+    background-position: center;
+    background-image: url(https://www.nasjonalparkriket.no/sites/cb_npr/files/8Besseggen-Cathrine%20Dokken_Nasjonalparkriket.web_.jpg);
     overflow: hidden;
     transition: 0.15s ease;
-    display: flex;
     justify-content: center;
     align-items: center;
     top: -20px;
+    border-radius: 20px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
 }
+
+.hero-bg::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 110%;
+    height: 110%;
+    background-image: url(https://www.nasjonalparkriket.no/sites/cb_npr/files/8Besseggen-Cathrine%20Dokken_Nasjonalparkriket.web_.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    transition: 0.15s ease;
+    z-index: -1;
+    filter: blur(8px);
+    -webkit-filter: blur(8px);
+}
+
 
 .hero-content {
     position: absolute;
