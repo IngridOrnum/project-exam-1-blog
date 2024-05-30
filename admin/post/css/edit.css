@@ -1,26 +1,99 @@
+.div-all-posts-edit-page {
+    display: flex;
+    justify-content: center;
+    margin-top: 42px;
+}
+
 .ul-all-posts-edit-page {
     list-style: none;
     display: flex;
-    flex-direction: column;
+    justify-content: center;
     gap: 2rem;
     padding: 0;
+    max-width: 840px;
+    flex-wrap: wrap;
+}
+
+.wrapper-edit-card {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    gap: 22px;
+    margin: 12px 0;
 }
 
 .single-blog-display-edit {
     display: flex;
+    justify-content: center;
     flex-direction: column;
     gap: .5rem;
-    border: black solid 1px;
+    border: var(--secondary-300-green-transparent) solid 2px;
     padding: 1rem;
+    border-radius: 6px;
+    list-style: none;
+    margin: 0 12px;
+}
+
+.title-card-edit-page {
+    font-family: Marcellus, sans-serif;
+    font-size: 30px;
+}
+
+.line-divider-card-edit-page {
+    height: 1px;
+    width: 100%;
+    padding: 0 12px;
+    background-color: var(--secondary-300-green-transparent);
+
 }
 
 .author-date-edit-page {
     display: flex;
     gap: 1rem;
+    font-size: 14px;
 }
 
 .edit-delete-btns {
     display: flex;
+    justify-content: center;
+    gap: 12px;
+}
+
+.edit-delete-btns button {
+    border-radius: 6px;
+    font-family: Montserrat, sans-serif;
+    font-size: 16px;
+    text-transform: uppercase;
+    transition: 0.3s ease;
+}
+
+.edit-btn, .save-btn {
+    background-color: var(--primary-500-darkgreen);
+    color: var(--neutral-500-white);
+    border: var(--primary-500-darkgreen) solid 1px;
+}
+
+.edit-btn:hover, .save-btn:hover {
+    background-color: transparent;
+    color: var(--primary-500-darkgreen);
+}
+
+.delete-btn {
+    background-color: var(--error-300);
+    color: var(--neutral-500-white);
+    border: var(--error-300) solid 1px;
+}
+
+.delete-btn:hover {
+    background-color: transparent;
+    color: var(--primary-500-darkgreen);
+}
+
+.close-btn {
+    display: none;
+    background-color: transparent;
+    border: var(--primary-500-darkgreen) solid 1px;
+    color: var(--primary-500-darkgreen);
 }
 
 .save-btn, .close-btn {
@@ -51,9 +124,17 @@
     background-color: #919191;
 }
 
-@media (min-width: 834px) {
+
+
+@media (min-width: 700px) {
+    .single-blog-display-edit {
+        /*width: 680px;*/
+    }
 }
 
-@media (min-width: 1440px) {
+@media (min-width: 750px) {
+    .single-blog-display-edit {
+        /*width: 740px;*/
+    }
 }
 

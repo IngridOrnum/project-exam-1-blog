@@ -4,13 +4,22 @@
     align-items: center;
 }
 
+.nav-link-dropdown-admin {
+    color: var(--neutral-500-white);
+    letter-spacing: 2px;
+}
+
+.wrapper-nav-link-dropdown-admin {
+    margin-top: 82px;
+}
+
 .h1-admin {
-   font-size: 34px;
+   font-size: 26px;
     color: var(--primary-500-darkgreen);
 }
 
 .p-admin {
-    font-size: 20px;
+    font-size: 18px;
     letter-spacing: 2px;
     color: var(--primary-500-darkgreen);
     margin: 42px 0 62px 0;
@@ -25,15 +34,17 @@
 
 .btn-admin {
     border: var(--secondary-200-green) solid 2px;
-    background-color: var(--secondary-300-green-transparent);
+    background-color: #283b2c80;
     border-radius: 6px;
-    width: 365px;
-    height: 58px;
+    width: 320px;
+    height: 48px;
     font-family: Montserrat, sans-serif;
     color: var(--neutral-500-white);
     text-transform: uppercase;
     font-size: 20px;
     font-weight: 400;
+    transition: 0.3s ease;
+    letter-spacing: 2px;
 }
 
 .btn-admin:hover {
@@ -48,8 +59,23 @@
 
 @media (min-width: 600px) {
 
+    .btn-admin {
+        width: 365px;
+        height: 58px;
+    }
+
+    .main-content-admin-landingpage {
+        height: 700px;
+    }
+
+
     .h1-admin {
+        font-size: 32px;
         margin-top: 82px;
+    }
+
+    .p-admin {
+        font-size: 20px;
     }
 
 }

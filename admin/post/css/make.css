@@ -62,9 +62,14 @@ select {
     color: var(--neutral-500-white);
     letter-spacing: 2px;
     width: 260px;
-    background-color: var(--secondary-300-green-transparent);
+    background-color: #283b2c80;
     cursor: pointer;
+    transition: 0.3s ease;
+}
 
+select:hover {
+    background-color: transparent;
+    color: var(--primary-500-darkgreen);
 }
 
 #create-post-btn {
@@ -80,6 +85,7 @@ select {
     text-transform: uppercase;
     border: var(--primary-500-darkgreen) solid 2px;
     margin-top: 42px;
+    transition: 0.3s ease;
 }
 
 #create-post-btn:hover {

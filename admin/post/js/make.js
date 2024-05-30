@@ -15,9 +15,8 @@ document.addEventListener('DOMContentLoaded', function () {
         const difficulty = document.getElementById('difficulty').value.trim();
         const season = document.getElementById('season').value.trim();
         const activity = document.getElementById('activity').value.trim();
-        const travelDuration = document.getElementById('travel-duration').value.trim();
 
-        const tags = [region, difficulty, season, activity, travelDuration].filter(tag => tag);
+        const tags = [region, difficulty, season, activity].filter(tag => tag);
 
         // Check if any of the required fields are empty
         if (!title || !heroImgUrl|| !heroAltImg) {

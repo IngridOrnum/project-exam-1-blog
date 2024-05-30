@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Nordic Trekking ✵ Create Post</title>
     <link href="css/edit.css" rel="stylesheet">
     <link href="css/make.css" rel="stylesheet">
@@ -27,10 +28,10 @@
             <button class="close-btn-nav-dropdown" onclick="closeDropdown()">
                 <i class="fa-solid fa-x fa-lg"></i>
             </button>
-            <div class="wrapper-nav-link-dropdown" onclick="closeDropdownThroughLinks()">
-                <span><a class="nav-link" href="index.html">HOME</a></span>
-                <span><a class="nav-link" href="make.html">New Post</a></span>
-                <span><a class="nav-link" href="edit.html">Edit Posts</a></span>
+            <div class="wrapper-nav-link-dropdown wrapper-nav-link-dropdown-admin" onclick="closeDropdownThroughLinks()">
+                <span><a class="nav-link nav-link-dropdown-admin" href="index.html">HOME</a></span>
+                <span><a class="nav-link nav-link-dropdown-admin" href="make.html">NEW POST</a></span>
+                <span><a class="nav-link nav-link-dropdown-admin" href="edit.html">EDIT POSTS</a></span>
             </div>
         </div>
     </nav>
@@ -57,6 +58,7 @@
                                     <option value="jotunheimen">Jotunheimen</option>
                                     <option value="rondane">Rondane</option>
                                     <option value="hardanger">Hardanger</option>
+                                    <option value="nordland">Nordland</option>
                                     <option value="more-romsdal">Møre & Romsdal</option>
                                 </select>
                             </div>
@@ -84,7 +86,6 @@
                                     <option value="forest">Forest Hiking</option>
                                     <option value="mountain">Mountain Hiking</option>
                                     <option value="difficult">Biking</option>
-                                    <option value="climbing">Climbing</option>
                                     <option value="skiing">Skiing</option>
                                 </select>
                             </div>

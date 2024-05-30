@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Nordic Trekking ✵ Home Admin</title>
     <script src="js/admin-homepage.js" defer></script>
     <script src="../../user/js/main.js" defer></script>
@@ -26,14 +27,14 @@
                 <i class="fa-solid fa-x fa-lg"></i>
             </button>
             <div class="wrapper-nav-link-dropdown" onclick="closeDropdownThroughLinks()">
-                <span><a class="nav-link" href="index.html">HOME</a></span>
-                <span><a class="nav-link" href="make.html">New Post</a></span>
-                <span><a class="nav-link" href="edit.html">Edit Posts</a></span>
+                <span><a class="nav-link nav-link-dropdown-admin" href="index.html">HOME</a></span>
+                <span><a class="nav-link nav-link-dropdown-admin" href="make.html">NEW POST</a></span>
+                <span><a class="nav-link nav-link-dropdown-admin" href="edit.html">EDIT POSTS</a></span>
             </div>
         </div>
     </nav>
 <main>
-    <div class="main-content-admin">
+    <div class="main-content-admin main-content-admin-landingpage">
     <div id="welcome-title"></div>
     <p class="p-admin">What do you want to do today?</p>
     <div class="buttons-wrapper-admin-landingpage">
@@ -41,7 +42,7 @@
             <button class="btn-admin">Create New Post</button>
         </form>
         <form action="../post/edit.html">
-            <button class="btn-admin">Edit or Delete Post/button</button>
+            <button class="btn-admin">Edit or Delete Post</button>
         </form>
     </div>
     </div>

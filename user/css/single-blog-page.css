@@ -91,7 +91,6 @@ strong {
     border: var(--secondary-300-green-transparent) solid 3px;
     border-radius: 6px;
     padding: 22px 42px;
-    width: 306px;
 }
 
 .details-section-wrapper {
@@ -117,8 +116,7 @@ strong {
     }
 
     .details-wrapper {
-        width: 260px;
-        height: 260px;
+        height: 300px;
     }
 
     .details-img {
@@ -154,12 +152,12 @@ strong {
     }
 
     .details-img {
-        width: 500px;
+        width: 440px;
         height: 400px;
     }
 
     .details-wrapper {
-        height: 356px;
+        height: 400px;
     }
 
     .single-post-content-wrapper p {

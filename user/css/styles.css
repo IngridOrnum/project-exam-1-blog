@@ -45,7 +45,7 @@ nav {
     padding: 22px;
 }
 
-.nav-link, .logo {
+.logo {
     color: var(--primary-500-darkgreen);
 }
 
@@ -274,6 +274,7 @@ footer {
     height: 478px;
     width: 100%;
     margin-top: 42px;
+    bottom: 0;
 }
 
 .bg-footer {
