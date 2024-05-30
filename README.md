@@ -1,7 +1,18 @@
-# Nordic Trekking Blog Interface
+# Nordic Trekking Blog - Exam Project 1
 
 ## Project Description
 The Nordic Trekking Blog Interface is a front-end user interface for an API-driven blogging application focused on hiking and outdoor activities in Norway. The application allows users to explore various hiking, skiing, and biking trips with detailed recommendations and beautiful imagery. This project also provides a admin interface for content management where blogs can be created, deleted or edited.
+
+This project was an exam project while studying on Noroff School of Technology and Media. 
+
+## Table of contents:
+- [User Features](#user-features)
+- [Admin Features](#admin-features)
+- [Tech Used](#tech-used)
+- [Challenges Faced](#challenges-faced)
+- [Future Feautures](#future-features)
+- [Deployment and Project Links](#deployment-and-project-links)
+- [Licence](#licence)
 
 ## User Features
 * Latest Posts View: Users can view the latest posts, filter them based on various criteria, and see detailed information about hikes, skiing trips, and biking adventures.
@@ -11,6 +22,12 @@ The Nordic Trekking Blog Interface is a front-end user interface for an API-driv
 * About Page: Provides information about the blog and its mission.
 
 ## Admin Features
+* Account Management: Admins can register and log in with validation and error handling for incorrect inputs, empty fields, or false login information.
+* Admin Dashboard: Displays the logged-in user's name and provides options to create or edit posts.
+* Post Creation: A form for creating new posts with alerts indicating the success or failure of the publishing process.
+* Post Editing: An edit page where admins can update or delete posts, with alerts confirming the success or failure of these actions. A confirmation prompt is shown before deletion, and posts can be filtered for easier management.
+
+## Tech Used
 * HTML, CSS, JavaScript: Core technologies for building the front-end interface.
 * ChatGPT: Used for debugging and assistance during development.
 * Figma: For designing wireframes and high-fidelity assets.Post Creation: A form for creating new posts with alerts indicating the success or failure of the publishing process.
@@ -18,7 +35,7 @@ The Nordic Trekking Blog Interface is a front-end user interface for an API-driv
 * Google Fonts: For typography and enhancing the visual appeal.
 * Youtube: For inspiration and tips for various of challenges during the project.
 
-## Admin Features
+## Challenges Faced
 1. API Integration: This was my first experience with API-based login and registration, and handling access tokens. Initially, this was a challenging concept, but I now have a much better understanding.
 2. Content Structuring: The provided API had limitations, such as a single string for the body content and only one image per post. To address this, I used ChatGPT to help split the body content into multiple paragraphs and include additional images.
 3. Design Adjustments: I had to adjust my initial design to align better with the API's capabilities, simplifying some aspects to streamline development.
@@ -30,14 +47,14 @@ For further development of this blog, I would like to add folloging features:
 * More interesting design and design effects.
 * Preview of the blog post before creating post on admin pages.
 
-## Deployment and project links
-* Vercel Deployment User
-* Vercel Deploument Admin
-* email: ingrid.ornum@stud.noroff.no
-* password: iLoveFlexbox
-* GitHub Repository
-* GitHub Board
-* Figma Design
+## Deployment and Project Links
+* [Vercel Deployment User](https://project-exam-1-blog.vercel.app/user/index.html)
+* [Vercel Deployment Admin](https://project-exam-1-blog.vercel.app/admin/account/login.html)
+  * email: ingrid.ornum@stud.noroff.no
+  * password: iLoveFlexbox
+* [GitHub Repository](https://github.com/IngridOrnum/project-exam-1-blog)
+* [GitHub Board](https://github.com/users/IngridOrnum/projects/11/views/1)
+* [Figma Design](https://www.figma.com/design/h2OCILAUmPbyg0Pa2o1TzH/Exam-Project-1?node-id=1%3A5&t=MMt9nOGpAecWT2rN-1)
 
 ## License
 This project is licensed under the MIT License.
