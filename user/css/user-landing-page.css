@@ -8,6 +8,8 @@ section {
 p {
     margin-top: 12px;
     font-size: 14px;
+    letter-spacing: 2px;
+    color: var(--neutral-300-black);
 }
 
 .nav-homepage {
@@ -38,6 +40,7 @@ p {
     display: flex;
     justify-content: center;
     align-items: center;
+    top: -20px;
 }
 
 .hero-content {
@@ -387,6 +390,9 @@ p {
         font-size: 16px;
     }
 
+    .hero-content {
+        top: 280px;
+    }
 }
 
 @media (min-width: 1440px) {

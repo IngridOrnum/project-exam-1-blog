@@ -25,6 +25,8 @@
 .p-about-page {
     color: var(--neutral-300-black);
     padding: 0 22px;
+    margin-top: 22px;
+    text-align: left;
 }
 
 .small-text-about-page {
@@ -41,7 +43,6 @@
 
     .p-about-page {
         padding: 0 42px;
-        text-align: left;
     }
 
     .title-about-page {

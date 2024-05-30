@@ -1,4 +1,3 @@
-
 document.addEventListener('DOMContentLoaded', function () {
     const postsContainer = document.querySelector('.ul-all-posts-edit-page');
     const username = sessionStorage.getItem('username');
@@ -238,7 +237,7 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 
     function addFormData(editDropdown, postData) {
-        const { title, tags, body, media } = postData.data;
+        const {title, tags, body, media} = postData.data;
         editDropdown.querySelector('#title').value = title || '';
         editDropdown.querySelector('#img-url-1').value = media.url || '';
         editDropdown.querySelector('#alt-img-1').value = media.alt || '';
@@ -349,7 +348,7 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 
     function deleteSinglePost(element) {
-        if(confirm('Are you sure you want to delete this post?')) {
+        if (confirm('Are you sure you want to delete this post?')) {
             const postElement = element.target.closest('.single-blog-display-edit');
             const postId = postElement.dataset.id;
             fetch(`https://v2.api.noroff.dev/blog/posts/${username}/${postId}`, {
@@ -366,7 +365,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 })
                 .catch(error => console.error('Failed to delete post:', error));
         }
-        }
+    }
 
     function getHeaders() {
         return {

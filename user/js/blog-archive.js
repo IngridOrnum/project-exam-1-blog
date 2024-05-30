@@ -11,8 +11,8 @@ function displayAllPosts() {
         .then(res => res.json())
         .then(data => {
             if (data && data.data) {
-                allPosts = data.data;  // Store fetched posts
-                renderPosts(allPosts, 12); // Call render function, and display initial 12 posts
+                allPosts = data.data;
+                renderPosts(allPosts, 12);
             }
         })
         .catch(error => console.error('Error fetching blog posts:', error));
@@ -33,11 +33,10 @@ function renderPosts(posts, numberOfPosts) {
             </div>`;
     }).join('');
 
-    document.querySelector('.blog-archive-section').innerHTML += postElements; //append new posts
+    document.querySelector('.blog-archive-section').innerHTML += postElements;
 
-    currentlyDisplayedPosts += numberOfPosts; // update the count of displayed posts
+    currentlyDisplayedPosts += numberOfPosts;
 
-    //check if there is any more posts to display
     if (currentlyDisplayedPosts >= posts.length) {
         document.querySelector('.more-posts-generator-btn').style.display = 'none';
     }
@@ -77,12 +76,12 @@ document.addEventListener('DOMContentLoaded', () => {
                 subcategories.style.display = 'block';
                 lineDivider.style.display = 'block';
             }
-            button.classList.add('active'); // Add active class to the clicked main filter button
+            button.classList.add('active');
         });
     });
 
    morePostsButton.addEventListener('click', () => {
-       renderPosts(allPosts, 10); // display 10 more posts on click
+       renderPosts(allPosts, 10);
    })
 
     function removeActiveClass(buttons) {

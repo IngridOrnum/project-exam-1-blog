@@ -11,8 +11,8 @@ document.addEventListener('DOMContentLoaded', function () {
         const mouseX = e.clientX / width;
         const mouseY = e.clientY / height;
 
-        const moveX = (mouseX - 0.5) * 30; // Adjust multiplier for desired effect
-        const moveY = (mouseY - 0.5) * 30; // Adjust multiplier for desired effect
+        const moveX = (mouseX - 0.5) * 30;
+        const moveY = (mouseY - 0.5) * 30;
 
         heroBg.style.backgroundPosition = `calc(50% + ${moveX}px) calc(50% + ${moveY}px)`;
     });
@@ -21,7 +21,6 @@ document.addEventListener('DOMContentLoaded', function () {
         heroBg.style.backgroundPosition = '50% 50%';
     });
 });
-
 
 function fetchUserBlogPostsCarousel() {
     fetch(`https://v2.api.noroff.dev/blog/posts/IngridOrnum`, {
@@ -42,8 +41,8 @@ function fetchUserBlogPostsCarousel() {
                          <button class="title-carousel-button"><a class="post-title" href="post/index.html?postId=${post.id}">${post.title}</a></button>
                         </div>
                 </li>`;
-                }).join('');  // Join the array of strings into a single string
-                initializeSlides(); // Initialize slides and start the automatic slideshow
+                }).join('');
+                initializeSlides();
                 initializePagination();
             }
         })
@@ -76,10 +75,9 @@ function showSlide(index) {
     stopAutomaticSlide();
 
     const slides = document.querySelectorAll('.post-slide');
-    if (index >= slides.length) index = 0; // wrap around to the first slide
-    if (index < 0) index = slides.length -1; // wrap around to the last slide
+    if (index >= slides.length) index = 0;
+    if (index < 0) index = slides.length -1;
 
-    // hide all slides, except the targeted slide
     slides.forEach(slide => slide.style.display = 'none');
     slides[index].style.display = 'block';
     currentSlideIndex = index; //update current slide index
@@ -142,7 +140,7 @@ function fetchUserBlogPostsStaticList() {
                     </div>
                     </a>
                 </div>`;
-                }).join('');  // Join the array of strings into a single string
+                }).join('');
             }
         })
         .catch(error => console.error('Error fetching blog posts:', error));
