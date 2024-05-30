@@ -1,10 +1,17 @@
 
-label, .tags {
+.edit-form > label, .tags {
     font-family: Montserrat, sans-serif;
     color: var(--primary-500-darkgreen);
-    font-weight: 400;
+    font-weight: 600;
     margin-top: 22px;
 }
+
+.tag-labels {
+    font-family: Montserrat, sans-serif;
+    color: var(--primary-500-darkgreen);
+    font-size: 16px;
+}
+
 .edit-form {
     width: 370px;
 }
