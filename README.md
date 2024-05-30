@@ -1,9 +1,9 @@
 # Nordic Trekking Blog - Exam Project 1
 
 ## Project Description
-The Nordic Trekking Blog Interface is a front-end user interface for an API-driven blogging application focused on hiking and outdoor activities in Norway. The application allows users to explore various hiking, skiing, and biking trips with detailed recommendations and beautiful imagery. This project also provides a admin interface for content management where blogs can be created, deleted or edited.
+The Nordic Trekking Blog Interface is a front-end user interface for an API-driven blogging application focused on hiking and outdoor activities in Norway. The application allows users to explore various hiking, skiing, and biking trips with detailed recommendations and beautiful imagery. This project also provides an admin interface for content management where blogs can be created, deleted or edited.
 
-This project was an exam project while studying on Noroff School of Technology and Media. 
+This project was a project exam while studying on Noroff School of Technology and Digital Media. 
 
 ## Table of contents:
 - [User Features](#user-features)
