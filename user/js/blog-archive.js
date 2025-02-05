@@ -2,7 +2,7 @@ let allPosts = [];
 let currentlyDisplayedPosts = 0;
 
 function displayAllPosts() {
-    fetch(`https://v2.api.noroff.dev/blog/posts/IngridOrnum`, {
+    fetch(`https://v2.api.noroff.dev/blog/posts/Ingrid_Ornum`, {
         method: 'GET',
         headers: {
             'Content-Type': 'application/json'

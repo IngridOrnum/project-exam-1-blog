@@ -7,7 +7,7 @@ function displaySinglePost () {
         return;
     }
 
-    fetch(`https://v2.api.noroff.dev/blog/posts/IngridOrnum/${postId}`)
+    fetch(`https://v2.api.noroff.dev/blog/posts/Ingrid_Ornum/${postId}`)
         .then(response => response.json())
         .then(data => {
 

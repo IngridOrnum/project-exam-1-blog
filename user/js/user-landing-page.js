@@ -23,7 +23,7 @@ document.addEventListener('DOMContentLoaded', function () {
 });
 
 function fetchUserBlogPostsCarousel() {
-    fetch(`https://v2.api.noroff.dev/blog/posts/IngridOrnum`, {
+    fetch(`https://v2.api.noroff.dev/blog/posts/Ingrid_Ornum`, {
         method: 'GET',
         headers: {
             'Content-Type': 'application/json'
@@ -120,7 +120,7 @@ function stopAutomaticSlide() {
 fetchUserBlogPostsCarousel();
 
 function fetchUserBlogPostsStaticList() {
-    fetch(`https://v2.api.noroff.dev/blog/posts/IngridOrnum`, {
+    fetch(`https://v2.api.noroff.dev/blog/posts/Ingrid_Ornum`, {
         method: 'GET',
         headers: {
             'Content-Type': 'application/json'
