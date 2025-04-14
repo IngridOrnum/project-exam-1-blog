@@ -6,6 +6,8 @@
   <component name="ChangeListManager">
     <list default="true" id="c45fea73-1762-4fd9-a33f-17df48578d29" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/user/css/styles.css" beforeDir="false" afterPath="$PROJECT_DIR$/user/css/styles.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/user/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/user/index.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/user/js/blog-archive.js" beforeDir="false" afterPath="$PROJECT_DIR$/user/js/blog-archive.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/user/js/single-blog-page.js" beforeDir="false" afterPath="$PROJECT_DIR$/user/js/single-blog-page.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/user/js/user-landing-page.js" beforeDir="false" afterPath="$PROJECT_DIR$/user/js/user-landing-page.js" afterDir="false" />
@@ -40,21 +42,22 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;DefaultHtmlFileTemplate&quot;: &quot;HTML File&quot;,
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
-    &quot;last_opened_file_path&quot;: &quot;/Users/ingrid/Documents/Repos/project-exam-1-blog&quot;,
-    &quot;list.type.of.created.stylesheet&quot;: &quot;CSS&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "DefaultHtmlFileTemplate": "HTML File",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "git-widget-placeholder": "fixes",
+    "last_opened_file_path": "/Users/ingrid/Documents/Repos/project-exam-1-blog",
+    "list.type.of.created.stylesheet": "CSS",
+    "node.js.detected.package.eslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/user" />
@@ -82,7 +85,8 @@
       <workItem from="1733952209126" duration="642000" />
       <workItem from="1735826355691" duration="2712000" />
       <workItem from="1737020643965" duration="6000" />
-      <workItem from="1738784938530" duration="717000" />
+      <workItem from="1738784938530" duration="1979000" />
+      <workItem from="1744556472099" duration="2421000" />
     </task>
     <servers />
   </component>
